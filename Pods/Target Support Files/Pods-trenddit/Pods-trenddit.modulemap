@@ -1,0 +1,6 @@
+framework module Pods_trenddit {
+  umbrella header "Pods-trenddit-umbrella.h"
+
+  export *
+  module * { export * }
+}
