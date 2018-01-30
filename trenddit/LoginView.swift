@@ -15,13 +15,18 @@ class LoginView: UIView {
     lazy var emailTextfield: UITextField = {
         let tf = UITextField()
         tf.borderStyle = .line
-        tf.placeholder = "Enter a email."
+        tf.autocorrectionType = .no
+        tf.autocapitalizationType = .none
+        tf.keyboardType = .emailAddress
+        tf.backgroundColor = Constants.Colors.iconsOrText
+        tf.placeholder = "Enter a email"
         return tf
     }()
     
     lazy var passwordTextfield: UITextField = {
         let tf = UITextField()
         tf.borderStyle = .line
+        tf.backgroundColor = Constants.Colors.iconsOrText
         tf.placeholder = "Enter password"
         tf.isSecureTextEntry = true
         return tf
@@ -29,20 +34,26 @@ class LoginView: UIView {
     
     lazy var logInButton: UIButton = {
         let bttn = UIButton()
-        bttn.backgroundColor = .orange
+        bttn.backgroundColor = Constants.Colors.accent
+        bttn.layer.borderWidth = 2.0
+        bttn.layer.borderColor = Constants.Colors.divider.cgColor
+        bttn.setTitleColor(Constants.Colors.lightPrimary, for: .normal)
         bttn.setTitle("Log In", for: .normal)
         return bttn
     }()
     
     lazy var signUpButton: UIButton = {
         let bttn = UIButton()
-        bttn.backgroundColor = .purple
+        bttn.backgroundColor = Constants.Colors.accent
+        bttn.layer.borderWidth = 2.0
+        bttn.layer.borderColor = Constants.Colors.divider.cgColor
+        bttn.setTitleColor(Constants.Colors.lightPrimary, for: .normal)
         bttn.setTitle("Sign Up", for: .normal)
         return bttn
     }()
 
     private func commonInit() {
-        self.backgroundColor = .white
+        self.backgroundColor = Constants.Colors.lightPrimary
         setupTextFieldStack()
         setupTextFields()
         setupButtons()
