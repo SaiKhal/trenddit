@@ -15,7 +15,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        FirebaseApp.configure()
+//        FirebaseApp.configure()
+        view.addSubview(LoginView())
     }
 
     override func didReceiveMemoryWarning() {

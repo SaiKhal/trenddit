@@ -12,15 +12,15 @@ import FirebaseAuth
 class UserClient {
     
     func createUser(withEmail: String , password: String) {
-        Auth.auth().createUser(withEmail: <#T##String#>, password: <#T##String#>) { (<#User?#>, <#Error?#>) in
-            <#code#>
+        Auth.auth().createUser(withEmail: withEmail, password: password) { (user, error) in
+            
         }
     }
     
     
     func signIn(withEmail: String , password: String) {
-        Auth.auth().signIn(withEmail: <#T##String#>, password: <#T##String#>) { (<#User?#>, <#Error?#>) in
-            <#code#>
+        Auth.auth().signIn(withEmail: withEmail, password: password) { (user, error) in
+            
         }
     }
     
@@ -34,14 +34,14 @@ class UserClient {
     }
     
     func sendPasswordReset(withEmail: String) {
-        Auth.auth().sendPasswordReset(withEmail: <#T##String#>) { (<#Error?#>) in
-            <#code#>
+        Auth.auth().sendPasswordReset(withEmail: withEmail) { (error) in
+            
         }
     }
     
     func confirmPasswordReset(withCode: String, newPassword: String) {
-        Auth.auth().confirmPasswordReset(withCode: <#T##String#>, newPassword: <#T##String#>) { (<#Error?#>) in
-            <#code#>
+        Auth.auth().confirmPasswordReset(withCode: withCode, newPassword: newPassword) { (error) in
+            
         }
     }
     
