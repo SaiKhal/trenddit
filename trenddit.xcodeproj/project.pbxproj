@@ -13,6 +13,8 @@
 		81A16602201FE7DA00EE8CA0 /* trenddit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 81A16600201FE7DA00EE8CA0 /* trenddit.xcdatamodeld */; };
 		81A16604201FE7DA00EE8CA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81A16603201FE7DA00EE8CA0 /* Assets.xcassets */; };
 		81A16607201FE7DA00EE8CA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81A16605201FE7DA00EE8CA0 /* LaunchScreen.storyboard */; };
+		C4C8B70D202001DC00FD2B3B /* UserClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8B70C202001DC00FD2B3B /* UserClient.swift */; };
+		C4C8B70F2020056500FD2B3B /* ErrorHandleable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8B70E2020056500FD2B3B /* ErrorHandleable.swift */; };
 		CBA68423399D5995FF565856 /* Pods_trenddit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A483F771524432B67E1FA549 /* Pods_trenddit.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +30,8 @@
 		A483F771524432B67E1FA549 /* Pods_trenddit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_trenddit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8233DF17766892C05415FA3 /* Pods-trenddit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trenddit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-trenddit/Pods-trenddit.debug.xcconfig"; sourceTree = "<group>"; };
 		C316B0E80377A318D0895EFB /* Pods-trenddit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trenddit.release.xcconfig"; path = "Pods/Target Support Files/Pods-trenddit/Pods-trenddit.release.xcconfig"; sourceTree = "<group>"; };
+		C4C8B70C202001DC00FD2B3B /* UserClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserClient.swift; sourceTree = "<group>"; };
+		C4C8B70E2020056500FD2B3B /* ErrorHandleable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandleable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 				81A16605201FE7DA00EE8CA0 /* LaunchScreen.storyboard */,
 				81A16608201FE7DA00EE8CA0 /* Info.plist */,
 				81A16600201FE7DA00EE8CA0 /* trenddit.xcdatamodeld */,
+				C4C8B70C202001DC00FD2B3B /* UserClient.swift */,
+				C4C8B70E2020056500FD2B3B /* ErrorHandleable.swift */,
 			);
 			path = trenddit;
 			sourceTree = "<group>";
@@ -231,7 +237,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				81A165FC201FE7DA00EE8CA0 /* ViewController.swift in Sources */,
+				C4C8B70D202001DC00FD2B3B /* UserClient.swift in Sources */,
 				81A165FA201FE7DA00EE8CA0 /* AppDelegate.swift in Sources */,
+				C4C8B70F2020056500FD2B3B /* ErrorHandleable.swift in Sources */,
 				81A16602201FE7DA00EE8CA0 /* trenddit.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
