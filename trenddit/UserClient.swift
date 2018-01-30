@@ -10,20 +10,19 @@ import Foundation
 import FirebaseAuth
 
 class UserClient {
-    
-    func createUser(withEmail: String , password: String) {
+
+    func createUser(withEmail: String, password: String) {
         Auth.auth().createUser(withEmail: withEmail, password: password) { (user, error) in
-            
+
         }
     }
-    
-    
-    func signIn(withEmail: String , password: String) {
+
+    func signIn(withEmail: String, password: String) {
         Auth.auth().signIn(withEmail: withEmail, password: password) { (user, error) in
-            
+
         }
     }
-    
+
     func signOut() {
         guard Auth.auth().currentUser != nil else { return }
         do {
@@ -32,20 +31,19 @@ class UserClient {
             print(error)
         }
     }
-    
+
     func sendPasswordReset(withEmail: String) {
         Auth.auth().sendPasswordReset(withEmail: withEmail) { (error) in
-            
+
         }
     }
-    
+
     func confirmPasswordReset(withCode: String, newPassword: String) {
         Auth.auth().confirmPasswordReset(withCode: withCode, newPassword: newPassword) { (error) in
-            
+
         }
     }
-    
-    
+
     //if let user = Auth.auth().currentUser {
     //    User.updatePassword(user)
     //    User.updateEmail(user)
@@ -53,4 +51,3 @@ class UserClient {
     //    User.createProfileChangeRequest(user)
     //}
 }
-
