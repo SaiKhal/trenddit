@@ -15,7 +15,6 @@ public typealias AZTabBarAction = (() -> Void)
 public class AZTabBarController: UIViewController {
 
     // MARK: - Static instance methods
-     */
 
     /// This function creates an instance of AZTabBarController using the specifed icons and inserts it into the provided view controller.
     ///
