@@ -17,6 +17,7 @@
 		C4C8B70F2020056500FD2B3B /* ErrorHandleable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8B70E2020056500FD2B3B /* ErrorHandleable.swift */; };
 		C4C8B7112020098700FD2B3B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8B7102020098700FD2B3B /* LoginView.swift */; };
 		C4DD4F1A2020C7F700C0FBE0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8B7172020434A00FD2B3B /* Constants.swift */; };
+		C4DD4F212020CC7500C0FBE0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4DD4F202020CC7500C0FBE0 /* GoogleService-Info.plist */; };
 		CBA68423399D5995FF565856 /* Pods_trenddit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A483F771524432B67E1FA549 /* Pods_trenddit.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		C4C8B70E2020056500FD2B3B /* ErrorHandleable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandleable.swift; sourceTree = "<group>"; };
 		C4C8B7102020098700FD2B3B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		C4C8B7172020434A00FD2B3B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C4DD4F202020CC7500C0FBE0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				81A16605201FE7DA00EE8CA0 /* LaunchScreen.storyboard */,
 				81A16608201FE7DA00EE8CA0 /* Info.plist */,
 				81A16600201FE7DA00EE8CA0 /* trenddit.xcdatamodeld */,
+				C4DD4F202020CC7500C0FBE0 /* GoogleService-Info.plist */,
 			);
 			path = trenddit;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81A16607201FE7DA00EE8CA0 /* LaunchScreen.storyboard in Resources */,
+				C4DD4F212020CC7500C0FBE0 /* GoogleService-Info.plist in Resources */,
 				81A16604201FE7DA00EE8CA0 /* Assets.xcassets in Resources */,
 				81A165FF201FE7DA00EE8CA0 /* Main.storyboard in Resources */,
 			);
