@@ -16,6 +16,7 @@
 		C4C8B70D202001DC00FD2B3B /* UserClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8B70C202001DC00FD2B3B /* UserClient.swift */; };
 		C4C8B70F2020056500FD2B3B /* ErrorHandleable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8B70E2020056500FD2B3B /* ErrorHandleable.swift */; };
 		C4C8B7112020098700FD2B3B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8B7102020098700FD2B3B /* LoginView.swift */; };
+		C4C8B7132020150C00FD2B3B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8B7122020150C00FD2B3B /* Constants.swift */; };
 		CBA68423399D5995FF565856 /* Pods_trenddit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A483F771524432B67E1FA549 /* Pods_trenddit.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		C4C8B70C202001DC00FD2B3B /* UserClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserClient.swift; sourceTree = "<group>"; };
 		C4C8B70E2020056500FD2B3B /* ErrorHandleable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandleable.swift; sourceTree = "<group>"; };
 		C4C8B7102020098700FD2B3B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		C4C8B7122020150C00FD2B3B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = ../../../../Music/Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			children = (
 				81A165F9201FE7DA00EE8CA0 /* AppDelegate.swift */,
 				81A165FB201FE7DA00EE8CA0 /* ViewController.swift */,
+				C4C8B7122020150C00FD2B3B /* Constants.swift */,
 				C4C8B7102020098700FD2B3B /* LoginView.swift */,
 				81A165FD201FE7DA00EE8CA0 /* Main.storyboard */,
 				81A16603201FE7DA00EE8CA0 /* Assets.xcassets */,
@@ -243,6 +246,7 @@
 				81A165FC201FE7DA00EE8CA0 /* ViewController.swift in Sources */,
 				C4C8B70D202001DC00FD2B3B /* UserClient.swift in Sources */,
 				81A165FA201FE7DA00EE8CA0 /* AppDelegate.swift in Sources */,
+				C4C8B7132020150C00FD2B3B /* Constants.swift in Sources */,
 				C4C8B70F2020056500FD2B3B /* ErrorHandleable.swift in Sources */,
 				81A16602201FE7DA00EE8CA0 /* trenddit.xcdatamodeld in Sources */,
 			);
