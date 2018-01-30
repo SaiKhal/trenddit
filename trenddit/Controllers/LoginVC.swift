@@ -11,7 +11,7 @@ import Firebase
 
 class LoginVC: UIViewController {
 
-    let loginView = LoginView()
+    let loginView = SignUpView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
