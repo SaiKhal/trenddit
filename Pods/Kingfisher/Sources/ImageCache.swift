@@ -396,7 +396,7 @@ open class ImageCache {
     
     - parameter completionHander: Called after the operation completes.
     */
-    open func clearDiskCache(completion handler: (()->Void)? = nil) {
+    open func clearDiskCache(completion handler: (() -> Void)? = nil) {
         ioQueue.async {
             do {
                 try self.fileManager.removeItem(atPath: self.diskCachePath)
@@ -423,7 +423,7 @@ open class ImageCache {
     
     - parameter completionHandler: Called after the operation completes.
     */
-    open func cleanExpiredDiskCache(completion handler: (()->Void)? = nil) {
+    open func cleanExpiredDiskCache(completion handler: (() -> Void)? = nil) {
 
         // Do things in cocurrent io queue
         ioQueue.async {

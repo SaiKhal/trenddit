@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		81A165FA201FE7DA00EE8CA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A165F9201FE7DA00EE8CA0 /* AppDelegate.swift */; };
-		81A165FC201FE7DA00EE8CA0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A165FB201FE7DA00EE8CA0 /* ViewController.swift */; };
+		81A165FC201FE7DA00EE8CA0 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A165FB201FE7DA00EE8CA0 /* LoginVC.swift */; };
 		81A165FF201FE7DA00EE8CA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81A165FD201FE7DA00EE8CA0 /* Main.storyboard */; };
 		81A16602201FE7DA00EE8CA0 /* trenddit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 81A16600201FE7DA00EE8CA0 /* trenddit.xcdatamodeld */; };
 		81A16604201FE7DA00EE8CA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81A16603201FE7DA00EE8CA0 /* Assets.xcassets */; };
@@ -16,14 +16,13 @@
 		C4C8B70D202001DC00FD2B3B /* UserClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8B70C202001DC00FD2B3B /* UserClient.swift */; };
 		C4C8B70F2020056500FD2B3B /* ErrorHandleable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8B70E2020056500FD2B3B /* ErrorHandleable.swift */; };
 		C4C8B7112020098700FD2B3B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8B7102020098700FD2B3B /* LoginView.swift */; };
-		C4C8B7132020150C00FD2B3B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8B7122020150C00FD2B3B /* Constants.swift */; };
 		CBA68423399D5995FF565856 /* Pods_trenddit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A483F771524432B67E1FA549 /* Pods_trenddit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		81A165F6201FE7DA00EE8CA0 /* trenddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = trenddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81A165F9201FE7DA00EE8CA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		81A165FB201FE7DA00EE8CA0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		81A165FB201FE7DA00EE8CA0 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		81A165FE201FE7DA00EE8CA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		81A16601201FE7DA00EE8CA0 /* trenddit.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = trenddit.xcdatamodel; sourceTree = "<group>"; };
 		81A16603201FE7DA00EE8CA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -35,7 +34,7 @@
 		C4C8B70C202001DC00FD2B3B /* UserClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserClient.swift; sourceTree = "<group>"; };
 		C4C8B70E2020056500FD2B3B /* ErrorHandleable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandleable.swift; sourceTree = "<group>"; };
 		C4C8B7102020098700FD2B3B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		C4C8B7122020150C00FD2B3B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = ../../../../Music/Constants.swift; sourceTree = "<group>"; };
+		C4C8B7172020434A00FD2B3B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,16 +80,16 @@
 			isa = PBXGroup;
 			children = (
 				81A165F9201FE7DA00EE8CA0 /* AppDelegate.swift */,
-				81A165FB201FE7DA00EE8CA0 /* ViewController.swift */,
-				C4C8B7122020150C00FD2B3B /* Constants.swift */,
-				C4C8B7102020098700FD2B3B /* LoginView.swift */,
+				C4C8B71A202043A500FD2B3B /* Models */,
+				C4C8B7192020437700FD2B3B /* Services */,
+				C4C8B7152020434100FD2B3B /* Controllers */,
+				C4C8B7182020436D00FD2B3B /* Views */,
+				C4C8B7162020434A00FD2B3B /* Supporting Files */,
 				81A165FD201FE7DA00EE8CA0 /* Main.storyboard */,
 				81A16603201FE7DA00EE8CA0 /* Assets.xcassets */,
 				81A16605201FE7DA00EE8CA0 /* LaunchScreen.storyboard */,
 				81A16608201FE7DA00EE8CA0 /* Info.plist */,
 				81A16600201FE7DA00EE8CA0 /* trenddit.xcdatamodeld */,
-				C4C8B70C202001DC00FD2B3B /* UserClient.swift */,
-				C4C8B70E2020056500FD2B3B /* ErrorHandleable.swift */,
 			);
 			path = trenddit;
 			sourceTree = "<group>";
@@ -101,6 +100,54 @@
 				A483F771524432B67E1FA549 /* Pods_trenddit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C4C8B7142020374A00FD2B3B /* Authentification */ = {
+			isa = PBXGroup;
+			children = (
+				C4C8B70C202001DC00FD2B3B /* UserClient.swift */,
+				C4C8B70E2020056500FD2B3B /* ErrorHandleable.swift */,
+			);
+			path = Authentification;
+			sourceTree = "<group>";
+		};
+		C4C8B7152020434100FD2B3B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				81A165FB201FE7DA00EE8CA0 /* LoginVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C4C8B7162020434A00FD2B3B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C4C8B7172020434A00FD2B3B /* Constants.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C4C8B7182020436D00FD2B3B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C4C8B7102020098700FD2B3B /* LoginView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C4C8B7192020437700FD2B3B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C4C8B7142020374A00FD2B3B /* Authentification */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C4C8B71A202043A500FD2B3B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,10 +290,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4C8B7112020098700FD2B3B /* LoginView.swift in Sources */,
-				81A165FC201FE7DA00EE8CA0 /* ViewController.swift in Sources */,
+				81A165FC201FE7DA00EE8CA0 /* LoginVC.swift in Sources */,
 				C4C8B70D202001DC00FD2B3B /* UserClient.swift in Sources */,
 				81A165FA201FE7DA00EE8CA0 /* AppDelegate.swift in Sources */,
-				C4C8B7132020150C00FD2B3B /* Constants.swift in Sources */,
 				C4C8B70F2020056500FD2B3B /* ErrorHandleable.swift in Sources */,
 				81A16602201FE7DA00EE8CA0 /* trenddit.xcdatamodeld in Sources */,
 			);

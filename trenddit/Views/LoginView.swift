@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import QuartzCore
 
 class LoginView: UIView {
 
@@ -18,6 +19,7 @@ class LoginView: UIView {
         tf.autocapitalizationType = .none
         tf.keyboardType = .emailAddress
         tf.backgroundColor = Constants.Colors.iconsOrText
+        tf.layer.borderWidth = 2.0
         tf.placeholder = "Enter a email"
         return tf
     }()
@@ -26,6 +28,7 @@ class LoginView: UIView {
         let tf = UITextField()
         tf.borderStyle = .line
         tf.backgroundColor = Constants.Colors.iconsOrText
+        tf.layer.borderWidth = 2.0
         tf.placeholder = "Enter password"
         tf.isSecureTextEntry = true
         return tf
@@ -38,8 +41,31 @@ class LoginView: UIView {
         bttn.layer.borderColor = Constants.Colors.divider.cgColor
         bttn.setTitleColor(Constants.Colors.lightPrimary, for: .normal)
         bttn.setTitle("Log In", for: .normal)
+        bttn.addTarget(self, action: #selector(buttonFunc), for: .touchUpInside)
         return bttn
     }()
+
+    @objc func buttonFunc() {
+        guard let emailText = emailTextfield.text, !emailText.isEmpty else {
+            //present no email error
+            let animation = CABasicAnimation(keyPath: "borderColor")
+            animation.fromValue = Constants.Colors.divider.cgColor
+            animation.toValue = Constants.Colors.errorRed.cgColor
+            animation.duration = 2.0
+            let customTimingFunction = CAMediaTimingFunction(controlPoints: 0.0, 0.80, 0.0, 0.98)
+            animation.timingFunction = customTimingFunction
+            self.emailTextfield.layer.add(animation, forKey: animation.keyPath)
+            self.emailTextfield.layer.borderColor = Constants.Colors.divider.cgColor
+            return
+        }
+
+        guard let passwordText = passwordTextfield.text, !passwordText.isEmpty else {
+            //present no password error
+            return
+        }
+
+        print("pressed")
+    }
 
     lazy var signUpButton: UIButton = {
         let bttn = UIButton()
