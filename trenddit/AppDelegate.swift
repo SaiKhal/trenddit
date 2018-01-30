@@ -18,9 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Configure Firebase.
         FirebaseApp.configure()
-
-        // Configure tab bar controller
-        let root = CustomTabBarVC()
+        
+        let root: UIViewController!
+        
+        if UserClient.signedIn {
+            root = LoginVC()
+        } else {
+            root = CustomTabBarVC()
+        }
 
         // configure window
         window = UIWindow(frame: UIScreen.main.bounds)
