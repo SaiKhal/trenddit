@@ -16,6 +16,7 @@
 		C4C8B70D202001DC00FD2B3B /* UserClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8B70C202001DC00FD2B3B /* UserClient.swift */; };
 		C4C8B70F2020056500FD2B3B /* ErrorHandleable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8B70E2020056500FD2B3B /* ErrorHandleable.swift */; };
 		C4C8B7112020098700FD2B3B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8B7102020098700FD2B3B /* LoginView.swift */; };
+		C4DD4F1A2020C7F700C0FBE0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8B7172020434A00FD2B3B /* Constants.swift */; };
 		CBA68423399D5995FF565856 /* Pods_trenddit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A483F771524432B67E1FA549 /* Pods_trenddit.framework */; };
 /* End PBXBuildFile section */
 
@@ -293,6 +294,7 @@
 				81A165FC201FE7DA00EE8CA0 /* LoginVC.swift in Sources */,
 				C4C8B70D202001DC00FD2B3B /* UserClient.swift in Sources */,
 				81A165FA201FE7DA00EE8CA0 /* AppDelegate.swift in Sources */,
+				C4DD4F1A2020C7F700C0FBE0 /* Constants.swift in Sources */,
 				C4C8B70F2020056500FD2B3B /* ErrorHandleable.swift in Sources */,
 				81A16602201FE7DA00EE8CA0 /* trenddit.xcdatamodeld in Sources */,
 			);
