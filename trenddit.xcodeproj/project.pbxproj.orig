@@ -22,7 +22,10 @@
 		C46E712F2020FE8000AA0226 /* AZTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E712A2020FE8000AA0226 /* AZTabBarController.swift */; };
 		C46E71302020FE8000AA0226 /* AZTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C46E712B2020FE8000AA0226 /* AZTabBarController.xib */; };
 		C46E71312020FE8000AA0226 /* AZTabBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E712C2020FE8000AA0226 /* AZTabBarDelegate.swift */; };
+<<<<<<< HEAD
 		C46E713520210C2300AA0226 /* CustomTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E713420210C2300AA0226 /* CustomTabBarVC.swift */; };
+=======
+>>>>>>> f5ef9c70a4a25ad20b65ab2d5769c94387330647
 		C4C8B70D202001DC00FD2B3B /* UserClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8B70C202001DC00FD2B3B /* UserClient.swift */; };
 		C4C8B70F2020056500FD2B3B /* ErrorHandleable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8B70E2020056500FD2B3B /* ErrorHandleable.swift */; };
 		C4C8B7112020098700FD2B3B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8B7102020098700FD2B3B /* LoginView.swift */; };
@@ -52,6 +55,10 @@
 		C46E712A2020FE8000AA0226 /* AZTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZTabBarController.swift; sourceTree = "<group>"; };
 		C46E712B2020FE8000AA0226 /* AZTabBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AZTabBarController.xib; sourceTree = "<group>"; };
 		C46E712C2020FE8000AA0226 /* AZTabBarDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZTabBarDelegate.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
+		C46E713420210C2300AA0226 /* CustomTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarVC.swift; sourceTree = "<group>"; };
+=======
+>>>>>>> f5ef9c70a4a25ad20b65ab2d5769c94387330647
 		C4C8B70C202001DC00FD2B3B /* UserClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserClient.swift; sourceTree = "<group>"; };
 		C4C8B70E2020056500FD2B3B /* ErrorHandleable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandleable.swift; sourceTree = "<group>"; };
 		C4C8B7102020098700FD2B3B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
