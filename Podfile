@@ -11,5 +11,6 @@ target 'trenddit' do
     pod ‘Firebase/Core’
     pod ‘SnapKit’, ‘~> 4.0.0’
     pod ‘Kingfisher’, ‘~> 4.0’
-
+    pod 'AZTabBar'
+    pod 'EasyNotificationBadge'
 end

@@ -17,6 +17,12 @@
 		9379A8D12020F162004BBD39 /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9379A8D02020F162004BBD39 /* CommentView.swift */; };
 		9379A8D52020F230004BBD39 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9379A8D42020F230004BBD39 /* FeedView.swift */; };
 		9379A8D82020F278004BBD39 /* FeedCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9379A8D72020F278004BBD39 /* FeedCollectionView.swift */; };
+		C46E712D2020FE8000AA0226 /* AZTabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E71282020FE8000AA0226 /* AZTabBarButton.swift */; };
+		C46E712E2020FE8000AA0226 /* AZTabBarButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E71292020FE8000AA0226 /* AZTabBarButtonDelegate.swift */; };
+		C46E712F2020FE8000AA0226 /* AZTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E712A2020FE8000AA0226 /* AZTabBarController.swift */; };
+		C46E71302020FE8000AA0226 /* AZTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C46E712B2020FE8000AA0226 /* AZTabBarController.xib */; };
+		C46E71312020FE8000AA0226 /* AZTabBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E712C2020FE8000AA0226 /* AZTabBarDelegate.swift */; };
+		C46E713520210C2300AA0226 /* CustomTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E713420210C2300AA0226 /* CustomTabBarVC.swift */; };
 		C4C8B70D202001DC00FD2B3B /* UserClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8B70C202001DC00FD2B3B /* UserClient.swift */; };
 		C4C8B70F2020056500FD2B3B /* ErrorHandleable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8B70E2020056500FD2B3B /* ErrorHandleable.swift */; };
 		C4C8B7112020098700FD2B3B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8B7102020098700FD2B3B /* LoginView.swift */; };
@@ -41,6 +47,12 @@
 		A483F771524432B67E1FA549 /* Pods_trenddit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_trenddit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8233DF17766892C05415FA3 /* Pods-trenddit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trenddit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-trenddit/Pods-trenddit.debug.xcconfig"; sourceTree = "<group>"; };
 		C316B0E80377A318D0895EFB /* Pods-trenddit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trenddit.release.xcconfig"; path = "Pods/Target Support Files/Pods-trenddit/Pods-trenddit.release.xcconfig"; sourceTree = "<group>"; };
+		C46E71282020FE8000AA0226 /* AZTabBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZTabBarButton.swift; sourceTree = "<group>"; };
+		C46E71292020FE8000AA0226 /* AZTabBarButtonDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZTabBarButtonDelegate.swift; sourceTree = "<group>"; };
+		C46E712A2020FE8000AA0226 /* AZTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZTabBarController.swift; sourceTree = "<group>"; };
+		C46E712B2020FE8000AA0226 /* AZTabBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AZTabBarController.xib; sourceTree = "<group>"; };
+		C46E712C2020FE8000AA0226 /* AZTabBarDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZTabBarDelegate.swift; sourceTree = "<group>"; };
+		C46E713420210C2300AA0226 /* CustomTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarVC.swift; sourceTree = "<group>"; };
 		C4C8B70C202001DC00FD2B3B /* UserClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserClient.swift; sourceTree = "<group>"; };
 		C4C8B70E2020056500FD2B3B /* ErrorHandleable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandleable.swift; sourceTree = "<group>"; };
 		C4C8B7102020098700FD2B3B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -96,6 +108,7 @@
 				C4C8B7152020434100FD2B3B /* Controllers */,
 				C4C8B7182020436D00FD2B3B /* Views */,
 				C4C8B7162020434A00FD2B3B /* Supporting Files */,
+				C46E71272020FE8000AA0226 /* Sources */,
 				81A165FD201FE7DA00EE8CA0 /* Main.storyboard */,
 				81A16603201FE7DA00EE8CA0 /* Assets.xcassets */,
 				81A16605201FE7DA00EE8CA0 /* LaunchScreen.storyboard */,
@@ -174,6 +187,18 @@
 			path = Tristan;
 			sourceTree = "<group>";
 		};
+		C46E71272020FE8000AA0226 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				C46E71282020FE8000AA0226 /* AZTabBarButton.swift */,
+				C46E71292020FE8000AA0226 /* AZTabBarButtonDelegate.swift */,
+				C46E712A2020FE8000AA0226 /* AZTabBarController.swift */,
+				C46E712B2020FE8000AA0226 /* AZTabBarController.xib */,
+				C46E712C2020FE8000AA0226 /* AZTabBarDelegate.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		C4C8B7142020374A00FD2B3B /* Authentification */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				81A165FB201FE7DA00EE8CA0 /* LoginVC.swift */,
+				C46E713420210C2300AA0226 /* CustomTabBarVC.swift */,
 				9379A8DE2020F31D004BBD39 /* Tristan */,
 				9379A8DD2020F315004BBD39 /* Kaniz */,
 				9379A8DC2020F30A004BBD39 /* Clint */,
@@ -292,6 +318,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C46E71302020FE8000AA0226 /* AZTabBarController.xib in Resources */,
 				81A16607201FE7DA00EE8CA0 /* LaunchScreen.storyboard in Resources */,
 				C4DD4F212020CC7500C0FBE0 /* GoogleService-Info.plist in Resources */,
 				81A16604201FE7DA00EE8CA0 /* Assets.xcassets in Resources */,
@@ -342,6 +369,8 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-trenddit/Pods-trenddit-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AZTabBar/AZTabBar.framework",
+				"${BUILT_PRODUCTS_DIR}/EasyNotificationBadge/EasyNotificationBadge.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
@@ -351,6 +380,8 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AZTabBar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EasyNotificationBadge.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
@@ -372,15 +403,20 @@
 			files = (
 				9379A8D52020F230004BBD39 /* FeedView.swift in Sources */,
 				9379A8D12020F162004BBD39 /* CommentView.swift in Sources */,
+				C46E712F2020FE8000AA0226 /* AZTabBarController.swift in Sources */,
 				C4C8B7112020098700FD2B3B /* LoginView.swift in Sources */,
 				9379A8D82020F278004BBD39 /* FeedCollectionView.swift in Sources */,
+				C46E71312020FE8000AA0226 /* AZTabBarDelegate.swift in Sources */,
 				81A165FC201FE7DA00EE8CA0 /* LoginVC.swift in Sources */,
 				C4C8B70D202001DC00FD2B3B /* UserClient.swift in Sources */,
+				C46E712D2020FE8000AA0226 /* AZTabBarButton.swift in Sources */,
+				C46E712E2020FE8000AA0226 /* AZTabBarButtonDelegate.swift in Sources */,
 				81A165FA201FE7DA00EE8CA0 /* AppDelegate.swift in Sources */,
 				9379A8CF2020EFE9004BBD39 /* ZoomedImageView.swift in Sources */,
 				C4DD4F1A2020C7F700C0FBE0 /* Constants.swift in Sources */,
 				C4C8B70F2020056500FD2B3B /* ErrorHandleable.swift in Sources */,
 				81A16602201FE7DA00EE8CA0 /* trenddit.xcdatamodeld in Sources */,
+				C46E713520210C2300AA0226 /* CustomTabBarVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
