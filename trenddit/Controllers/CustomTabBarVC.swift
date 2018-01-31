@@ -29,14 +29,14 @@ class CustomTabBarVC: UIViewController {
         tabController.setTitle("User", atIndex: 2)
 
         // Configure tab bar apparance
-        tabController.defaultColor = Constants.Colors.accent
-        tabController.selectedColor = Constants.Colors.accent
-        tabController.highlightColor = .white
-        tabController.highlightedBackgroundColor = Constants.Colors.accent
-        tabController.buttonsBackgroundColor = Constants.Colors.darkPrimary
-        tabController.selectionIndicatorColor = Constants.Colors.lightPrimary
+        tabController.defaultColor = Stylesheet.Contexts.TabBarController.DefaultColor
+        tabController.selectedColor = Stylesheet.Contexts.TabBarController.SelectedColor
+        tabController.highlightColor = Stylesheet.Contexts.TabBarController.HighlightColor
+        tabController.highlightedBackgroundColor = Stylesheet.Contexts.TabBarController.HighlightedBackgroundColor
+        tabController.buttonsBackgroundColor = Stylesheet.Contexts.TabBarController.ButtonsBackgroundColor
+        tabController.selectionIndicatorColor = Stylesheet.Contexts.TabBarController.SelectionIndicatorColor
         tabController.selectionIndicatorHeight = 3.0
-        tabController.separatorLineColor = Constants.Colors.accent
+        tabController.separatorLineColor = Stylesheet.Contexts.TabBarController.SeparatorLineColor
         tabController.separatorLineVisible = true
         tabController.animateTabChange = true
     }

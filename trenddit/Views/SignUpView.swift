@@ -41,7 +41,7 @@ class SignUpView: UIView {
     }
     
     private func commonInit() {
-        self.backgroundColor = Constants.Colors.lightPrimary
+        self.backgroundColor = Stylesheet.Contexts.Global.BackgroundColor
         setupTextFieldStack()
         setupTextFields()
         setupImageView()

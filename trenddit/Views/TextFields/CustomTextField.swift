@@ -27,7 +27,7 @@ class CustomTextField: UITextField {
     
     private func configureTextField() {
         self.borderStyle = .line
-        self.backgroundColor = Constants.Colors.iconsOrText
+        self.backgroundColor = Stylesheet.Colors.White
         self.layer.borderWidth = 2.0
         self.isSecureTextEntry = true
     }

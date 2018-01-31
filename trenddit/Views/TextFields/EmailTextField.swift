@@ -25,7 +25,7 @@ class EmailTextField: UITextField {
         self.autocorrectionType = .no
         self.autocapitalizationType = .none
         self.keyboardType = .emailAddress
-        self.backgroundColor = Constants.Colors.iconsOrText
+        self.backgroundColor = Stylesheet.Colors.White
         self.layer.borderWidth = 2.0
         self.placeholder = "Enter a email"
     }
