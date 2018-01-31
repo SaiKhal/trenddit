@@ -14,7 +14,7 @@ class SignUpView: UIView {
     // Text Fields
     let emailTextfield: EmailTextField = EmailTextField()
     let passwordTextfield: PasswordTextField = PasswordTextField()
-    let usernameTextField: CustomTextField = CustomTextField()
+    let usernameTextField: CustomTextField = CustomTextField(placeholderText: "Enter a username")
     
     lazy var profileImageView: UIImageView = {
         let width: CGFloat = UIScreen.main.bounds.width * 0.25

@@ -20,8 +20,8 @@ class CustomTextField: UITextField {
         configureTextField()
     }
     
-    init(placeholderText: String) {
-        super.init(frame: UIScreen.main.bounds)
+    convenience init(placeholderText: String) {
+        self.init()
         self.placeholder = placeholderText
     }
     
