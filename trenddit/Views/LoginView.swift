@@ -14,8 +14,8 @@ class LoginView: UIView {
     let logoView = LogoView()
 
     // Text Fields
-    let emailTextfield = YokoTextField()
-    let passwordTextfield = YokoTextField()
+    let emailTextfield = IsaoTextField()
+    let passwordTextfield = IsaoTextField()
 //    let emailTextfield: EmailTextField = EmailTextField()
 //    let passwordTextfield: PasswordTextField = PasswordTextField()
     
@@ -40,12 +40,12 @@ class LoginView: UIView {
         setupTextFieldStack()
         setupTextFields()
         setupButtons()
-        emailTextfield.placeholderColor = .purple
-        emailTextfield.foregroundColor = .red
+        emailTextfield.activeColor = .orange
+        emailTextfield.inactiveColor = Stylesheet.Colors.Blue
         emailTextfield.placeholder = "Enter email"
-        emailTextfield.
-        passwordTextfield.placeholderColor = .purple
-        passwordTextfield.foregroundColor = .red
+        
+        passwordTextfield.activeColor = .orange
+        passwordTextfield.inactiveColor = Stylesheet.Colors.Blue
         passwordTextfield.placeholder = "Enter password"
     }
     
