@@ -12,14 +12,14 @@ import SnapKit
 class SignUpView: UIView {
     
     // Text Fields
-    let emailTextfield: EmailTextField = EmailTextField()
-    let passwordTextfield: PasswordTextField = PasswordTextField()
-    let usernameTextField: CustomTextField = CustomTextField()
+    let emailTextfield = IsaoTextField() // EmailTextField()
+    let passwordTextfield = IsaoTextField() // PasswordTextField()
+    let usernameTextField = IsaoTextField() // CustomTextField(placeholderText: "Enter a username")
     
     lazy var profileImageView: UIImageView = {
         let width: CGFloat = UIScreen.main.bounds.width * 0.25
         let iv = UIImageView()
-        iv.backgroundColor = .green
+        iv.backgroundColor = .white
         iv.layer.cornerRadius = 40
         iv.layer.masksToBounds = true
         return iv
@@ -41,13 +41,36 @@ class SignUpView: UIView {
     }
     
     private func commonInit() {
-        self.backgroundColor = Constants.Colors.lightPrimary
+        self.backgroundColor = Stylesheet.Contexts.Global.BackgroundColor
         setupTextFieldStack()
         setupTextFields()
+        setupImageView()
         setupButtons()
+        emailTextfield.activeColor = .orange
+        emailTextfield.inactiveColor = Stylesheet.Colors.Blue
+        emailTextfield.placeholder = "Enter email"
+        emailTextfield.backgroundColor = .gray
+        
+        passwordTextfield.activeColor = .orange
+        passwordTextfield.inactiveColor = Stylesheet.Colors.Blue
+        passwordTextfield.placeholder = "Enter password"
+        
+        usernameTextField.activeColor = .orange
+        usernameTextField.inactiveColor = Stylesheet.Colors.Blue
+        usernameTextField.placeholder = "Enter display name"
     }
     
     // Setup views
+    
+    private func setupImageView() {
+        self.addSubview(profileImageView)
+        profileImageView.snp.makeConstraints { (make) in
+            make.bottom.equalTo(emailTextfield.snp.top).offset(-20)
+            make.height.width.equalTo(80)
+            make.centerX.equalTo(self.snp.centerX)
+        }
+    }
+    
     private func setupTextFieldStack() {
         let stackview = UIStackView(arrangedSubviews: [emailTextfield, passwordTextfield, usernameTextField])
         self.addSubview(stackview)
@@ -63,15 +86,9 @@ class SignUpView: UIView {
     }
     
     private func setupTextFields() {
-        self.addSubview(profileImageView)
-        profileImageView.snp.makeConstraints { (make) in
-            make.top.equalTo(self.snp.centerY).offset(10)
-            make.height.width.equalTo(80)
-            make.centerX.equalTo(self.snp.centerX)
-        }
-        
         emailTextfield.snp.makeConstraints { (make) in
             make.width.equalTo(self.snp.width).multipliedBy(0.6)
+            make.height.equalTo(self.snp.height).multipliedBy(0.1)
         }
         
         passwordTextfield.snp.makeConstraints { (make) in
@@ -86,17 +103,10 @@ class SignUpView: UIView {
     }
     
     private func setupButtons() {
-        self.addSubview(logInButton)
         self.addSubview(signUpButton)
-        logInButton.snp.makeConstraints { (make) in
-            make.top.equalTo(profileImageView.snp.bottom).offset(30)
-            make.width.equalTo(emailTextfield.snp.width).multipliedBy(0.7)
-            make.centerX.equalTo(self.snp.centerX)
-        }
-        
         signUpButton.snp.makeConstraints { (make) in
-            make.top.equalTo(logInButton.snp.bottom).offset(10)
-            make.width.equalTo(logInButton.snp.width)
+            make.top.equalTo(self.snp.centerY).offset(10)
+            make.width.equalTo(emailTextfield.snp.width).multipliedBy(0.7)
             make.centerX.equalTo(self.snp.centerX)
         }
     }

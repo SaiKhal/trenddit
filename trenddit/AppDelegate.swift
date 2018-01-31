@@ -24,7 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if UserClient.signedIn {
             root = LoginVC()
         } else {
-            root = CustomTabBarVC()
+            root = LoginVC() // for testing
+//            root = CustomTabBarVC()
         }
 
         // configure window

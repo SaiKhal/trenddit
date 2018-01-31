@@ -9,9 +9,9 @@
 import UIKit
 import Firebase
 
-class LoginVC: UIViewController {
+class LoginVC: UIViewController, AuthDelegate {
 
-    let loginView = SignUpView()
+    let loginView = LoginView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +20,16 @@ class LoginVC: UIViewController {
         view.addSubview(loginView)
         loginView.emailTextfield.delegate = self
         loginView.passwordTextfield.delegate = self
+        loginView.logInButton.delegate = self
+        loginView.signUpButton.delegate = self
+    }
+    
+    func signUp() {
+        // present(SignUpVC(), animated: true, completion: nil)
+    }
+    
+    func logIn() {
+        //
     }
 
 }
