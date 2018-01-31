@@ -12,9 +12,9 @@ import SnapKit
 class SignUpView: UIView {
     
     // Text Fields
-    let emailTextfield: EmailTextField = EmailTextField()
-    let passwordTextfield: PasswordTextField = PasswordTextField()
-    let usernameTextField: CustomTextField = CustomTextField(placeholderText: "Enter a username")
+    let emailTextfield = IsaoTextField() // EmailTextField()
+    let passwordTextfield = IsaoTextField() // PasswordTextField()
+    let usernameTextField = IsaoTextField() // CustomTextField(placeholderText: "Enter a username")
     
     lazy var profileImageView: UIImageView = {
         let width: CGFloat = UIScreen.main.bounds.width * 0.25
@@ -46,6 +46,18 @@ class SignUpView: UIView {
         setupTextFields()
         setupImageView()
         setupButtons()
+        emailTextfield.activeColor = .orange
+        emailTextfield.inactiveColor = Stylesheet.Colors.Blue
+        emailTextfield.placeholder = "Enter email"
+        emailTextfield.backgroundColor = .gray
+        
+        passwordTextfield.activeColor = .orange
+        passwordTextfield.inactiveColor = Stylesheet.Colors.Blue
+        passwordTextfield.placeholder = "Enter password"
+        
+        usernameTextField.activeColor = .orange
+        usernameTextField.inactiveColor = Stylesheet.Colors.Blue
+        usernameTextField.placeholder = "Enter display name"
     }
     
     // Setup views
@@ -76,6 +88,7 @@ class SignUpView: UIView {
     private func setupTextFields() {
         emailTextfield.snp.makeConstraints { (make) in
             make.width.equalTo(self.snp.width).multipliedBy(0.6)
+            make.height.equalTo(self.snp.height).multipliedBy(0.1)
         }
         
         passwordTextfield.snp.makeConstraints { (make) in
