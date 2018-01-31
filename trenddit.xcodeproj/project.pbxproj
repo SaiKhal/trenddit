@@ -17,22 +17,12 @@
 		C44EAF81202158FD00E6A7D9 /* Stylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44EAF80202158FD00E6A7D9 /* Stylesheet.swift */; };
 		C44EAF83202166A800E6A7D9 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44EAF82202166A800E6A7D9 /* LogoView.swift */; };
 		C44EAF852021697C00E6A7D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C44EAF842021697C00E6A7D9 /* Assets.xcassets */; };
-		C44EAFAB202180FC00E6A7D9 /* AkiraTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44EAF9F202180FC00E6A7D9 /* AkiraTextField.swift */; };
-		C44EAFAC202180FC00E6A7D9 /* HoshiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44EAFA0202180FC00E6A7D9 /* HoshiTextField.swift */; };
-		C44EAFAE202180FC00E6A7D9 /* IsaoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44EAFA2202180FC00E6A7D9 /* IsaoTextField.swift */; };
-		C44EAFAF202180FC00E6A7D9 /* JiroTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44EAFA3202180FC00E6A7D9 /* JiroTextField.swift */; };
-		C44EAFB0202180FC00E6A7D9 /* KaedeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44EAFA4202180FC00E6A7D9 /* KaedeTextField.swift */; };
-		C44EAFB1202180FC00E6A7D9 /* MadokaTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44EAFA5202180FC00E6A7D9 /* MadokaTextField.swift */; };
-		C44EAFB2202180FC00E6A7D9 /* MinoruTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44EAFA6202180FC00E6A7D9 /* MinoruTextField.swift */; };
-		C44EAFB3202180FC00E6A7D9 /* TextFieldEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44EAFA8202180FC00E6A7D9 /* TextFieldEffects.swift */; };
-		C44EAFB4202180FC00E6A7D9 /* YokoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44EAFA9202180FC00E6A7D9 /* YokoTextField.swift */; };
-		C44EAFB5202180FC00E6A7D9 /* YoshikoTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44EAFAA202180FC00E6A7D9 /* YoshikoTextField.swift */; };
 		C46E712D2020FE8000AA0226 /* AZTabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E71282020FE8000AA0226 /* AZTabBarButton.swift */; };
 		C46E712E2020FE8000AA0226 /* AZTabBarButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E71292020FE8000AA0226 /* AZTabBarButtonDelegate.swift */; };
 		C46E712F2020FE8000AA0226 /* AZTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E712A2020FE8000AA0226 /* AZTabBarController.swift */; };
 		C46E71302020FE8000AA0226 /* AZTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C46E712B2020FE8000AA0226 /* AZTabBarController.xib */; };
 		C46E71312020FE8000AA0226 /* AZTabBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E712C2020FE8000AA0226 /* AZTabBarDelegate.swift */; };
-		C46E713520210C2300AA0226 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		C46E713520210C2300AA0226 /* BuildFile in Sources */ = {isa = PBXBuildFile; };
 		C46E71372021107A00AA0226 /* CustomTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E71362021107A00AA0226 /* CustomTabBarVC.swift */; };
 		C46E713A20211B4500AA0226 /* EmailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E713920211B4500AA0226 /* EmailTextField.swift */; };
 		C46E713C20211E2E00AA0226 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E713B20211E2E00AA0226 /* PasswordTextField.swift */; };
@@ -66,17 +56,6 @@
 		C44EAF80202158FD00E6A7D9 /* Stylesheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stylesheet.swift; sourceTree = "<group>"; };
 		C44EAF82202166A800E6A7D9 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		C44EAF842021697C00E6A7D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C44EAF9F202180FC00E6A7D9 /* AkiraTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AkiraTextField.swift; sourceTree = "<group>"; };
-		C44EAFA0202180FC00E6A7D9 /* HoshiTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoshiTextField.swift; sourceTree = "<group>"; };
-		C44EAFA2202180FC00E6A7D9 /* IsaoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsaoTextField.swift; sourceTree = "<group>"; };
-		C44EAFA3202180FC00E6A7D9 /* JiroTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JiroTextField.swift; sourceTree = "<group>"; };
-		C44EAFA4202180FC00E6A7D9 /* KaedeTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KaedeTextField.swift; sourceTree = "<group>"; };
-		C44EAFA5202180FC00E6A7D9 /* MadokaTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MadokaTextField.swift; sourceTree = "<group>"; };
-		C44EAFA6202180FC00E6A7D9 /* MinoruTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinoruTextField.swift; sourceTree = "<group>"; };
-		C44EAFA7202180FC00E6A7D9 /* TextFieldEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldEffects.h; sourceTree = "<group>"; };
-		C44EAFA8202180FC00E6A7D9 /* TextFieldEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldEffects.swift; sourceTree = "<group>"; };
-		C44EAFA9202180FC00E6A7D9 /* YokoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YokoTextField.swift; sourceTree = "<group>"; };
-		C44EAFAA202180FC00E6A7D9 /* YoshikoTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoshikoTextField.swift; sourceTree = "<group>"; };
 		C46E71282020FE8000AA0226 /* AZTabBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZTabBarButton.swift; sourceTree = "<group>"; };
 		C46E71292020FE8000AA0226 /* AZTabBarButtonDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZTabBarButtonDelegate.swift; sourceTree = "<group>"; };
 		C46E712A2020FE8000AA0226 /* AZTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AZTabBarController.swift; sourceTree = "<group>"; };
@@ -164,25 +143,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C44EAF9E202180FC00E6A7D9 /* TextFieldEffects */ = {
-			isa = PBXGroup;
-			children = (
-				C44EAF9F202180FC00E6A7D9 /* AkiraTextField.swift */,
-				C44EAFA0202180FC00E6A7D9 /* HoshiTextField.swift */,
-				C44EAFA2202180FC00E6A7D9 /* IsaoTextField.swift */,
-				C44EAFA3202180FC00E6A7D9 /* JiroTextField.swift */,
-				C44EAFA4202180FC00E6A7D9 /* KaedeTextField.swift */,
-				C44EAFA5202180FC00E6A7D9 /* MadokaTextField.swift */,
-				C44EAFA6202180FC00E6A7D9 /* MinoruTextField.swift */,
-				C44EAFA7202180FC00E6A7D9 /* TextFieldEffects.h */,
-				C44EAFA8202180FC00E6A7D9 /* TextFieldEffects.swift */,
-				C44EAFA9202180FC00E6A7D9 /* YokoTextField.swift */,
-				C44EAFAA202180FC00E6A7D9 /* YoshikoTextField.swift */,
-			);
-			name = TextFieldEffects;
-			path = ../../../../../Downloads/TextFieldEffects;
-			sourceTree = "<group>";
-		};
 		C46E71272020FE8000AA0226 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,7 +205,6 @@
 		C4C8B7162020434A00FD2B3B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C44EAF9E202180FC00E6A7D9 /* TextFieldEffects */,
 				C46E71272020FE8000AA0226 /* Sources */,
 				C4C8B7172020434A00FD2B3B /* Constants.swift */,
 				C44EAF7E2021584C00E6A7D9 /* UIColorExt.swift */,
@@ -393,6 +352,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -404,6 +364,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -425,35 +386,25 @@
 				C46E71372021107A00AA0226 /* CustomTabBarVC.swift in Sources */,
 				C46E713F20211E9C00AA0226 /* LogInButton.swift in Sources */,
 				C44EAF81202158FD00E6A7D9 /* Stylesheet.swift in Sources */,
-				C44EAFB0202180FC00E6A7D9 /* KaedeTextField.swift in Sources */,
 				C46E71312020FE8000AA0226 /* AZTabBarDelegate.swift in Sources */,
 				81A165FC201FE7DA00EE8CA0 /* LoginVC.swift in Sources */,
-				C44EAFAB202180FC00E6A7D9 /* AkiraTextField.swift in Sources */,
-				C44EAFAC202180FC00E6A7D9 /* HoshiTextField.swift in Sources */,
 				C4A056C52021517600D8E589 /* SignUpVC.swift in Sources */,
-				C44EAFAE202180FC00E6A7D9 /* IsaoTextField.swift in Sources */,
 				C46E713C20211E2E00AA0226 /* PasswordTextField.swift in Sources */,
-				C44EAFB3202180FC00E6A7D9 /* TextFieldEffects.swift in Sources */,
 				C44EAF7F2021584C00E6A7D9 /* UIColorExt.swift in Sources */,
 				C4C8B70D202001DC00FD2B3B /* UserClient.swift in Sources */,
 				C4A056C7202152CC00D8E589 /* AuthDelegate.swift in Sources */,
 				C46E712D2020FE8000AA0226 /* AZTabBarButton.swift in Sources */,
 				C46E712E2020FE8000AA0226 /* AZTabBarButtonDelegate.swift in Sources */,
-				C44EAFB2202180FC00E6A7D9 /* MinoruTextField.swift in Sources */,
-				C44EAFB5202180FC00E6A7D9 /* YoshikoTextField.swift in Sources */,
 				81A165FA201FE7DA00EE8CA0 /* AppDelegate.swift in Sources */,
 				C4DD4F1A2020C7F700C0FBE0 /* Constants.swift in Sources */,
 				C4200BFC202123900025058D /* SignUpView.swift in Sources */,
 				C46E713A20211B4500AA0226 /* EmailTextField.swift in Sources */,
 				C4C8B70F2020056500FD2B3B /* ErrorHandleable.swift in Sources */,
 				C44EAF83202166A800E6A7D9 /* LogoView.swift in Sources */,
-				C44EAFAF202180FC00E6A7D9 /* JiroTextField.swift in Sources */,
 				81A16602201FE7DA00EE8CA0 /* trenddit.xcdatamodeld in Sources */,
-				C46E713520210C2300AA0226 /* (null) in Sources */,
+				C46E713520210C2300AA0226 /* BuildFile in Sources */,
 				C48438DE2021200A00E9909F /* SignUpButton.swift in Sources */,
-				C44EAFB4202180FC00E6A7D9 /* YokoTextField.swift in Sources */,
 				C4A056C320212FB700D8E589 /* Post.swift in Sources */,
-				C44EAFB1202180FC00E6A7D9 /* MadokaTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
