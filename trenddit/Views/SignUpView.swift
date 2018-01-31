@@ -19,7 +19,7 @@ class SignUpView: UIView {
     lazy var profileImageView: UIImageView = {
         let width: CGFloat = UIScreen.main.bounds.width * 0.25
         let iv = UIImageView()
-        iv.backgroundColor = .green
+        iv.backgroundColor = .white
         iv.layer.cornerRadius = 40
         iv.layer.masksToBounds = true
         return iv
@@ -44,10 +44,21 @@ class SignUpView: UIView {
         self.backgroundColor = Constants.Colors.lightPrimary
         setupTextFieldStack()
         setupTextFields()
+        setupImageView()
         setupButtons()
     }
     
     // Setup views
+    
+    private func setupImageView() {
+        self.addSubview(profileImageView)
+        profileImageView.snp.makeConstraints { (make) in
+            make.bottom.equalTo(emailTextfield.snp.top).offset(-20)
+            make.height.width.equalTo(80)
+            make.centerX.equalTo(self.snp.centerX)
+        }
+    }
+    
     private func setupTextFieldStack() {
         let stackview = UIStackView(arrangedSubviews: [emailTextfield, passwordTextfield, usernameTextField])
         self.addSubview(stackview)
@@ -63,13 +74,6 @@ class SignUpView: UIView {
     }
     
     private func setupTextFields() {
-        self.addSubview(profileImageView)
-        profileImageView.snp.makeConstraints { (make) in
-            make.top.equalTo(self.snp.centerY).offset(10)
-            make.height.width.equalTo(80)
-            make.centerX.equalTo(self.snp.centerX)
-        }
-        
         emailTextfield.snp.makeConstraints { (make) in
             make.width.equalTo(self.snp.width).multipliedBy(0.6)
         }
@@ -86,17 +90,10 @@ class SignUpView: UIView {
     }
     
     private func setupButtons() {
-        self.addSubview(logInButton)
         self.addSubview(signUpButton)
-        logInButton.snp.makeConstraints { (make) in
-            make.top.equalTo(profileImageView.snp.bottom).offset(30)
-            make.width.equalTo(emailTextfield.snp.width).multipliedBy(0.7)
-            make.centerX.equalTo(self.snp.centerX)
-        }
-        
         signUpButton.snp.makeConstraints { (make) in
-            make.top.equalTo(logInButton.snp.bottom).offset(10)
-            make.width.equalTo(logInButton.snp.width)
+            make.top.equalTo(self.snp.centerY).offset(10)
+            make.width.equalTo(emailTextfield.snp.width).multipliedBy(0.7)
             make.centerX.equalTo(self.snp.centerX)
         }
     }
