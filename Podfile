@@ -13,4 +13,5 @@ target 'trenddit' do
     pod ‘Kingfisher’, ‘~> 4.0’
     pod 'AZTabBar'
     pod 'EasyNotificationBadge'
+    pod 'TextFieldEffects'
 end
