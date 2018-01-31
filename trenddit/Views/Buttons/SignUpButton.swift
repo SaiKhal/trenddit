@@ -10,6 +10,8 @@ import UIKit
 
 class SignUpButton: UIButton {
     
+    var delegate: AuthDelegate!
+    
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         configureButton()
@@ -26,6 +28,12 @@ class SignUpButton: UIButton {
         self.layer.borderColor = Constants.Colors.divider.cgColor
         self.setTitleColor(Constants.Colors.lightPrimary, for: .normal)
         self.setTitle("Sign Up", for: .normal)
+        self.addTarget(self, action: #selector(signUpPressed), for: .touchUpInside)
+    }
+    
+    @objc func signUpPressed() {
+        // Transition to signUpVC
+        delegate.signUp()
     }
     
     
