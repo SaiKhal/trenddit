@@ -10,6 +10,14 @@ import Foundation
 import FirebaseAuth
 
 class UserClient {
+    
+    static var signedIn: Bool {
+        if let _ = Auth.auth().currentUser {
+            return true
+        } else {
+            return false
+        }
+    }
 
     func createUser(withEmail: String, password: String) {
         Auth.auth().createUser(withEmail: withEmail, password: password) { (user, error) in
