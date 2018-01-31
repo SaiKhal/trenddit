@@ -10,10 +10,14 @@ import UIKit
 import SnapKit
 
 class LoginView: UIView {
+    
+    let logoView = LogoView()
 
     // Text Fields
-    let emailTextfield: EmailTextField = EmailTextField()
-    let passwordTextfield: PasswordTextField = PasswordTextField()
+    let emailTextfield = IsaoTextField()
+    let passwordTextfield = IsaoTextField()
+//    let emailTextfield: EmailTextField = EmailTextField()
+//    let passwordTextfield: PasswordTextField = PasswordTextField()
     
     // Buttons
     let logInButton: LogInButton = LogInButton()
@@ -31,13 +35,32 @@ class LoginView: UIView {
     }
     
     private func commonInit() {
-        self.backgroundColor = Constants.Colors.lightPrimary
+        self.backgroundColor = Stylesheet.Contexts.Global.BackgroundColor
+        setupLogoView()
         setupTextFieldStack()
         setupTextFields()
         setupButtons()
+        emailTextfield.activeColor = .orange
+        emailTextfield.inactiveColor = Stylesheet.Colors.Blue
+        emailTextfield.placeholder = "Enter email"
+        
+        passwordTextfield.activeColor = .orange
+        passwordTextfield.inactiveColor = Stylesheet.Colors.Blue
+        passwordTextfield.placeholder = "Enter password"
     }
     
     // Setup views
+    
+    private func setupLogoView() {
+        self.addSubview(logoView)
+        logoView.snp.makeConstraints { make in
+            make.top.equalTo(self.snp.top)
+            make.left.equalTo(self.snp.left)
+            make.right.equalTo(self.snp.right)
+            make.bottom.equalTo(self.snp.centerY).offset(80)
+        }
+    }
+    
     private func setupTextFieldStack() {
         let stackview = UIStackView(arrangedSubviews: [emailTextfield, passwordTextfield])
         self.addSubview(stackview)
@@ -46,7 +69,7 @@ class LoginView: UIView {
         stackview.spacing = 10
 
         stackview.snp.makeConstraints { (make) in
-            make.bottom.equalTo(self.snp.centerY)
+            make.top.equalTo(logoView.snp.bottom).offset(20)
             make.centerX.equalTo(self.snp.centerX)
         }
         
@@ -66,7 +89,7 @@ class LoginView: UIView {
         self.addSubview(logInButton)
         self.addSubview(signUpButton)
         logInButton.snp.makeConstraints { (make) in
-            make.top.equalTo(self.snp.centerY).offset(30)
+            make.top.equalTo(passwordTextfield.snp.bottom).offset(30)
             make.width.equalTo(emailTextfield.snp.width).multipliedBy(0.7)
             make.centerX.equalTo(self.snp.centerX)
         }

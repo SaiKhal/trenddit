@@ -19,19 +19,19 @@ class UserClient {
         }
     }
 
-    func createUser(withEmail: String, password: String) {
+    static func createUser(withEmail: String, password: String) {
         Auth.auth().createUser(withEmail: withEmail, password: password) { (user, error) in
 
         }
     }
 
-    func signIn(withEmail: String, password: String) {
+    static func signIn(withEmail: String, password: String) {
         Auth.auth().signIn(withEmail: withEmail, password: password) { (user, error) in
 
         }
     }
 
-    func signOut() {
+    static func signOut() {
         guard Auth.auth().currentUser != nil else { return }
         do {
             try Auth.auth().signOut()
@@ -40,13 +40,13 @@ class UserClient {
         }
     }
 
-    func sendPasswordReset(withEmail: String) {
+    static func sendPasswordReset(withEmail: String) {
         Auth.auth().sendPasswordReset(withEmail: withEmail) { (error) in
 
         }
     }
 
-    func confirmPasswordReset(withCode: String, newPassword: String) {
+    static func confirmPasswordReset(withCode: String, newPassword: String) {
         Auth.auth().confirmPasswordReset(withCode: withCode, newPassword: newPassword) { (error) in
 
         }
