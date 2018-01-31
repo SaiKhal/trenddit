@@ -47,6 +47,7 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - SnapKit (4.0.0)
+  - TextFieldEffects (1.4.0)
 
 DEPENDENCIES:
   - AZTabBar
@@ -56,6 +57,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Kingfisher (~> 4.0)
   - SnapKit (~> 4.0.0)
+  - TextFieldEffects
 
 SPEC CHECKSUMS:
   AZTabBar: bbb19d62a02c7303e7331c855d1e84d1ddf9ba26
@@ -72,7 +74,8 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  TextFieldEffects: 4ee41b5216e674d55fb6ac25107bf1af7629176f
 
-PODFILE CHECKSUM: 581577ebcbe4ea5190855e746f06d16af12620b2
+PODFILE CHECKSUM: 76c3b1a238843fe2fa92700c9fce97ae58438749
 
 COCOAPODS: 1.4.0
