@@ -9,8 +9,10 @@
 import Foundation
 import FirebaseAuth
 
-class UserClient {
-    
+class AuthClient: NSObject {
+
+    var delegate: AuthDelegate!
+
     static var signedIn: Bool {
         if let _ = Auth.auth().currentUser {
             return true
@@ -19,19 +21,31 @@ class UserClient {
         }
     }
 
-    static func createUser(withEmail: String, password: String) {
-        Auth.auth().createUser(withEmail: withEmail, password: password) { (user, error) in
+    func createUser(withEmail: String, password: String) {
+        Auth.auth().createUser(withEmail: withEmail, password: password) { [weak self] (user, error) in
+            if let error = error {
+                self?.delegate.handle(error: error)
+            }
 
+            if let user = user {
+                self?.delegate.didCreateUser?(user: user)
+            }
         }
     }
 
-    static func signIn(withEmail: String, password: String) {
-        Auth.auth().signIn(withEmail: withEmail, password: password) { (user, error) in
+    func signIn(withEmail: String, password: String) {
+        Auth.auth().signIn(withEmail: withEmail, password: password) { [weak self]  (user, error) in
+            if let error = error {
+                self?.delegate.handle(error: error)
+            }
 
+            if let user = user {
+                self?.delegate.didSignIn?(user: user)
+            }
         }
     }
 
-    static func signOut() {
+    func signOut() {
         guard Auth.auth().currentUser != nil else { return }
         do {
             try Auth.auth().signOut()
@@ -40,13 +54,13 @@ class UserClient {
         }
     }
 
-    static func sendPasswordReset(withEmail: String) {
+    func sendPasswordReset(withEmail: String) {
         Auth.auth().sendPasswordReset(withEmail: withEmail) { (error) in
 
         }
     }
 
-    static func confirmPasswordReset(withCode: String, newPassword: String) {
+    func confirmPasswordReset(withCode: String, newPassword: String) {
         Auth.auth().confirmPasswordReset(withCode: withCode, newPassword: newPassword) { (error) in
 
         }
