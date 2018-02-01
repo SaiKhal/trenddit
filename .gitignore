@@ -6,6 +6,10 @@
 build/
 DerivedData
 
+#suggested add from alex
+trenddit.xcodeproj/xcuserdata/*
+trenddit.xcodeproj/project.xcworkspace/xcuserdata/*
+
 ## Various settings
 *.pbxuser
 !default.pbxuser
