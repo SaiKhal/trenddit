@@ -50,13 +50,14 @@ class ZoomedImageView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
-        setUpView()
+        setUpZoomedView()
         
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
+    
     
     func setUpZoomedView() {
       setUpUserPostLabel()
@@ -68,10 +69,16 @@ class ZoomedImageView: UIView {
     
     func setUpUserPostLabel() {
         addSubview(userNameLabel)
+        userNameLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(safeAreaLayoutGuide).offset(8)
+            make.leading.equalTo(safeAreaLayoutGuide.snp.leading)
+        }
     }
     
     func setUpPostImage() {
         addSubview(postImage)
+        postImage.snp.makeConstraints { (make) in
+        }
     }
     
     func setUpLikeButton() {
