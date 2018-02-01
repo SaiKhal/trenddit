@@ -24,8 +24,8 @@ class LogoView: UIView {
     
     lazy var captionLabel: UILabel = {
         let label = UILabel()
-        label.text = "Enter company caption here"
-        label.font = UIFont(name: "HelveticaNeue-Thin", size: 20)
+        label.text = "WHO IS MAKING THAT LOGO THO"
+        label.font = UIFont(name: "HelveticaNeue-Thin", size: 18)
         return label
     }()
     
@@ -58,7 +58,7 @@ class LogoView: UIView {
         self.addSubview(logoImage)
         logoImage.snp.makeConstraints { make in
             make.top.equalTo(logoNameLabel.snp.bottom).offset(30)
-            make.size.equalTo(self.snp.width).multipliedBy(0.6)
+            make.size.equalTo(self.snp.width).multipliedBy(0.4)
             make.centerX.equalTo(self.snp.centerX)
         }
     }

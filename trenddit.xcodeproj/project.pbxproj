@@ -22,7 +22,7 @@
 		C46E712F2020FE8000AA0226 /* AZTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E712A2020FE8000AA0226 /* AZTabBarController.swift */; };
 		C46E71302020FE8000AA0226 /* AZTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C46E712B2020FE8000AA0226 /* AZTabBarController.xib */; };
 		C46E71312020FE8000AA0226 /* AZTabBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E712C2020FE8000AA0226 /* AZTabBarDelegate.swift */; };
-		C46E713520210C2300AA0226 /* BuildFile in Sources */ = {isa = PBXBuildFile; };
+		C46E713520210C2300AA0226 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		C46E71372021107A00AA0226 /* CustomTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E71362021107A00AA0226 /* CustomTabBarVC.swift */; };
 		C46E713A20211B4500AA0226 /* EmailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E713920211B4500AA0226 /* EmailTextField.swift */; };
 		C46E713C20211E2E00AA0226 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E713B20211E2E00AA0226 /* PasswordTextField.swift */; };
@@ -402,7 +402,7 @@
 				C4C8B70F2020056500FD2B3B /* ErrorHandleable.swift in Sources */,
 				C44EAF83202166A800E6A7D9 /* LogoView.swift in Sources */,
 				81A16602201FE7DA00EE8CA0 /* trenddit.xcdatamodeld in Sources */,
-				C46E713520210C2300AA0226 /* BuildFile in Sources */,
+				C46E713520210C2300AA0226 /* (null) in Sources */,
 				C48438DE2021200A00E9909F /* SignUpButton.swift in Sources */,
 				C4A056C320212FB700D8E589 /* Post.swift in Sources */,
 			);

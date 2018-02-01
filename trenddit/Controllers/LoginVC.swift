@@ -22,10 +22,11 @@ class LoginVC: UIViewController, AuthDelegate {
         loginView.passwordTextfield.delegate = self
         loginView.logInButton.delegate = self
         loginView.signUpButton.delegate = self
+        loginView.callToActionButton.addTarget(self, action: #selector(signUp), for: .touchUpInside)
     }
     
-    func signUp() {
-        // present(SignUpVC(), animated: true, completion: nil)
+    @objc func signUp() {
+         present(SignUpVC(), animated: true, completion: nil)
     }
     
     func logIn() {

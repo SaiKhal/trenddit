@@ -21,6 +21,11 @@ class SignUpVC: UIViewController, AuthDelegate {
         signUpView.passwordTextfield.delegate = self
         signUpView.logInButton.delegate = self
         signUpView.signUpButton.delegate = self
+        signUpView.dismissButton.addTarget(self, action: #selector(dismissVC), for: .touchUpInside)
+    }
+    
+    @objc func dismissVC() {
+        dismiss(animated: true, completion: nil)
     }
     
     func signUp() {
