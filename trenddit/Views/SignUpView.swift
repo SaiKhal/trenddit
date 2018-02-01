@@ -11,106 +11,136 @@ import SnapKit
 import TextFieldEffects
 
 class SignUpView: UIView {
-    
+
+    let callToActionView = CallToActionView(labelText: "ALREADY HAVE AN ACCOUNT?", buttonText: "Sign In")
+
     // Text Fields
-    let emailTextfield = IsaoTextField() // EmailTextField()
-    let passwordTextfield = IsaoTextField() // PasswordTextField()
-    let usernameTextField = IsaoTextField() // CustomTextField(placeholderText: "Enter a username")
-    
+    let emailTextfield = TextFieldFactory.generate(type: .email)
+    let passwordTextfield = TextFieldFactory.generate(type: .password)
+    let usernameTextField = TextFieldFactory.generate(type: .general("Enter username"))
+
+    lazy var signUpLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Sign Up"
+        label.font = UIFont(name: "HelveticaNeue-Bold", size: 20)
+        return label
+    }()
+
     lazy var profileImageView: UIImageView = {
         let width: CGFloat = UIScreen.main.bounds.width * 0.25
         let iv = UIImageView()
-        iv.backgroundColor = .white
-        iv.layer.cornerRadius = 40
+        iv.backgroundColor = .orange
+        iv.layer.cornerRadius = 80
         iv.layer.masksToBounds = true
         return iv
     }()
-    
+
+    lazy var dismissButton: UIButton = {
+        let bttn = UIButton()
+        bttn.setImage(#imageLiteral(resourceName: "close"), for: .normal)
+        return bttn
+    }()
+
     // Buttons
     let logInButton: LogInButton = LogInButton()
     let signUpButton: SignUpButton = SignUpButton()
-    
-    
+
     // Init
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         commonInit()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError()
     }
-    
+
     private func commonInit() {
         self.backgroundColor = Stylesheet.Contexts.Global.BackgroundColor
+        setupSignUpLabel()
+        setupImageView()
         setupTextFieldStack()
         setupTextFields()
-        setupImageView()
         setupButtons()
-        emailTextfield.activeColor = .orange
-        emailTextfield.inactiveColor = Stylesheet.Colors.Blue
-        emailTextfield.placeholder = "Enter email"
-        emailTextfield.backgroundColor = .gray
-        
-        passwordTextfield.activeColor = .orange
-        passwordTextfield.inactiveColor = Stylesheet.Colors.Blue
-        passwordTextfield.placeholder = "Enter password"
-        
-        usernameTextField.activeColor = .orange
-        usernameTextField.inactiveColor = Stylesheet.Colors.Blue
-        usernameTextField.placeholder = "Enter display name"
+        setupDismissButton()
+        setupCallToActionStack()
     }
-    
+
     // Setup views
-    
+    private func setupSignUpLabel() {
+        self.addSubview(signUpLabel)
+        signUpLabel.snp.makeConstraints { make in
+            make.centerX.equalTo(self.snp.centerX)
+            make.top.equalTo(self.snp.top).offset(50)
+        }
+    }
+
+    private func setupDismissButton() {
+        self.addSubview(dismissButton)
+        dismissButton.snp.makeConstraints { make in
+            make.size.equalTo(profileImageView).multipliedBy(0.2)
+            make.top.equalTo(signUpLabel.snp.top)
+            make.right.equalTo(emailTextfield.snp.right)
+        }
+    }
+
     private func setupImageView() {
         self.addSubview(profileImageView)
         profileImageView.snp.makeConstraints { (make) in
-            make.bottom.equalTo(emailTextfield.snp.top).offset(-20)
-            make.height.width.equalTo(80)
+            make.top.equalTo(signUpLabel.snp.bottom).offset(40)
+            make.size.equalTo(160)
             make.centerX.equalTo(self.snp.centerX)
         }
     }
-    
+
     private func setupTextFieldStack() {
         let stackview = UIStackView(arrangedSubviews: [emailTextfield, passwordTextfield, usernameTextField])
         self.addSubview(stackview)
         stackview.alignment = .center
         stackview.axis = .vertical
         stackview.spacing = 10
-        
+
         stackview.snp.makeConstraints { (make) in
-            make.bottom.equalTo(self.snp.centerY)
+            make.top.equalTo(profileImageView.snp.bottom).offset(20)
             make.centerX.equalTo(self.snp.centerX)
         }
-        
+
     }
-    
+
     private func setupTextFields() {
         emailTextfield.snp.makeConstraints { (make) in
-            make.width.equalTo(self.snp.width).multipliedBy(0.6)
+            make.width.equalTo(self.snp.width).multipliedBy(0.8)
             make.height.equalTo(self.snp.height).multipliedBy(0.1)
         }
-        
+
         passwordTextfield.snp.makeConstraints { (make) in
-            make.width.equalTo(self.snp.width).multipliedBy(0.6)
+            make.width.equalTo(emailTextfield.snp.width)
+            make.height.equalTo(emailTextfield.snp.height)
         }
-        
+
         usernameTextField.snp.makeConstraints { make in
-            make.width.equalTo(self.snp.width).multipliedBy(0.6)
+            make.width.equalTo(emailTextfield.snp.width)
+            make.height.equalTo(emailTextfield.snp.height)
         }
-        
-        
+
     }
-    
+
     private func setupButtons() {
         self.addSubview(signUpButton)
         signUpButton.snp.makeConstraints { (make) in
-            make.top.equalTo(self.snp.centerY).offset(10)
-            make.width.equalTo(emailTextfield.snp.width).multipliedBy(0.7)
+            make.top.equalTo(usernameTextField.snp.bottom).offset(30)
+            make.width.equalTo(emailTextfield.snp.width)
+            make.height.equalTo(emailTextfield.snp.height)
             make.centerX.equalTo(self.snp.centerX)
         }
     }
-    
-}
 
+    func setupCallToActionStack() {
+        self.addSubview(callToActionView.callToActionStack)
+        callToActionView.callToActionStack.snp.makeConstraints { make in
+            make.top.equalTo(signUpButton.snp.bottom).offset(30)
+            make.centerX.equalTo(self.snp.centerX)
+        }
+    }
+
+}

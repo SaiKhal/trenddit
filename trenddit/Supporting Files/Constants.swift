@@ -21,4 +21,3 @@ import UIKit
 //        static let errorRed = UIColor(red:0.73, green:0.07, blue:0.11, alpha:1.00)
 //    }
 //}
-

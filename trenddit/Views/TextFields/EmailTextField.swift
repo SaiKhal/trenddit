@@ -9,17 +9,17 @@
 import UIKit
 
 class EmailTextField: UITextField {
-    
+
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         configureTextField()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         configureTextField()
     }
-    
+
     private func configureTextField() {
         self.borderStyle = .line
         self.autocorrectionType = .no
@@ -29,5 +29,5 @@ class EmailTextField: UITextField {
         self.layer.borderWidth = 2.0
         self.placeholder = "Enter a email"
     }
-    
+
 }
