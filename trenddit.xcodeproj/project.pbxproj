@@ -12,6 +12,10 @@
 		81A165FF201FE7DA00EE8CA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81A165FD201FE7DA00EE8CA0 /* Main.storyboard */; };
 		81A16602201FE7DA00EE8CA0 /* trenddit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 81A16600201FE7DA00EE8CA0 /* trenddit.xcdatamodeld */; };
 		81A16607201FE7DA00EE8CA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81A16605201FE7DA00EE8CA0 /* LaunchScreen.storyboard */; };
+		8773868B20229BA500056F69 /* FeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8773868A20229BA500056F69 /* FeedCollectionViewCell.swift */; };
+		8773868D20229BD100056F69 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8773868C20229BD100056F69 /* FeedView.swift */; };
+		87BEDC362022BD3E00DD6561 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BEDC352022BD3E00DD6561 /* FeedViewController.swift */; };
+		87BEDC3A2022C4BA00DD6561 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BEDC392022C4BA00DD6561 /* CategoryCollectionViewCell.swift */; };
 		C4200BFC202123900025058D /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4200BFB202123900025058D /* SignUpView.swift */; };
 		C44EAF7F2021584C00E6A7D9 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44EAF7E2021584C00E6A7D9 /* UIColorExt.swift */; };
 		C44EAF81202158FD00E6A7D9 /* Stylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44EAF80202158FD00E6A7D9 /* Stylesheet.swift */; };
@@ -22,7 +26,7 @@
 		C46E712F2020FE8000AA0226 /* AZTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E712A2020FE8000AA0226 /* AZTabBarController.swift */; };
 		C46E71302020FE8000AA0226 /* AZTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C46E712B2020FE8000AA0226 /* AZTabBarController.xib */; };
 		C46E71312020FE8000AA0226 /* AZTabBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E712C2020FE8000AA0226 /* AZTabBarDelegate.swift */; };
-		C46E713520210C2300AA0226 /* BuildFile in Sources */ = {isa = PBXBuildFile; };
+		C46E713520210C2300AA0226 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		C46E71372021107A00AA0226 /* CustomTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E71362021107A00AA0226 /* CustomTabBarVC.swift */; };
 		C46E713A20211B4500AA0226 /* EmailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E713920211B4500AA0226 /* EmailTextField.swift */; };
 		C46E713C20211E2E00AA0226 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E713B20211E2E00AA0226 /* PasswordTextField.swift */; };
@@ -48,6 +52,10 @@
 		81A16601201FE7DA00EE8CA0 /* trenddit.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = trenddit.xcdatamodel; sourceTree = "<group>"; };
 		81A16606201FE7DA00EE8CA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		81A16608201FE7DA00EE8CA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8773868A20229BA500056F69 /* FeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCollectionViewCell.swift; sourceTree = "<group>"; };
+		8773868C20229BD100056F69 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		87BEDC352022BD3E00DD6561 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		87BEDC392022C4BA00DD6561 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		A483F771524432B67E1FA549 /* Pods_trenddit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_trenddit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8233DF17766892C05415FA3 /* Pods-trenddit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trenddit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-trenddit/Pods-trenddit.debug.xcconfig"; sourceTree = "<group>"; };
 		C316B0E80377A318D0895EFB /* Pods-trenddit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trenddit.release.xcconfig"; path = "Pods/Target Support Files/Pods-trenddit/Pods-trenddit.release.xcconfig"; sourceTree = "<group>"; };
@@ -198,6 +206,7 @@
 				C46E71362021107A00AA0226 /* CustomTabBarVC.swift */,
 				81A165FB201FE7DA00EE8CA0 /* LoginVC.swift */,
 				C4A056C42021517600D8E589 /* SignUpVC.swift */,
+				87BEDC352022BD3E00DD6561 /* FeedViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -216,6 +225,9 @@
 		C4C8B7182020436D00FD2B3B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				87BEDC392022C4BA00DD6561 /* CategoryCollectionViewCell.swift */,
+				8773868A20229BA500056F69 /* FeedCollectionViewCell.swift */,
+				8773868C20229BD100056F69 /* FeedView.swift */,
 				C4C8B7102020098700FD2B3B /* LoginView.swift */,
 				C4200BFB202123900025058D /* SignUpView.swift */,
 				C46E713D20211E8200AA0226 /* Buttons */,
@@ -381,15 +393,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				C46E712F2020FE8000AA0226 /* AZTabBarController.swift in Sources */,
+				8773868D20229BD100056F69 /* FeedView.swift in Sources */,
 				C4C8B7112020098700FD2B3B /* LoginView.swift in Sources */,
 				C4A056BE20212D1400D8E589 /* CustomTextField.swift in Sources */,
 				C46E71372021107A00AA0226 /* CustomTabBarVC.swift in Sources */,
+				87BEDC3A2022C4BA00DD6561 /* CategoryCollectionViewCell.swift in Sources */,
 				C46E713F20211E9C00AA0226 /* LogInButton.swift in Sources */,
+				87BEDC362022BD3E00DD6561 /* FeedViewController.swift in Sources */,
 				C44EAF81202158FD00E6A7D9 /* Stylesheet.swift in Sources */,
 				C46E71312020FE8000AA0226 /* AZTabBarDelegate.swift in Sources */,
 				81A165FC201FE7DA00EE8CA0 /* LoginVC.swift in Sources */,
 				C4A056C52021517600D8E589 /* SignUpVC.swift in Sources */,
 				C46E713C20211E2E00AA0226 /* PasswordTextField.swift in Sources */,
+				8773868B20229BA500056F69 /* FeedCollectionViewCell.swift in Sources */,
 				C44EAF7F2021584C00E6A7D9 /* UIColorExt.swift in Sources */,
 				C4C8B70D202001DC00FD2B3B /* UserClient.swift in Sources */,
 				C4A056C7202152CC00D8E589 /* AuthDelegate.swift in Sources */,
@@ -402,7 +418,7 @@
 				C4C8B70F2020056500FD2B3B /* ErrorHandleable.swift in Sources */,
 				C44EAF83202166A800E6A7D9 /* LogoView.swift in Sources */,
 				81A16602201FE7DA00EE8CA0 /* trenddit.xcdatamodeld in Sources */,
-				C46E713520210C2300AA0226 /* BuildFile in Sources */,
+				C46E713520210C2300AA0226 /* (null) in Sources */,
 				C48438DE2021200A00E9909F /* SignUpButton.swift in Sources */,
 				C4A056C320212FB700D8E589 /* Post.swift in Sources */,
 			);
