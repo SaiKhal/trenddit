@@ -11,28 +11,28 @@ import SnapKit
 import TextFieldEffects
 
 class LoginView: UIView {
-    
+
     let callToActionView = CallToActionView(labelText: "DON'T HAVE AN ACCOUNT?", buttonText: "Sign Up")
     let logoView = LogoView()
 
     // Text Fields
     let emailTextfield = TextFieldFactory.generate(type: .email)
     let passwordTextfield = TextFieldFactory.generate(type: .password)
-    
+
     // Buttons
     let logInButton: LogInButton = LogInButton()
     let signUpButton: SignUpButton = SignUpButton()
-    
+
     // Init
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         commonInit()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError()
     }
-    
+
     private func commonInit() {
         self.backgroundColor = Stylesheet.Contexts.Global.BackgroundColor
         setupLogoView()
@@ -41,7 +41,7 @@ class LoginView: UIView {
         setupButtons()
         setupCallToActionStack()
     }
-    
+
     // Setup views
     private func setupLogoView() {
         self.addSubview(logoView)
@@ -52,7 +52,7 @@ class LoginView: UIView {
             make.bottom.equalTo(self.snp.centerY)
         }
     }
-    
+
     private func setupTextFieldStack() {
         let stackview = UIStackView(arrangedSubviews: [emailTextfield, passwordTextfield])
         self.addSubview(stackview)
@@ -64,7 +64,7 @@ class LoginView: UIView {
             make.top.equalTo(logoView.snp.bottom).offset(10)
             make.centerX.equalTo(self.snp.centerX)
         }
-        
+
     }
 
     private func setupTextFields() {

@@ -9,17 +9,17 @@
 import UIKit
 
 class LogInButton: UIButton {
-    
+
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         configureButton()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         configureButton()
     }
-    
+
     private func configureButton() {
         self.backgroundColor = Stylesheet.Colors.LightGray
         self.layer.borderWidth = 2.0
@@ -27,8 +27,7 @@ class LogInButton: UIButton {
         self.setTitleColor(Stylesheet.Colors.White, for: .normal)
         self.setTitle("Log In", for: .normal)
     }
-    
-    
+
 //    @objc func buttonFunc() {
 //        guard let emailText = emailTextfield.text, !emailText.isEmpty else {
 //            //present no email error
@@ -42,7 +41,5 @@ class LogInButton: UIButton {
 //            self.emailTextfield.layer.borderColor = Constants.Colors.divider.cgColor
 //            return
 //        }
-    
-    
-}
 
+}

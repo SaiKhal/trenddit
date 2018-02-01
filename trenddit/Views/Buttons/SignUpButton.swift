@@ -9,17 +9,17 @@
 import UIKit
 
 class SignUpButton: UIButton {
-    
+
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         configureButton()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         configureButton()
     }
-    
+
     private func configureButton() {
         self.backgroundColor = Stylesheet.Colors.LightBlue
         self.layer.borderWidth = 2.0
@@ -27,5 +27,5 @@ class SignUpButton: UIButton {
         self.setTitleColor(Stylesheet.Colors.White, for: .normal)
         self.setTitle("Sign Up", for: .normal)
     }
-    
+
 }

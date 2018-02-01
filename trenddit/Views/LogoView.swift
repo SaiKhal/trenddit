@@ -9,43 +9,43 @@
 import UIKit
 
 class LogoView: UIView {
-    lazy var logoImage: UIImageView =  {
+    lazy var logoImage: UIImageView = {
         let iv = UIImageView()
         iv.backgroundColor = .orange
         return iv
     }()
-    
+
     lazy var logoNameLabel: UILabel = {
         let label = UILabel()
         label.text = "TRENDDIT"
         label.font = UIFont(name: "HelveticaNeue-Light", size: 28)
         return label
     }()
-    
+
     lazy var captionLabel: UILabel = {
         let label = UILabel()
         label.text = "WHO IS MAKING THAT LOGO THO"
         label.font = UIFont(name: "HelveticaNeue-Thin", size: 18)
         return label
     }()
-    
+
     // Init
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         commonInit()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError()
     }
-    
+
     private func commonInit() {
         self.backgroundColor = Stylesheet.Colors.Blue
         setupLogoNameLabel()
         setupLogoImage()
         setupCaptionLabel()
     }
-    
+
     private func setupLogoNameLabel() {
         self.addSubview(logoNameLabel)
         logoNameLabel.snp.makeConstraints { make in
@@ -53,7 +53,7 @@ class LogoView: UIView {
             make.centerX.equalTo(self.snp.centerX)
         }
     }
-    
+
     private func setupLogoImage() {
         self.addSubview(logoImage)
         logoImage.snp.makeConstraints { make in
@@ -62,7 +62,7 @@ class LogoView: UIView {
             make.centerX.equalTo(self.snp.centerX)
         }
     }
-    
+
     private func setupCaptionLabel() {
         self.addSubview(captionLabel)
         captionLabel.snp.makeConstraints { make in

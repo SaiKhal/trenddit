@@ -18,18 +18,20 @@ enum TextFieldType {
 class TextFieldFactory {
     static func generate(type: TextFieldType) -> IsaoTextField {
         let tf = IsaoTextField()
-        
+
         switch type {
         case .email:
             tf.activeColor = .orange
             tf.inactiveColor = Stylesheet.Colors.Blue
             tf.placeholder = "Enter email"
             tf.keyboardType = .emailAddress
+            tf.autocapitalizationType = .none
             tf.font = UIFont(name: "HelveticaNeue-Light", size: 22)
         case .password:
             tf.activeColor = .orange
             tf.inactiveColor = Stylesheet.Colors.Blue
             tf.placeholder = "Enter password"
+            tf.autocapitalizationType = .none
             tf.isSecureTextEntry = true
             tf.font = UIFont(name: "HelveticaNeue-Light", size: 22)
         case let .general (placeholder):

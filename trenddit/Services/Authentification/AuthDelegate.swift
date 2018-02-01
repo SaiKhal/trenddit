@@ -10,10 +10,11 @@ import Foundation
 import FirebaseAuth
 
 @objc protocol AuthDelegate {
-    @objc optional func signUp()
-    @objc optional func logIn()
-    @objc optional func didSignIn()
-    @objc optional func didCreateUser()
+    @objc optional func didSignIn(user: User)
+    @objc optional func failedSignIn(error: Error)
+
+    @objc optional func didCreateUser(user: User)
+    @objc optional func failedCreateUser(error: Error)
 }
 
 extension AuthDelegate {
