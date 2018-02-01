@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let root: UIViewController!
         
-        if UserClient.signedIn {
+        if AuthClient.signedIn {
             root = LoginVC()
         } else {
             root = LoginVC() // for testing

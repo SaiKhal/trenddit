@@ -12,20 +12,16 @@ import TextFieldEffects
 
 class LoginView: UIView {
     
-    let callToActionView = CallToActionView()
+    let callToActionView = CallToActionView(labelText: "DON'T HAVE AN ACCOUNT?", buttonText: "Sign Up")
     let logoView = LogoView()
 
     // Text Fields
-    let emailTextfield = IsaoTextField()
-    let passwordTextfield = IsaoTextField()
-//    let emailTextfield: EmailTextField = EmailTextField()
-//    let passwordTextfield: PasswordTextField = PasswordTextField()
+    let emailTextfield = TextFieldFactory.generate(type: .email)
+    let passwordTextfield = TextFieldFactory.generate(type: .password)
     
     // Buttons
     let logInButton: LogInButton = LogInButton()
     let signUpButton: SignUpButton = SignUpButton()
-    
-    
     
     // Init
     override init(frame: CGRect) {
@@ -44,21 +40,9 @@ class LoginView: UIView {
         setupTextFields()
         setupButtons()
         setupCallToActionStack()
-        emailTextfield.activeColor = .orange
-        emailTextfield.inactiveColor = Stylesheet.Colors.Blue
-        emailTextfield.placeholder = "Enter email"
-        emailTextfield.font = UIFont(name: "HelveticaNeue-Light", size: 22)
-
-        
-        passwordTextfield.activeColor = .orange
-        passwordTextfield.inactiveColor = Stylesheet.Colors.Blue
-        passwordTextfield.placeholder = "Enter password"
-        passwordTextfield.font = UIFont(name: "HelveticaNeue-Light", size: 22)
-
     }
     
     // Setup views
-    
     private func setupLogoView() {
         self.addSubview(logoView)
         logoView.snp.makeConstraints { make in

@@ -19,20 +19,26 @@ class CallToActionView: UIView {
         fatalError()
     }
     
+    init(labelText: String, buttonText: String) {
+        super.init(frame: UIScreen.main.bounds)
+        callToActionLabel.text = labelText
+        callToActionButton.setTitle(buttonText, for: .normal)
+    }
+    
     private func commonInit() {
         self.addSubview(callToActionStack)
     }
     
     lazy var callToActionLabel: UILabel = {
         let label = UILabel()
-        label.text = "DON'T HAVE AN ACCOUNT?"
+//        label.text = "DON'T HAVE AN ACCOUNT?"
         return label
     }()
     
     lazy var callToActionButton: UIButton = {
         let bttn = UIButton()
         bttn.backgroundColor = .white
-        bttn.setTitle("SIGN UP", for: .normal)
+//        bttn.setTitle("SIGN UP", for: .normal)
         bttn.setTitleColor(.orange, for: .normal)
         return bttn
     }()

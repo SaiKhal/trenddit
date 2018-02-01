@@ -8,33 +8,65 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 
-class LoginVC: UIViewController, AuthDelegate {
-
+class LoginVC: UIViewController {
+    
+    // MARK: - Setup - View/Data
+    let authClient = AuthClient()
     let loginView = LoginView()
-
+    
+    // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-//        FirebaseApp.configure()
         view.addSubview(loginView)
-        loginView.emailTextfield.delegate = self
-        loginView.passwordTextfield.delegate = self
-        loginView.logInButton.delegate = self
-        loginView.signUpButton.delegate = self
-        loginView.callToActionView.callToActionButton.addTarget(self, action: #selector(signUp), for: .touchUpInside)
+        setDelegates()
+        setButtonActions()
     }
     
-    @objc func signUp() {
+    // MARK: - User Actions
+    @objc func signUpPressed() {
          present(SignUpVC(), animated: true, completion: nil)
+    }
+    
+    @objc func logInPressed() {
+        authClient.signIn(withEmail: loginView.emailTextfield.text!, password: loginView.passwordTextfield.text!)
+    }
+
+}
+
+// MARK: - Private Methods
+private extension LoginVC {
+    func setDelegates() {
+        loginView.emailTextfield.delegate = self
+        loginView.passwordTextfield.delegate = self
+        authClient.delegate = self
+    }
+    
+    func setButtonActions() {
+        loginView.logInButton.addTarget(self, action: #selector(logInPressed), for: .touchUpInside)
+        loginView.callToActionView.callToActionButton.addTarget(self, action: #selector(signUpPressed), for: .touchUpInside)
+    }
+}
+
+// MARK: - AuthDelegate
+extension LoginVC: AuthDelegate {
+    func signUp() {
+        //
     }
     
     func logIn() {
         //
     }
-
+    
+    func didSignIn() {
+        //
+    }
+    
 }
 
+// MARK: - UITextFieldDelegate
 extension LoginVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
