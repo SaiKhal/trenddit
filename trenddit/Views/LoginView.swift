@@ -12,6 +12,7 @@ import TextFieldEffects
 
 class LoginView: UIView {
     
+    let callToActionView = CallToActionView()
     let logoView = LogoView()
 
     // Text Fields
@@ -23,6 +24,7 @@ class LoginView: UIView {
     // Buttons
     let logInButton: LogInButton = LogInButton()
     let signUpButton: SignUpButton = SignUpButton()
+    
     
     
     // Init
@@ -109,32 +111,10 @@ class LoginView: UIView {
 //            make.centerX.equalTo(self.snp.centerX)
 //        }
     }
-    
-    lazy var callToActionLabel: UILabel = {
-        let label = UILabel()
-        label.text = "DON'T HAVE AN ACCOUNT?"
-        return label
-    }()
-    
-    lazy var callToActionButton: UIButton = {
-        let bttn = UIButton()
-        bttn.backgroundColor = .white
-        bttn.setTitle("SIGN UP", for: .normal)
-        bttn.setTitleColor(.orange, for: .normal)
-        return bttn
-    }()
-    
-    lazy var callToActionStack: UIStackView = {
-        let stackview = UIStackView(arrangedSubviews: [callToActionLabel, callToActionButton])
-        stackview.alignment = .center
-        stackview.axis = .horizontal
-        stackview.spacing = 5
-        return stackview
-    }()
-    
+
     func setupCallToActionStack() {
-        self.addSubview(callToActionStack)
-        callToActionStack.snp.makeConstraints { make in
+        self.addSubview(callToActionView.callToActionStack)
+        callToActionView.callToActionStack.snp.makeConstraints { make in
             make.top.equalTo(logInButton.snp.bottom).offset(30)
             make.centerX.equalTo(self.snp.centerX)
         }

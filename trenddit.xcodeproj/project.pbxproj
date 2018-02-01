@@ -35,6 +35,7 @@
 		C4C8B70D202001DC00FD2B3B /* UserClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8B70C202001DC00FD2B3B /* UserClient.swift */; };
 		C4C8B70F2020056500FD2B3B /* ErrorHandleable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8B70E2020056500FD2B3B /* ErrorHandleable.swift */; };
 		C4C8B7112020098700FD2B3B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8B7102020098700FD2B3B /* LoginView.swift */; };
+		C4C8F7F22022C02700F4288A /* CallToActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8F7F12022C02700F4288A /* CallToActionView.swift */; };
 		C4DD4F1A2020C7F700C0FBE0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8B7172020434A00FD2B3B /* Constants.swift */; };
 		C4DD4F212020CC7500C0FBE0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4DD4F202020CC7500C0FBE0 /* GoogleService-Info.plist */; };
 		CBA68423399D5995FF565856 /* Pods_trenddit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A483F771524432B67E1FA549 /* Pods_trenddit.framework */; };
@@ -74,6 +75,7 @@
 		C4C8B70E2020056500FD2B3B /* ErrorHandleable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandleable.swift; sourceTree = "<group>"; };
 		C4C8B7102020098700FD2B3B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		C4C8B7172020434A00FD2B3B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C4C8F7F12022C02700F4288A /* CallToActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallToActionView.swift; sourceTree = "<group>"; };
 		C4DD4F202020CC7500C0FBE0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -221,6 +223,7 @@
 				C46E713D20211E8200AA0226 /* Buttons */,
 				C46E713820211B3000AA0226 /* TextFields */,
 				C44EAF82202166A800E6A7D9 /* LogoView.swift */,
+				C4C8F7F12022C02700F4288A /* CallToActionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				C46E71312020FE8000AA0226 /* AZTabBarDelegate.swift in Sources */,
 				81A165FC201FE7DA00EE8CA0 /* LoginVC.swift in Sources */,
 				C4A056C52021517600D8E589 /* SignUpVC.swift in Sources */,
+				C4C8F7F22022C02700F4288A /* CallToActionView.swift in Sources */,
 				C46E713C20211E2E00AA0226 /* PasswordTextField.swift in Sources */,
 				C44EAF7F2021584C00E6A7D9 /* UIColorExt.swift in Sources */,
 				C4C8B70D202001DC00FD2B3B /* UserClient.swift in Sources */,
