@@ -73,13 +73,19 @@ class FeedView: UIView {
     
     private func setupFeedCollectionView() {
         feedCollectionView.snp.makeConstraints { (make) in
-            make.edges.equalTo(snp.edges).offset(15)
+            make.top.equalTo(snp.top)
+            make.width.equalTo(self)
+            make.centerX.equalTo(self)
+            make.height.equalTo(self).multipliedBy(0.25)
         }
     }
     
     private func setupCategoryCollectionView() {
         feedCollectionView.snp.makeConstraints { (make) in
-            make.edges.equalTo(snp.edges).offset(15)
+            make.top.equalTo(feedCollectionView.snp.bottom)
+            make.width.equalTo(self)
+            make.centerX.equalTo(self)
+            make.height.equalTo(self).multipliedBy(0.75)
         }
     }
 }
