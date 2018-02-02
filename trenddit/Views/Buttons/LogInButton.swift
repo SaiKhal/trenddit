@@ -23,7 +23,7 @@ class LogInButton: UIButton {
     private func configureButton() {
         self.backgroundColor = Stylesheet.Colors.LightGray
         self.layer.borderWidth = 2.0
-        self.layer.borderColor = Stylesheet.Colors.DarkGray.cgColor
+        self.layer.borderColor = Stylesheet.Colors.LightBlue.cgColor
         self.setTitleColor(Stylesheet.Colors.White, for: .normal)
         self.setTitle("Log In", for: .normal)
     }
