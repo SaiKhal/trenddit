@@ -22,8 +22,10 @@ class FeedViewController: UIViewController {
         self.feedView.feedCollectionView.delegate = self
         self.feedView.categoryCollectionView.dataSource = self
         self.feedView.categoryCollectionView.delegate = self
-        configureNavBar()
+        addSubView()
+        setupView()
         configureTabBar()
+        configureNavBar()
     }
     
     // MARK: - Functions
@@ -42,6 +44,20 @@ class FeedViewController: UIViewController {
     // TODO : input correct tag etc
     private func configureTabBar() {
         self.tabBarItem = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "houses"), tag: 1)
+    }
+    
+    private func addSubView() {
+        self.view.addSubview(feedView)
+    }
+    
+    private func setupView() {
+        setupFeedView()
+    }
+    
+    private func setupFeedView() {
+        feedView.snp.makeConstraints { (constraint) in
+            constraint.edges.equalTo(view.safeAreaLayoutGuide.snp.edges)
+        }
     }
     
 }

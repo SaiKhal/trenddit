@@ -25,20 +25,22 @@ class FeedCollectionViewCell: UICollectionViewCell {
     lazy var userNameButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .white
-        button.setTitleColor(UIColor.white, for: .normal)
-        button.setTitleColor(UIColor.blue, for: .selected)
-        button.titleLabel?.text = "userName"
-        button.titleLabel?.textAlignment = .center
+        button.setTitleColor(UIColor.black, for: .normal)
+        button.setTitleColor(UIColor.red, for: .selected)
+        button.setTitle("username", for: .normal)
+        button.contentHorizontalAlignment = .left
+        button.titleLabel?.font = button.titleLabel?.font.withSize(12)
         return button
     }()
     
     lazy var postCategoryButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .white
-        button.setTitleColor(UIColor.white, for: .normal)
-        button.setTitleColor(UIColor.blue, for: .selected)
-        button.titleLabel?.text = "category"
-        button.titleLabel?.textAlignment = .center
+        button.setTitleColor(UIColor.black, for: .normal)
+        button.setTitleColor(UIColor.red, for: .selected)
+        button.setTitle("category", for: .normal)
+        button.contentHorizontalAlignment = .left
+        button.titleLabel?.font = button.titleLabel?.font.withSize(12)
         return button
     }()
     
@@ -76,7 +78,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.text = "13.1k"
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        label.font = UIFont.systemFont(ofSize: 9, weight: .regular)
         return label
     }()
     
@@ -98,7 +100,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.text = "253"
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        label.font = UIFont.systemFont(ofSize: 9, weight: .regular)
         return label
     }()
     
@@ -113,7 +115,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.text = "Share"
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        label.font = UIFont.systemFont(ofSize: 9, weight: .regular)
         return label
     }()
     
@@ -121,6 +123,8 @@ class FeedCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         commonInit()
+        addSubviews()
+        setupViews()
     }
     
     // required. Storyboard
@@ -133,7 +137,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
     
     //MARK: - Functions
     private func commonInit() {
-        backgroundColor = .yellow
+        backgroundColor = .white
     }
     
     private func addSubviews() {
@@ -172,107 +176,112 @@ class FeedCollectionViewCell: UICollectionViewCell {
     private func setupProfileImageView() {
         profileImageView.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(snp.top).offset(10)
-            make.leading.equalTo(snp.leading).offset(20)
-            make.height.width.equalTo(self).multipliedBy(0.20)
+            make.leading.equalTo(snp.leading)
+            make.height.width.equalTo(self).multipliedBy(0.15)
         }
     }
     
     private func setupUserNameButton() {
         userNameButton.snp.makeConstraints { (make) in
-            make.top.equalTo(snp.top).offset(15)
+            make.top.equalTo(profileImageView.snp.top).offset(2)
             make.leading.equalTo(profileImageView.snp.trailing).offset(10)
-            make.height.equalTo(profileImageView.snp.height).multipliedBy(0.5)
+            make.height.equalTo(profileImageView.snp.height).multipliedBy(0.3)
             make.width.equalTo(self).multipliedBy(0.3)
         }
     }
-    
+
     private func setupPostCategoryButton() {
         postCategoryButton.snp.makeConstraints { (make) in
-            make.top.equalTo(userNameButton.snp.top).offset(5)
+            make.top.equalTo(userNameButton.snp.bottom).offset(5)
             make.leading.equalTo(profileImageView.snp.trailing).offset(10)
-            make.height.equalTo(profileImageView.snp.height).multipliedBy(0.5)
+            make.height.equalTo(profileImageView.snp.height).multipliedBy(0.3)
             make.width.equalTo(self).multipliedBy(0.3)
         }
     }
-    
+
     private func setupPostOptionsButton() {
         postOptionsButton.snp.makeConstraints { (make) in
-            make.top.equalTo(userNameButton.snp.top).offset(5)
-            make.trailing.equalTo(snp.trailing).offset(-20)
-            make.width.height.equalTo(self).multipliedBy(0.3)
+            make.top.equalTo(profileImageView.snp.top)
+            make.trailing.equalTo(snp.trailing).inset(5)
+            make.width.equalTo(self).multipliedBy(0.05)
+            make.height.equalTo(self).multipliedBy(0.08)
         }
     }
-    
+
     private func setupTitleLabel() {
         titleLabel.snp.makeConstraints { (make) in
-            make.bottom.equalTo(profileImageView.snp.bottom).offset(20)
-            make.leading.equalTo(profileImageView.snp.leading)
-            make.width.height.equalTo(profileImageView.snp.height).multipliedBy(0.9)
+            make.top.equalTo(profileImageView.snp.bottom).offset(5)
+            make.leading.equalTo(profileImageView.snp.leading).offset(13)
+            make.width.equalTo(self)
         }
     }
-    
+
     private func setupPostImageView() {
         postImageView.snp.makeConstraints { (make) in
-            make.top.equalTo(titleLabel.snp.bottom).offset(15)
+            make.top.equalTo(titleLabel.snp.bottom).offset(5)
             make.width.equalTo(self)
-            make.height.equalTo(self).multipliedBy(0.45)
+            make.height.equalTo(self).multipliedBy(0.6)
             make.centerX.equalTo(self)
         }
     }
-    
+
     private func setupUpVoteButton() {
         upVoteButton.snp.makeConstraints { (make) in
-            make.top.equalTo(postImageView.snp.bottom).offset(15)
+            make.top.equalTo(postImageView.snp.bottom).offset(8)
             make.leading.equalTo(titleLabel.snp.leading)
-            make.width.height.equalTo(self).multipliedBy(0.3)
+            make.height.equalTo(self).multipliedBy(0.05)
+            make.width.equalTo(self).multipliedBy(0.037)
         }
     }
-    
+
     private func setupTotalVotesLabel() {
         totalVotesLabel.snp.makeConstraints { (make) in
-            make.centerY.equalTo(upVoteButton.snp.height)
-            make.leading.equalTo(upVoteButton.snp.trailing).offset(15)
-            make.width.height.equalTo(upVoteButton).multipliedBy(0.8)
+            make.centerY.equalTo(upVoteButton.snp.centerY)
+            make.leading.equalTo(upVoteButton.snp.trailing).offset(8)
+            make.height.equalTo(upVoteButton).multipliedBy(0.8)
         }
     }
-    
+
     private func setupDownVoteButton() {
         downVoteButton.snp.makeConstraints { (make) in
-            make.top.equalTo(postImageView.snp.bottom).offset(15)
-            make.leading.equalTo(totalVotesLabel.snp.trailing).offset(15)
-            make.width.height.equalTo(self).multipliedBy(0.3)
+            make.top.equalTo(postImageView.snp.bottom).offset(8)
+            make.leading.equalTo(totalVotesLabel.snp.trailing).offset(8)
+            make.height.equalTo(self).multipliedBy(0.05)
+            make.width.equalTo(self).multipliedBy(0.037)
         }
     }
-    
+
     private func setupReplyToPostButton() {
         replyToPostButton.snp.makeConstraints { (make) in
-            make.top.equalTo(postImageView.snp.top).offset(15)
-            make.centerX.equalTo(self)
-            make.width.height.equalTo(self).multipliedBy(0.3)
+            make.top.equalTo(postImageView.snp.bottom).offset(8)
+            make.leading.equalTo(snp.centerX).inset(-10)
+            make.height.equalTo(self).multipliedBy(0.05)
+            make.width.equalTo(self).multipliedBy(0.037)
         }
     }
-    
+
     private func setupTotalRepliesLabel() {
-        shareButton.snp.makeConstraints { (make) in
-            make.top.equalTo(postImageView.snp.bottom).offset(15)
-            make.leading.equalTo(replyToPostButton.snp.trailing).offset(15)
-            make.width.height.equalTo(replyToPostButton).multipliedBy(0.8)
+        totalRepliesLabel.snp.makeConstraints { (make) in
+            make.centerY.equalTo(upVoteButton.snp.centerY)
+            make.leading.equalTo(replyToPostButton.snp.trailing).offset(8)
+            make.height.equalTo(upVoteButton).multipliedBy(0.8)
         }
     }
-    
+
     private func setupShareButton() {
         shareButton.snp.makeConstraints { (make) in
-            make.top.equalTo(postImageView.snp.top).offset(15)
-            make.trailing.equalTo(shareLabel.snp.leading).offset(-15)
-            make.width.height.equalTo(self).multipliedBy(0.3)
+            make.top.equalTo(postImageView.snp.bottom).offset(8)
+            make.trailing.equalTo(shareLabel.snp.leading).inset(-10)
+            make.height.equalTo(self).multipliedBy(0.05)
+            make.width.equalTo(self).multipliedBy(0.037)
         }
     }
-    
+
     private func setupShareLabel() {
         shareLabel.snp.makeConstraints { (make) in
-            make.centerY.equalTo(upVoteButton.snp.height)
-            make.trailing.equalTo(self).offset(-25)
-            make.width.height.equalTo(replyToPostButton).multipliedBy(0.8)
+            make.centerY.equalTo(upVoteButton.snp.centerY)
+            make.leading.equalTo(self.snp.trailing).inset(40)
+            make.height.equalTo(upVoteButton).multipliedBy(0.8)
         }
     }
     
