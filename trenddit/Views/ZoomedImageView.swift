@@ -78,11 +78,19 @@ class ZoomedImageView: UIView {
     func setUpPostImage() {
         addSubview(postImage)
         postImage.snp.makeConstraints { (make) in
+            make.centerX.equalTo(snp.centerX)
+            make.centerY.equalTo(snp.centerY)
+            make.left.equalTo(snp.left)
+            make.right.equalTo(snp.right)
         }
     }
     
     func setUpLikeButton() {
         addSubview(likeButton)
+        likeButton.snp.makeConstraints { (make) in
+            make.leading.equalTo(snp.leading).offset(5)
+            make.bottom.equalTo(snp.bottom).offset(-5)
+        }
     }
     
     func setUpDislikeButton() {
