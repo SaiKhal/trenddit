@@ -24,7 +24,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
     
     lazy var userNameButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .black
+        button.backgroundColor = .white
         button.setTitleColor(UIColor.white, for: .normal)
         button.setTitleColor(UIColor.blue, for: .selected)
         button.titleLabel?.text = "userName"
@@ -34,7 +34,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
     
     lazy var postCategoryButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .black
+        button.backgroundColor = .white
         button.setTitleColor(UIColor.white, for: .normal)
         button.setTitleColor(UIColor.blue, for: .selected)
         button.titleLabel?.text = "category"
@@ -133,7 +133,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
     
     //MARK: - Functions
     private func commonInit() {
-        backgroundColor = .white
+        backgroundColor = .yellow
     }
     
     private func addSubviews() {

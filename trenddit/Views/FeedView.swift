@@ -54,6 +54,8 @@ class FeedView: UIView {
     // MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
+        backgroundColor = .orange
+        addSubviews()
         setupView()
     }
     
@@ -63,12 +65,13 @@ class FeedView: UIView {
     
     // MARK: - Functions
     private func setupView(){
+        setupCategoryCollectionView()
         setupFeedCollectionView()
     }
     
     private func addSubviews() {
-        addSubview(feedCollectionView)
         addSubview(categoryCollectionView)
+        addSubview(feedCollectionView)
     }
     
     private func setupFeedCollectionView() {
@@ -81,7 +84,7 @@ class FeedView: UIView {
     }
     
     private func setupCategoryCollectionView() {
-        feedCollectionView.snp.makeConstraints { (make) in
+        categoryCollectionView.snp.makeConstraints { (make) in
             make.top.equalTo(feedCollectionView.snp.bottom)
             make.width.equalTo(self)
             make.centerX.equalTo(self)

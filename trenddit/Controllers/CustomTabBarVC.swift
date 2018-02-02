@@ -21,7 +21,7 @@ class CustomTabBarVC: UIViewController {
         let tabController = AZTabBarController.insert(into: controller, withTabIconNames: tabIcons, andSelectedIconNames: tabIcons)
 
         // Set controllers inside tab bar
-        tabController.setViewController(UIViewController(), atIndex: 0)
+        tabController.setViewController(FeedViewController(), atIndex: 0)
         tabController.setTitle("Feed", atIndex: 0)
         tabController.setViewController(UIViewController(), atIndex: 1)
         tabController.setTitle("Post", atIndex: 1)

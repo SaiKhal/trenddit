@@ -17,7 +17,7 @@ class FeedViewController: UIViewController {
     
     // MARK: - Overrides
     override func viewDidLoad() {
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = .red
         self.feedView.feedCollectionView.dataSource = self
         self.feedView.feedCollectionView.delegate = self
         self.feedView.categoryCollectionView.dataSource = self
@@ -57,7 +57,6 @@ extension FeedViewController: UICollectionViewDataSource  {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard collectionView == self.feedView.categoryCollectionView else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: feedView.postCellID, for: indexPath) as! FeedCollectionViewCell
-            
             // TODO: complete init
 //            cell.configureFeedCell(with: <#T##String#>, and: <#T##UIImage#>)
             
