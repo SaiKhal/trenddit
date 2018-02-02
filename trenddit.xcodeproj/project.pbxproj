@@ -232,10 +232,10 @@
 				8773868C20229BD100056F69 /* FeedView.swift */,
 				C4C8B7102020098700FD2B3B /* LoginView.swift */,
 				C4200BFB202123900025058D /* SignUpView.swift */,
-				C46E713D20211E8200AA0226 /* Buttons */,
-				C46E713820211B3000AA0226 /* TextFields */,
 				C44EAF82202166A800E6A7D9 /* LogoView.swift */,
 				C4C8F7F12022C02700F4288A /* CallToActionView.swift */,
+				C46E713D20211E8200AA0226 /* Buttons */,
+				C46E713820211B3000AA0226 /* TextFields */,
 			);
 			path = Views;
 			sourceTree = "<group>";

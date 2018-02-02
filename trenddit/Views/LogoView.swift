@@ -18,14 +18,14 @@ class LogoView: UIView {
     lazy var logoNameLabel: UILabel = {
         let label = UILabel()
         label.text = "TRENDDIT"
-        label.font = UIFont(name: "HelveticaNeue-Light", size: 28)
+        label.font = UIFont(name: Stylesheet.Fonts.Light, size: 28)
         return label
     }()
 
     lazy var captionLabel: UILabel = {
         let label = UILabel()
         label.text = "WHO IS MAKING THAT LOGO THO"
-        label.font = UIFont(name: "HelveticaNeue-Thin", size: 18)
+        label.font = UIFont(name: Stylesheet.Fonts.Thin, size: 18)
         return label
     }()
 

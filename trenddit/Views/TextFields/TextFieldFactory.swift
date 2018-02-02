@@ -26,19 +26,19 @@ class TextFieldFactory {
             tf.placeholder = "Enter email"
             tf.keyboardType = .emailAddress
             tf.autocapitalizationType = .none
-            tf.font = UIFont(name: "HelveticaNeue-Light", size: 22)
+            tf.font = UIFont(name: Stylesheet.Fonts.Light, size: 22)
         case .password:
             tf.activeColor = .orange
             tf.inactiveColor = Stylesheet.Colors.Blue
             tf.placeholder = "Enter password"
             tf.autocapitalizationType = .none
             tf.isSecureTextEntry = true
-            tf.font = UIFont(name: "HelveticaNeue-Light", size: 22)
+            tf.font = UIFont(name: Stylesheet.Fonts.Light, size: 22)
         case let .general (placeholder):
             tf.activeColor = .orange
             tf.inactiveColor = Stylesheet.Colors.Blue
             tf.placeholder = placeholder
-            tf.font = UIFont(name: "HelveticaNeue-Light", size: 22)
+            tf.font = UIFont(name: Stylesheet.Fonts.Light, size: 22)
         }
         return tf
     }

@@ -21,8 +21,9 @@ enum Stylesheet {
     }
 
     enum Fonts {
-        static let Regular = "Avenir-Light"
-        static let Bold = "Avenir-Medium"
+        static let Bold = "HelveticaNeue-Bold"
+        static let Thin = "HelveticaNeue-Thin"
+        static let Light = "HelveticaNeue-Light"
     }
 
     enum Contexts {

@@ -22,7 +22,7 @@ class SignUpView: UIView {
     lazy var signUpLabel: UILabel = {
         let label = UILabel()
         label.text = "Sign Up"
-        label.font = UIFont(name: "HelveticaNeue-Bold", size: 20)
+        label.font = UIFont(name: Stylesheet.Fonts.Bold, size: 20)
         return label
     }()
 
