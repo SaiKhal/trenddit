@@ -17,13 +17,15 @@ class FeedViewController: UIViewController {
     
     // MARK: - Overrides
     override func viewDidLoad() {
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = .red
         self.feedView.feedCollectionView.dataSource = self
         self.feedView.feedCollectionView.delegate = self
         self.feedView.categoryCollectionView.dataSource = self
         self.feedView.categoryCollectionView.delegate = self
-        configureNavBar()
+        addSubView()
+        setupView()
         configureTabBar()
+        configureNavBar()
     }
     
     // MARK: - Functions
@@ -44,6 +46,20 @@ class FeedViewController: UIViewController {
         self.tabBarItem = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "houses"), tag: 1)
     }
     
+    private func addSubView() {
+        self.view.addSubview(feedView)
+    }
+    
+    private func setupView() {
+        setupFeedView()
+    }
+    
+    private func setupFeedView() {
+        feedView.snp.makeConstraints { (constraint) in
+            constraint.edges.equalTo(view.safeAreaLayoutGuide.snp.edges)
+        }
+    }
+    
 }
 
 //m// MARK: - CollectionView Data Source
@@ -57,7 +73,6 @@ extension FeedViewController: UICollectionViewDataSource  {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard collectionView == self.feedView.categoryCollectionView else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: feedView.postCellID, for: indexPath) as! FeedCollectionViewCell
-            
             // TODO: complete init
 //            cell.configureFeedCell(with: <#T##String#>, and: <#T##UIImage#>)
             
