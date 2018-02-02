@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 
 class CommentListView: UIView {
+
     //Purpose:  (Table View With List Of Comments and TF on Bottom)
     
     //Top Left: Table View with two custom cells
@@ -43,14 +44,15 @@ class CommentListView: UIView {
     func addTableView() {
         addSubview(tableView)
         tableView.snp.makeConstraints { (make) -> Void in
-            
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(20)
         }
     }
     
     func addCommentTextField() {
         addSubview(commentTextField)
         commentTextField.snp.makeConstraints { (make) -> Void in
-            
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-10)
+            make.leading.trailing.equalTo(safeAreaLayoutGuide)
         }
     }
 

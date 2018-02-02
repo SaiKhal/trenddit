@@ -8,14 +8,31 @@
 
 import UIKit
 
-class CommentListVC: UIViewController {
-    //Purpose: (Controls Comment View)
+class CommentListVC: UIViewController{
     
+    //Purpose: (Controls Comment View)
     var commentListView = CommentListView()
+    
     //View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(commentListView)
+        commentListView.tableView.delegate = self
+        commentListView.tableView.dataSource = self
     }
 
+}
+
+extension CommentListVC: UITableViewDelegate {
+    
+}
+
+extension CommentListVC: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
 }
