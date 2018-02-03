@@ -43,7 +43,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
     
     lazy var userNameButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .white
+        button.backgroundColor = Stylesheet.Colors.White
         button.setTitleColor(UIColor.black, for: .normal)
         button.setTitleColor(UIColor.red, for: .selected)
         button.setTitle("username", for: .normal)
@@ -55,7 +55,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
     
     lazy var postCategoryButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .white
+        button.backgroundColor = Stylesheet.Colors.White
         button.setTitleColor(UIColor.black, for: .normal)
         button.setTitleColor(UIColor.red, for: .selected)
         button.setTitle("category", for: .normal)
@@ -72,23 +72,15 @@ class FeedCollectionViewCell: UICollectionViewCell {
         return button
     }()
     
-    //    lazy var titleLabel: UILabel = {
-    //        let label = UILabel()
-    //        label.text = "this is the post header"
-    //        label.textAlignment = .left
-    //        label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-    //        return label
-    //    }()
-    
     lazy var titleButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .white
+        button.backgroundColor = Stylesheet.Colors.White
         button.setTitleColor(UIColor.black, for: .normal)
         button.setTitleColor(UIColor.red, for: .selected)
         button.setTitle("this is the post header", for: .normal)
         button.contentHorizontalAlignment = .left
         button.titleLabel?.font = button.titleLabel?.font.withSize(15)
-        button.addTarget(self, action: #selector(segueToProfile), for: .touchUpInside)
+        button.addTarget(self, action: #selector(replyToPostButtonPressed), for: .touchUpInside)
         return button
     }()
     
@@ -126,7 +118,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
     lazy var replyToPostButton: UIButton = {
         let button = UIButton(type: UIButtonType.custom) as UIButton
         button.setImage(#imageLiteral(resourceName: "chat"), for: .normal)
-        button.addTarget(self, action: #selector(replyToPost), for: .touchUpInside)
+        button.addTarget(self, action: #selector(replyToPostButtonPressed), for: .touchUpInside)
         return button
     }()
     
@@ -141,7 +133,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
     lazy var shareButton: UIButton = {
         let button = UIButton(type: UIButtonType.custom) as UIButton
         button.setImage(#imageLiteral(resourceName: "share"), for: .normal)
-        button.addTarget(self, action: #selector(shareOptions), for: .touchUpInside)
+        button.addTarget(self, action: #selector(shareOptionsButtonPressed), for: .touchUpInside)
         return button
     }()
     
@@ -171,7 +163,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
     
     //MARK: - Functions
     private func commonInit() {
-        backgroundColor = .white
+        backgroundColor = Stylesheet.Colors.White
     }
     
     private func addSubviews() {
@@ -195,7 +187,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
         setupUserNameButton()
         setupPostCategoryButton()
         setupPostOptionsButton()
-        setupTitleButtonl()
+        setupTitleButton()
         setupPostImageView()
         setupUpVoteButton()
         setupTotalVotesLabel()
@@ -246,7 +238,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
         profileImageView.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(snp.top).offset(10)
             make.leading.equalTo(snp.leading)
-            make.height.width.equalTo(self).multipliedBy(0.15)
+            make.height.width.equalTo(self).multipliedBy(0.13)
         }
     }
     
@@ -279,15 +271,15 @@ class FeedCollectionViewCell: UICollectionViewCell {
     
     private func setupTitleButton() {
         titleButton.snp.makeConstraints { (make) in
-            make.top.equalTo(profileImageView.snp.bottom).offset(5)
+            make.top.equalTo(profileImageView.snp.bottom).offset(2)
             make.leading.equalTo(profileImageView.snp.leading).offset(13)
-            make.width.equalTo(self)
+            make.trailing.equalTo(self)
         }
     }
     
     private func setupPostImageView() {
         postImageView.snp.makeConstraints { (make) in
-            make.top.equalTo(titleLabel.snp.bottom).offset(5)
+            make.top.equalTo(titleButton.snp.bottom).offset(3)
             make.width.equalTo(self)
             make.height.equalTo(self).multipliedBy(0.6)
             make.centerX.equalTo(self)
@@ -297,9 +289,9 @@ class FeedCollectionViewCell: UICollectionViewCell {
     private func setupUpVoteButton() {
         upVoteButton.snp.makeConstraints { (make) in
             make.top.equalTo(postImageView.snp.bottom).offset(8)
-            make.leading.equalTo(titleLabel.snp.leading)
+            make.leading.equalTo(titleButton.snp.leading)
             make.height.equalTo(self).multipliedBy(0.05)
-            make.width.equalTo(self).multipliedBy(0.037)
+            make.width.equalTo(self).multipliedBy(0.045)
         }
     }
     
@@ -316,7 +308,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
             make.top.equalTo(postImageView.snp.bottom).offset(8)
             make.leading.equalTo(totalVotesLabel.snp.trailing).offset(8)
             make.height.equalTo(self).multipliedBy(0.05)
-            make.width.equalTo(self).multipliedBy(0.037)
+            make.width.equalTo(self).multipliedBy(0.045)
         }
     }
     
@@ -354,15 +346,15 @@ class FeedCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    // configure cell from viewController
-    //    public func configureFeedCell(with details: String, and userProfileImage: UIImage) {
-    //        profileImageView.image = userProfileImage
-    //        userNameButton.titleLabel?.text = text
-    //        postCategoryButton.titleLabel?.text = text
-    //        titleLabel.text = text
-    //        postImageView.image = image
-    //        totalVotesLabel.text = text
-    //        totalRepliesLabel.text = text
-    //    }
-    //
+        // function for configuring cell from viewController
+        public func configureFeedCell(with details: Feed) {
+//            profileImageView.image = details.userID.profileImage
+            userNameButton.titleLabel?.text = details.userID.userName
+            postCategoryButton.titleLabel?.text = details.userID.postID.category
+            titleButton.titleLabel?.text = details.userID.postID.category
+//            postImageView.image = details.userID.postID.postImage
+            totalVotesLabel.text = details.userID.postID.totalVotes
+            totalRepliesLabel.text = String(details.userID.postID.totalComments)
+        }
+    
 }

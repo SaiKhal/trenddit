@@ -23,20 +23,43 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     let categoryImageView: UIImageView = {
         var imageView = UIImageView()
         imageView.image = UIImage(named: "feedPlaceHolder")
-        imageView.backgroundColor = .white
+        imageView.backgroundColor = Stylesheet.Colors.UltraLightGray
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.layer.borderColor = UIColor.white.cgColor
         imageView.layer.borderWidth = 2.0
-        imageView.layer.cornerRadius = imageView.frame.width / 2
+        imageView.layer.cornerRadius = imageView.bounds.width/2.0
         return imageView
     }()
+    
+    override var bounds: CGRect {
+        didSet {
+            self.layoutIfNeeded()
+        }
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        self.categoryImageView.layer.masksToBounds = true
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        self.setCircularImageView()
+    }
+    
+    func setCircularImageView() {
+        self.categoryImageView.layer.cornerRadius = CGFloat(roundf(Float(self.categoryImageView.frame.size.width / 2.0)))
+        
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubViews()
         setupViews()
-        backgroundColor = .white
+        backgroundColor = Stylesheet.Colors.UltraLightGray
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -75,5 +98,20 @@ class CategoryCollectionViewCell: UICollectionViewCell {
             categoryImageView.image = postImage
             categoryLabel.text = category
         }
+    
+    public func configureCell() {
+        self.layer.cornerRadius = 5.0
+        self.layer.borderWidth = 1.0
+        self.layer.borderColor = UIColor.clear.cgColor
+        self.backgroundColor = UIColor.white
+        self.layer.masksToBounds = true
+        
+        self.layer.shadowColor = UIColor.lightGray.cgColor
+        self.layer.shadowOffset = CGSize.zero
+        self.layer.shadowRadius = 2.0
+        self.layer.shadowOpacity = 1.0
+        self.layer.masksToBounds = false
+        self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
+    }
     
 }

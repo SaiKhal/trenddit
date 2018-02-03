@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class FeedViewController: UIViewController {
     
@@ -17,7 +18,7 @@ class FeedViewController: UIViewController {
     
     // MARK: - Overrides
     override func viewDidLoad() {
-        self.view.backgroundColor = .red
+        self.view.backgroundColor = Stylesheet.Colors.UltraLightGray
         self.feedView.feedCollectionView.dataSource = self
         self.feedView.feedCollectionView.delegate = self
         self.feedView.categoryCollectionView.dataSource = self
@@ -25,21 +26,26 @@ class FeedViewController: UIViewController {
         addSubView()
         setupView()
         configureTabBar()
-        configureNavBar()
+//        configureNavBar()
     }
     
     // MARK: - Functions
-    private func configureNavBar() {
-        navigationItem.title = "trenddit"
-        navigationController?.navigationBar.prefersLargeTitles = true
-        let cameraButton = UIBarButtonItem(image: #imageLiteral(resourceName: "photo-camera"), style: .plain, target: self, action: #selector(cameraButtonClicked))
-        navigationItem.rightBarButtonItem = cameraButton
-    }
+//    private func configureNavBar() {
+//        let screenSize: CGRect = UIScreen.main.bounds
+//        let navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: screenSize.width, height: 44))
+//        let navItem = UINavigationItem(title: "trenddit")
+//        navBar.prefersLargeTitles = true
+//        let cameraButton = UIBarButtonItem(image: #imageLiteral(resourceName: "photo-camera"), style: .plain, target: self, action: #selector(cameraButtonClicked))
+//        navItem.rightBarButtonItem = cameraButton
+//        navBar.setItems([navItem], animated: false)
+//        self.view.addSubview(navBar)
+//
+//    }
     
     // TODO: complete camera function
-    @objc func cameraButtonClicked() {
-        print("camera button pressed")
-    }
+//    @objc func cameraButtonClicked() {
+//        print("camera button pressed")
+//    }
     
     // TODO : input correct tag etc
     private func configureTabBar() {
@@ -55,13 +61,28 @@ class FeedViewController: UIViewController {
     }
     
     private func setupFeedView() {
-        feedView.snp.makeConstraints { (constraint) in
-            constraint.edges.equalTo(view.safeAreaLayoutGuide.snp.edges)
+        feedView.snp.makeConstraints { (make) in
+            make.edges.equalTo(view.safeAreaLayoutGuide.snp.edges)
         }
     }
+    
+//    func setNavigationBar() {
+//        let screenSize: CGRect = UIScreen.main.bounds
+//        let navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: screenSize.width, height: 44))
+//        let navItem = UINavigationItem(title: "")
+//        let doneItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: nil, action: #selector(done))
+//        navItem.rightBarButtonItem = doneItem
+//        navBar.setItems([navItem], animated: false)
+//        self.view.addSubview(navBar)
+//    }
+//
+    @objc func done() { // remove @objc for Swift 3
+        
+    }
+    
 }
 
-//m// MARK: - CollectionView Data Source
+// MARK: - CollectionView Data Source
 extension FeedViewController: UICollectionViewDataSource  {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -73,14 +94,16 @@ extension FeedViewController: UICollectionViewDataSource  {
         guard collectionView == self.feedView.categoryCollectionView else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: feedView.postCellID, for: indexPath) as! FeedCollectionViewCell
             // TODO: complete init
-//            cell.configureFeedCell(with: <#T##String#>, and: <#T##UIImage#>)
+            //            cell.configureFeedCell(with: <#T##String#>, and: <#T##UIImage#>)
             
             return cell
         }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: feedView.categoryCellID, for: indexPath) as! CategoryCollectionViewCell
+//        cell.configureCell()
+
         
         // TODO: complete init
-//        cell.configureCategoryCell(with: <#T##String#>, and: <#T##UIImage#>)
+        //        cell.configureCategoryCell(with: <#T##String#>, and: <#T##UIImage#>)
         
         return cell
     }
@@ -90,6 +113,20 @@ extension FeedViewController: UICollectionViewDataSource  {
 extension FeedViewController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+    }
+}
+
+extension FeedViewController: UICollectionViewDelegateFlowLayout {
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        guard collectionView == self.feedView.categoryCollectionView else {
+            let sized = CGSize(width: collectionView.frame.size.width , height: collectionView.frame.size.height / 1.85)
+            return sized
+        }
+        
+        let sized = CGSize(width: collectionView.frame.size.width / 4.15, height: collectionView.frame.size.height )
+        return sized
     }
 }
 

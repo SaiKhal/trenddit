@@ -26,11 +26,11 @@ class FeedView: UIView {
         let cellSpacing: CGFloat = 10.0
         let numberOfCells: CGFloat = 1
         let numberOfSpaces: CGFloat = numberOfCells + 1
-        layout.itemSize = CGSize(width: (screenWidth - (cellSpacing * numberOfSpaces)) / numberOfCells, height: screenHeight * 0.35)
+        layout.itemSize = CGSize(width: (screenWidth - (cellSpacing * numberOfSpaces)) / numberOfCells, height: screenHeight * 0.38)
         layout.sectionInset = UIEdgeInsetsMake(cellSpacing, cellSpacing , cellSpacing, cellSpacing )
         layout.minimumLineSpacing = cellSpacing
         layout.minimumInteritemSpacing = cellSpacing
-        collectionView.backgroundColor = UIColor(displayP3Red: 239/255, green: 239/255, blue: 239/255, alpha: 1)
+        collectionView.backgroundColor = Stylesheet.Colors.UltraLightGray
         collectionView.register(FeedCollectionViewCell.self, forCellWithReuseIdentifier: postCellID)
         return collectionView
     }()
@@ -48,7 +48,7 @@ class FeedView: UIView {
         layout.minimumLineSpacing = cellSpacing
         layout.minimumInteritemSpacing = cellSpacing
         let collectionView = UICollectionView(frame: self.bounds, collectionViewLayout: layout)
-        collectionView.backgroundColor = UIColor(displayP3Red: 239/255, green: 239/255, blue: 239/255, alpha: 1)
+        collectionView.backgroundColor = Stylesheet.Colors.UltraLightGray
         collectionView.register(CategoryCollectionViewCell.self, forCellWithReuseIdentifier: categoryCellID )
         return collectionView
     }()
@@ -56,7 +56,7 @@ class FeedView: UIView {
     // MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
-        backgroundColor = .gray
+        backgroundColor = Stylesheet.Colors.UltraLightGray
         addSubviews()
         setupView()
     }
