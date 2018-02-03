@@ -26,6 +26,9 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         imageView.backgroundColor = .white
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
+        imageView.layer.borderColor = UIColor.white.cgColor
+        imageView.layer.borderWidth = 2.0
+        imageView.layer.cornerRadius = imageView.frame.width / 2
         return imageView
     }()
     

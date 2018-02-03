@@ -59,7 +59,6 @@ class FeedViewController: UIViewController {
             constraint.edges.equalTo(view.safeAreaLayoutGuide.snp.edges)
         }
     }
-    
 }
 
 //m// MARK: - CollectionView Data Source
