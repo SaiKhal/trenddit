@@ -15,9 +15,9 @@ class SignUpView: UIView {
     let callToActionView = CallToActionView(labelText: "ALREADY HAVE AN ACCOUNT?", buttonText: "Sign In")
 
     // Text Fields
-    let emailTextfield = TextFieldFactory.generate(type: .email)
-    let passwordTextfield = TextFieldFactory.generate(type: .password)
-    let usernameTextField = TextFieldFactory.generate(type: .general("Enter username"))
+    let emailTextfield = ViewFactory.TextField.generate(type: .email)
+    let passwordTextfield = ViewFactory.TextField.generate(type: .password)
+    let usernameTextField = ViewFactory.TextField.generate(type: .general("Enter username"))
 
     lazy var signUpLabel: UILabel = {
         let label = UILabel()

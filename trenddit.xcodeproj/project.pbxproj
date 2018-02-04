@@ -39,7 +39,7 @@
 		C4C8B70D202001DC00FD2B3B /* AuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8B70C202001DC00FD2B3B /* AuthClient.swift */; };
 		C4C8B7112020098700FD2B3B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8B7102020098700FD2B3B /* LoginView.swift */; };
 		C4C8F7F22022C02700F4288A /* CallToActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8F7F12022C02700F4288A /* CallToActionView.swift */; };
-		C4C8F7F420236B0A00F4288A /* TextFieldFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8F7F320236B0A00F4288A /* TextFieldFactory.swift */; };
+		C4C8F7F420236B0A00F4288A /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8F7F320236B0A00F4288A /* ViewFactory.swift */; };
 		C4DD4F1A2020C7F700C0FBE0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8B7172020434A00FD2B3B /* Constants.swift */; };
 		C4DD4F212020CC7500C0FBE0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4DD4F202020CC7500C0FBE0 /* GoogleService-Info.plist */; };
 		CBA68423399D5995FF565856 /* Pods_trenddit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A483F771524432B67E1FA549 /* Pods_trenddit.framework */; };
@@ -83,7 +83,7 @@
 		C4C8B7102020098700FD2B3B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		C4C8B7172020434A00FD2B3B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C4C8F7F12022C02700F4288A /* CallToActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallToActionView.swift; sourceTree = "<group>"; };
-		C4C8F7F320236B0A00F4288A /* TextFieldFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldFactory.swift; sourceTree = "<group>"; };
+		C4C8F7F320236B0A00F4288A /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
 		C4DD4F202020CC7500C0FBE0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,7 +171,6 @@
 				C46E713920211B4500AA0226 /* EmailTextField.swift */,
 				C46E713B20211E2E00AA0226 /* PasswordTextField.swift */,
 				C4A056BD20212D1400D8E589 /* CustomTextField.swift */,
-				C4C8F7F320236B0A00F4288A /* TextFieldFactory.swift */,
 			);
 			path = TextFields;
 			sourceTree = "<group>";
@@ -234,6 +233,7 @@
 				C4200BFB202123900025058D /* SignUpView.swift */,
 				C44EAF82202166A800E6A7D9 /* LogoView.swift */,
 				C4C8F7F12022C02700F4288A /* CallToActionView.swift */,
+				C4C8F7F320236B0A00F4288A /* ViewFactory.swift */,
 				C46E713D20211E8200AA0226 /* Buttons */,
 				C46E713820211B3000AA0226 /* TextFields */,
 			);
@@ -401,7 +401,7 @@
 				C4A056BE20212D1400D8E589 /* CustomTextField.swift in Sources */,
 				C46E71372021107A00AA0226 /* CustomTabBarVC.swift in Sources */,
 				87BEDC3A2022C4BA00DD6561 /* CategoryCollectionViewCell.swift in Sources */,
-				C4C8F7F420236B0A00F4288A /* TextFieldFactory.swift in Sources */,
+				C4C8F7F420236B0A00F4288A /* ViewFactory.swift in Sources */,
 				C46E713F20211E9C00AA0226 /* LogInButton.swift in Sources */,
 				87BEDC362022BD3E00DD6561 /* FeedViewController.swift in Sources */,
 				C44EAF81202158FD00E6A7D9 /* Stylesheet.swift in Sources */,
