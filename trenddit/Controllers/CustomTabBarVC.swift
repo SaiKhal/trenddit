@@ -23,7 +23,8 @@ class CustomTabBarVC: UIViewController {
         // Set controllers inside tab bar
         tabController.setViewController(FeedViewController(), atIndex: 0)
         tabController.setTitle("Feed", atIndex: 0)
-        tabController.setViewController(UIViewController(), atIndex: 1)
+        //Kaniz - I added my view controller as one of the tabs
+        tabController.setViewController(PostViewController(), atIndex: 1)
         tabController.setTitle("Post", atIndex: 1)
         tabController.setViewController(LoginVC(), atIndex: 2)
         tabController.setTitle("User", atIndex: 2)
