@@ -207,7 +207,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
         //userNameButton
     }
     
-    @objc private func imageTapped(sender: UIImageView) {
+    @objc public func imageTapped(sender: UIImageView, target:UIViewController) {
         print("image tapped")
         //profileImageView
         //postImageView

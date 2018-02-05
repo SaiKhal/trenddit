@@ -12,6 +12,8 @@ import SnapKit
 class FeedViewController: UIViewController {
     
     // TODO: complete camera function and complete configureTabBar function.
+    // TODO: double protocol
+    // TODO: Make new view. So that: view -> cell -> view -> VC
     
     // MARK: - Constants
     let feedView = FeedView()
@@ -26,6 +28,7 @@ class FeedViewController: UIViewController {
         addSubView()
         setupView()
         configureNavBar()
+    
     }
     
     // MARK: - Functions
@@ -55,6 +58,9 @@ class FeedViewController: UIViewController {
             make.edges.equalTo(view.safeAreaLayoutGuide.snp.edges)
         }
     }
+    
+    private func setupFeedCellFunctions() {
+    }
 }
 
 // MARK: - CollectionView Data Source
@@ -70,12 +76,11 @@ extension FeedViewController: UICollectionViewDataSource  {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: feedView.postCellID, for: indexPath) as! FeedCollectionViewCell
             // TODO: complete init
             //            cell.configureFeedCell(with: <#T##String#>, and: <#T##UIImage#>)
-            
             return cell
         }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: feedView.categoryCellID, for: indexPath) as! CategoryCollectionViewCell
 //        cell.configureCell()
-
+        
         
         // TODO: complete init
         //        cell.configureCategoryCell(with: <#T##String#>, and: <#T##UIImage#>)
