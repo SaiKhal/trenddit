@@ -60,7 +60,7 @@ enum Stylesheet {
             static let SelectionIndicatorColor = Stylesheet.Colors.LightBlue
 
             // change the seperator line color
-            static let SeparatorLineColor = Stylesheet.Colors.UltraLightGray
+            static let SeparatorLineColor = Stylesheet.Colors.LightGray
         }
 
     }

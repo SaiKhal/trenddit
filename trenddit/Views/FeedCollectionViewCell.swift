@@ -290,8 +290,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
         upVoteButton.snp.makeConstraints { (make) in
             make.top.equalTo(postImageView.snp.bottom).offset(8)
             make.leading.equalTo(titleButton.snp.leading)
-            make.height.equalTo(self).multipliedBy(0.05)
-            make.width.equalTo(self).multipliedBy(0.045)
+            make.height.width.equalTo(snp.height).multipliedBy(0.05)
         }
     }
     
@@ -307,8 +306,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
         downVoteButton.snp.makeConstraints { (make) in
             make.top.equalTo(postImageView.snp.bottom).offset(8)
             make.leading.equalTo(totalVotesLabel.snp.trailing).offset(8)
-            make.height.equalTo(self).multipliedBy(0.05)
-            make.width.equalTo(self).multipliedBy(0.045)
+            make.height.width.equalTo(snp.height).multipliedBy(0.05)
         }
     }
     

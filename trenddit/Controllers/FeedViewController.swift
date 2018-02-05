@@ -25,31 +25,21 @@ class FeedViewController: UIViewController {
         self.feedView.categoryCollectionView.delegate = self
         addSubView()
         setupView()
-        configureTabBar()
-//        configureNavBar()
+        configureNavBar()
     }
     
     // MARK: - Functions
-//    private func configureNavBar() {
-//        let screenSize: CGRect = UIScreen.main.bounds
-//        let navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: screenSize.width, height: 44))
-//        let navItem = UINavigationItem(title: "trenddit")
-//        navBar.prefersLargeTitles = true
-//        let cameraButton = UIBarButtonItem(image: #imageLiteral(resourceName: "photo-camera"), style: .plain, target: self, action: #selector(cameraButtonClicked))
-//        navItem.rightBarButtonItem = cameraButton
-//        navBar.setItems([navItem], animated: false)
-//        self.view.addSubview(navBar)
-//
-//    }
+    private func configureNavBar() {
+        navigationItem.title = "trenddit"
+        navigationController?.navigationBar.prefersLargeTitles = false
+        navigationController?.navigationBar.barTintColor = Stylesheet.Colors.White
+        let cameraButton = UIBarButtonItem(image: #imageLiteral(resourceName: "photo-camera"), style: .plain, target: self, action: #selector(cameraButtonClicked))
+        navigationItem.rightBarButtonItem = cameraButton
+    }
     
     // TODO: complete camera function
-//    @objc func cameraButtonClicked() {
-//        print("camera button pressed")
-//    }
-    
-    // TODO : input correct tag etc
-    private func configureTabBar() {
-        self.tabBarItem = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "houses"), tag: 1)
+    @objc func cameraButtonClicked() {
+        print("camera button pressed")
     }
     
     private func addSubView() {
@@ -65,21 +55,6 @@ class FeedViewController: UIViewController {
             make.edges.equalTo(view.safeAreaLayoutGuide.snp.edges)
         }
     }
-    
-//    func setNavigationBar() {
-//        let screenSize: CGRect = UIScreen.main.bounds
-//        let navBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: screenSize.width, height: 44))
-//        let navItem = UINavigationItem(title: "")
-//        let doneItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: nil, action: #selector(done))
-//        navItem.rightBarButtonItem = doneItem
-//        navBar.setItems([navItem], animated: false)
-//        self.view.addSubview(navBar)
-//    }
-//
-    @objc func done() { // remove @objc for Swift 3
-        
-    }
-    
 }
 
 // MARK: - CollectionView Data Source
@@ -116,17 +91,18 @@ extension FeedViewController: UICollectionViewDelegate{
     }
 }
 
-extension FeedViewController: UICollectionViewDelegateFlowLayout {
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
-        guard collectionView == self.feedView.categoryCollectionView else {
-            let sized = CGSize(width: collectionView.frame.size.width , height: collectionView.frame.size.height / 1.85)
-            return sized
-        }
-        
-        let sized = CGSize(width: collectionView.frame.size.width / 4.15, height: collectionView.frame.size.height )
-        return sized
-    }
-}
+//extension FeedViewController: UICollectionViewDelegateFlowLayout {
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        
+//        guard collectionView == self.feedView.categoryCollectionView else {
+//            //CGSize for feedCollectionView
+//            let sized = CGSize(width: collectionView.frame.size.width , height: collectionView.frame.size.height / 1.85)
+//            return sized
+//        }
+//        //CGSize for categoryCollectionView
+//        let sized = CGSize(width: collectionView.frame.size.width / 5, height: collectionView.frame.size.height )
+//        return sized
+//    }
+//}
 
