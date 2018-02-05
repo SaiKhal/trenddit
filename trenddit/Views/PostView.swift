@@ -63,17 +63,20 @@ class PostView: UIView {
     
     lazy var addPhotoimageView: UIImageView = {
         var iv = UIImageView()
-        iv.image = UIImage(named: "postplaceholderimage") //for testing
-        iv.backgroundColor = .magenta
+        //iv.image = UIImage(named: "postplaceholderimage") //for testing
+        iv.image = UIImage(named: "addImage2")
+        iv.alpha = 0.30
+        //iv.backgroundColor = .magenta
         //iv.isHidden = true //hidden until they choose to add image
         return iv
     }()
     
     lazy var addImgButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .blue
-        button.setImage(#imageLiteral(resourceName: "photo-picker"), for: .normal)
-//      button.addTarget(<#T##target: Any?##Any?#>, action: <#T##Selector#>, for: <#T##UIControlEvents#>)
+        button.setImage(#imageLiteral(resourceName: "addImage2"), for: .normal)
+        //button.backgroundColor = .blue
+        //button.setImage(#imageLiteral(resourceName: "photo-picker"), for: .normal)
+        button.alpha = 0.15
         return button
     }()
     
@@ -104,7 +107,7 @@ class PostView: UIView {
         setUsernameButton()
         setCategoryCollectionView()
         setTextField()
-        addPhotoImageView()
+        //addPhotoImageView()
         setAddImageButton()
         setPostButton()
     }
@@ -152,10 +155,9 @@ class PostView: UIView {
         addSubview(addPhotoimageView)
         addPhotoimageView.snp.makeConstraints{(make) in
             make.top.equalTo(snp.top).offset(350)//200
-            make.width.equalTo(self.snp.width).dividedBy(2)
-            //make.width.equalTo(self.snp.width).multipliedBy(0.8)//0.8
-            make.height.equalTo(self.snp.height).dividedBy(4)//2
-            //make.height.width.equalTo(safeAreaLayoutGuide).dividedBy(2)
+            make.size.equalTo(300)
+            //make.width.equalTo(self.snp.width).dividedBy(2)
+            //make.height.equalTo(self.snp.height).dividedBy(4)//2
             make.centerX.equalTo(snp.centerX)
         }
     }
@@ -163,9 +165,14 @@ class PostView: UIView {
     private func setAddImageButton() {
         addSubview(addImgButton)
         addImgButton.snp.makeConstraints{(make) in
-            make.top.equalTo(self.snp.top).offset(300)
-            make.trailing.equalTo(snp.trailing).offset(10)
-            make.height.width.equalTo(self).multipliedBy(0.10)
+//            make.top.equalTo(self.snp.top).offset(150)
+//            make.trailing.equalTo(snp.trailing).offset(-20)
+//            make.size.equalTo(40)
+            //testing center
+            //make.bottom.equalTo(snp.bottom).offset(-70)//200
+            make.size.equalTo(250)
+            make.centerX.equalTo(snp.centerX)
+            make.centerY.equalTo(snp.centerY)
         }
     }
     
