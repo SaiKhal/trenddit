@@ -36,6 +36,8 @@
 		C4A056C320212FB700D8E589 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A056C220212FB700D8E589 /* Post.swift */; };
 		C4A056C52021517600D8E589 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A056C42021517600D8E589 /* SignUpVC.swift */; };
 		C4A056C7202152CC00D8E589 /* AuthDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A056C6202152CC00D8E589 /* AuthDelegate.swift */; };
+		C4A41C152027937A00BACF24 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A41C142027937A00BACF24 /* ProfileVC.swift */; };
+		C4A41C17202793BB00BACF24 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A41C16202793BB00BACF24 /* ProfileView.swift */; };
 		C4C8B70D202001DC00FD2B3B /* AuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8B70C202001DC00FD2B3B /* AuthClient.swift */; };
 		C4C8B7112020098700FD2B3B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8B7102020098700FD2B3B /* LoginView.swift */; };
 		C4C8F7F22022C02700F4288A /* CallToActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8F7F12022C02700F4288A /* CallToActionView.swift */; };
@@ -79,6 +81,8 @@
 		C4A056C220212FB700D8E589 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		C4A056C42021517600D8E589 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		C4A056C6202152CC00D8E589 /* AuthDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDelegate.swift; sourceTree = "<group>"; };
+		C4A41C142027937A00BACF24 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		C4A41C16202793BB00BACF24 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		C4C8B70C202001DC00FD2B3B /* AuthClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthClient.swift; sourceTree = "<group>"; };
 		C4C8B7102020098700FD2B3B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		C4C8B7172020434A00FD2B3B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -206,6 +210,7 @@
 			children = (
 				C46E71362021107A00AA0226 /* CustomTabBarVC.swift */,
 				81A165FB201FE7DA00EE8CA0 /* LoginVC.swift */,
+				C4A41C142027937A00BACF24 /* ProfileVC.swift */,
 				C4A056C42021517600D8E589 /* SignUpVC.swift */,
 				87BEDC352022BD3E00DD6561 /* FeedViewController.swift */,
 			);
@@ -227,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				87BEDC392022C4BA00DD6561 /* CategoryCollectionViewCell.swift */,
+				C4A41C16202793BB00BACF24 /* ProfileView.swift */,
 				8773868A20229BA500056F69 /* FeedCollectionViewCell.swift */,
 				8773868C20229BD100056F69 /* FeedView.swift */,
 				C4C8B7102020098700FD2B3B /* LoginView.swift */,
@@ -419,7 +425,9 @@
 				81A165FA201FE7DA00EE8CA0 /* AppDelegate.swift in Sources */,
 				C4DD4F1A2020C7F700C0FBE0 /* Constants.swift in Sources */,
 				C4200BFC202123900025058D /* SignUpView.swift in Sources */,
+				C4A41C17202793BB00BACF24 /* ProfileView.swift in Sources */,
 				C46E713A20211B4500AA0226 /* EmailTextField.swift in Sources */,
+				C4A41C152027937A00BACF24 /* ProfileVC.swift in Sources */,
 				C44EAF83202166A800E6A7D9 /* LogoView.swift in Sources */,
 				81A16602201FE7DA00EE8CA0 /* trenddit.xcdatamodeld in Sources */,
 				C46E713520210C2300AA0226 /* (null) in Sources */,

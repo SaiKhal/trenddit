@@ -25,6 +25,7 @@ class SignUpVC: UIViewController, UINavigationControllerDelegate {
         self.modalPresentationStyle = .overCurrentContext
     }
     
+    // MARK: - User Actions
     @objc func tapDetected() {
         print("Single Tap on imageview")
     }
@@ -36,14 +37,13 @@ class SignUpVC: UIViewController, UINavigationControllerDelegate {
         present(picker, animated: true)
     }
 
-    // MARK: - User Actions
     @objc func dismissPressed() {
         dismiss(animated: true, completion: nil)
     }
 
     @objc func signUpPressed() {
         if let (email, password) = validSignUpText(view: signUpView) {
-            authClient.createUser(withEmail: email, password: password)
+            authClient.createUser(withEmail: email, password: password, displayName: signUpView.usernameTextField.text)
         }
     }
 
@@ -84,7 +84,7 @@ extension SignUpVC: AuthDelegate {
     }
     
     func didCreateUser(user: User) {
-        print("\(user.email?.description): Created")
+        print("\(user.email ?? "NoEmail?"): Created")
     }
 
 }
