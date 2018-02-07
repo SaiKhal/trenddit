@@ -20,11 +20,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
 
         let root = LoginVC()
+        
+        //Profile Navigation Controller
+        let profileVC = ProfileViewController()
+        let profileNavigationController = UINavigationController(rootViewController: profileVC)
 
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = root
         window?.makeKeyAndVisible()
         return true
+        
+        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
