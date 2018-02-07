@@ -54,6 +54,10 @@
 		C4DD4F1A2020C7F700C0FBE0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8B7172020434A00FD2B3B /* Constants.swift */; };
 		C4DD4F212020CC7500C0FBE0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4DD4F202020CC7500C0FBE0 /* GoogleService-Info.plist */; };
 		CBA68423399D5995FF565856 /* Pods_trenddit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A483F771524432B67E1FA549 /* Pods_trenddit.framework */; };
+		FA203E3520292B6D00E0FD3B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA203E3320292B6D00E0FD3B /* ProfileViewController.swift */; };
+		FA203E3620292B6D00E0FD3B /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA203E3420292B6D00E0FD3B /* ProfileViewController.xib */; };
+		FA203E3B2029879100E0FD3B /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA203E392029879100E0FD3B /* EditProfileViewController.swift */; };
+		FA203E3C2029879100E0FD3B /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA203E3A2029879100E0FD3B /* EditProfileViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +111,10 @@
 		C4C8F7F12022C02700F4288A /* CallToActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallToActionView.swift; sourceTree = "<group>"; };
 		C4C8F7F320236B0A00F4288A /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
 		C4DD4F202020CC7500C0FBE0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FA203E3320292B6D00E0FD3B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		FA203E3420292B6D00E0FD3B /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		FA203E392029879100E0FD3B /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		FA203E3A2029879100E0FD3B /* EditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +244,10 @@
 				87BEDC352022BD3E00DD6561 /* FeedViewController.swift */,
 				931800C62023B23C00AC8CBA /* ZoomedImageVC.swift */,
 				931800C82023B26900AC8CBA /* CommentListVC.swift */,
+				FA203E392029879100E0FD3B /* EditProfileViewController.swift */,
+				FA203E3A2029879100E0FD3B /* EditProfileViewController.xib */,
+				FA203E3320292B6D00E0FD3B /* ProfileViewController.swift */,
+				FA203E3420292B6D00E0FD3B /* ProfileViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -348,6 +360,9 @@
 				C46E71302020FE8000AA0226 /* AZTabBarController.xib in Resources */,
 				81A16607201FE7DA00EE8CA0 /* LaunchScreen.storyboard in Resources */,
 				C4DD4F212020CC7500C0FBE0 /* GoogleService-Info.plist in Resources */,
+				FA203E3C2029879100E0FD3B /* EditProfileViewController.xib in Resources */,
+				81A16604201FE7DA00EE8CA0 /* Assets.xcassets in Resources */,
+				FA203E3620292B6D00E0FD3B /* ProfileViewController.xib in Resources */,
 				81A165FF201FE7DA00EE8CA0 /* Main.storyboard in Resources */,
 				C44EAF852021697C00E6A7D9 /* Assets.xcassets in Resources */,
 			);
@@ -471,6 +486,9 @@
 				C48438DE2021200A00E9909F /* SignUpButton.swift in Sources */,
 				81CC731B20225D4400B98E3F /* PostView.swift in Sources */,
 				C4A056C320212FB700D8E589 /* Post.swift in Sources */,
+				C4C8B70F2020056500FD2B3B /* ErrorHandleable.swift in Sources */,
+				FA203E3520292B6D00E0FD3B /* ProfileViewController.swift in Sources */,
+				FA203E3B2029879100E0FD3B /* EditProfileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
