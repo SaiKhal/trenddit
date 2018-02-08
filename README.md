@@ -55,3 +55,4 @@ Then, run the following command in Terminal:
 - **Tech Lead**: Kaniz Ali  
 - **QA**: Masai Young
 - **UI/UX**: Clint Mejia  
+- **Flex**: Ashlee Krammer
