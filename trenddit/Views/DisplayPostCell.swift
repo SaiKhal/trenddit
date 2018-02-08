@@ -1,37 +1,34 @@
 //
-//  ZoomedImageView.swift
+//  DisplayPostCell.swift
 //  trenddit
 //
-//  Created by Ashlee Krammer on 2/1/18.
+//  Created by Ashlee Krammer on 2/5/18.
 //  Copyright © 2018 C4Q. All rights reserved.
 //
 
 import UIKit
-import SnapKit
 
-class ZoomedImageView: UIView {
+class DisplayPostCell: UITableViewCell {
 
-    //Purpose: (Image Zoomed In)
-    
-    lazy var dismissButton: UIButton = {
-        var btn = UIButton()
-        btn.setImage(#imageLiteral(resourceName: "close"), for: .normal)
-        btn.backgroundColor = .white
-        return btn
-    }()
-    
     lazy var userNameLabel: UILabel = {
         var label = UILabel()
         label.text = "catterific • catLover89 • 3hr"
         label.font = UIFont.systemFont(ofSize: 20, weight: .regular)
-        label.textColor = .white
         return label
+    }()
+    
+    lazy var reportButton: UIButton = {
+        var btn = UIButton()
+        btn.setImage(#imageLiteral(resourceName: "more"), for: .normal)
+        return btn
     }()
     
     //Center: Image/Video
     lazy var postImage: UIImageView = {
         var img = UIImageView()
-        img.image = #imageLiteral(resourceName: "postplaceholderimage")
+        img.image = #imageLiteral(resourceName: "LoH93lT")
+        img.backgroundColor = .black
+        img.contentMode = .scaleAspectFit
         return img
     }()
     
@@ -39,15 +36,13 @@ class ZoomedImageView: UIView {
     lazy var likeButton: UIButton = {
         var btn = UIButton()
         btn.setImage(#imageLiteral(resourceName: "up-arrow"), for: .normal)
-        btn.backgroundColor = .white
         return btn
     }()
     
     lazy var likeCountLabel: UILabel = {
         var label = UILabel()
         label.text = "3.1K"
-        label.font = UIFont.systemFont(ofSize: 18, weight: .regular)
-        label.textColor = .white
+        label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
         return label
     }()
     lazy var dislikeButton: UIButton = {
@@ -73,20 +68,21 @@ class ZoomedImageView: UIView {
     
     //Functionality to Buttons in VC
     
-    override init(frame: CGRect) {
-        super.init(frame: UIScreen.main.bounds)
-        setUpZoomedView()
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        setUpViews()
         
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        setUpViews()
     }
     
-    
-    func setUpZoomedView() {
-        setUpDismissButton()
+    func setUpViews() {
         setUpUserPostLabel()
+        setUpReportButton()
         setUpPostImage()
         setUpLikeButton()
         setUpLikeCountLabel()
@@ -95,20 +91,23 @@ class ZoomedImageView: UIView {
         setUpShareButton()
     }
     
-    func setUpDismissButton() {
-        addSubview(dismissButton)
-        dismissButton.snp.makeConstraints { (make) in
+    
+    
+    func setUpUserPostLabel() {
+        addSubview(userNameLabel)
+        userNameLabel.snp.makeConstraints { (make) in
             make.top.equalTo(safeAreaLayoutGuide).offset(20)
             make.leading.equalTo(safeAreaLayoutGuide.snp.leading).offset(5)
             
         }
     }
     
-    func setUpUserPostLabel() {
-        addSubview(userNameLabel)
-        userNameLabel.snp.makeConstraints { (make) in
+    func setUpReportButton() {
+        addSubview(reportButton)
+        reportButton.snp.makeConstraints { (make) in
             make.top.equalTo(safeAreaLayoutGuide).offset(20)
             make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing).offset(-5)
+            make.height.width.equalTo(self).multipliedBy(0.05)
             
         }
     }
@@ -120,7 +119,7 @@ class ZoomedImageView: UIView {
             make.centerY.equalTo(snp.centerY)
             make.left.equalTo(snp.left)
             make.right.equalTo(snp.right)
-            make.height.equalTo(self).multipliedBy(0.3)
+            make.height.equalTo(self).multipliedBy(0.6)
             
         }
     }
@@ -130,6 +129,8 @@ class ZoomedImageView: UIView {
         likeButton.snp.makeConstraints { (make) in
             make.leading.equalTo(snp.leading).offset(5)
             make.bottom.equalTo(snp.bottom).offset(-10)
+            make.height.width.equalTo(self).multipliedBy(0.05)
+            
         }
     }
     
@@ -137,7 +138,9 @@ class ZoomedImageView: UIView {
         addSubview(likeCountLabel)
         likeCountLabel.snp.makeConstraints { (make) in
             make.leading.equalTo(likeButton.snp.trailing).offset(3)
-            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-15)
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-10)
+            make.height.equalTo(self).multipliedBy(0.05)
+            
             
         }
     }
@@ -147,6 +150,8 @@ class ZoomedImageView: UIView {
         dislikeButton.snp.makeConstraints { (make) in
             make.leading.equalTo(likeCountLabel.snp.trailing).offset(3)
             make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-10)
+            make.height.width.equalTo(self).multipliedBy(0.05)
+            
         }
     }
     
@@ -155,6 +160,8 @@ class ZoomedImageView: UIView {
         commentButton.snp.makeConstraints { (make) in
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
             make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-10)
+            make.height.width.equalTo(self).multipliedBy(0.05)
+            
         }
     }
     
@@ -163,8 +170,9 @@ class ZoomedImageView: UIView {
         shareButton.snp.makeConstraints { (make) in
             make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing).offset(-5)
             make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-10)
+            make.height.width.equalTo(self).multipliedBy(0.05)
+            
         }
     }
     
-
 }

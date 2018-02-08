@@ -11,11 +11,14 @@ import UIKit
 class ZoomedImageVC: UIViewController {
     //Purpose: (Controls Zoomed Image View)
     
+    //Variables
     var zoomedImageView = ZoomedImageView()
     
     //View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(zoomedImageView)
+        view.backgroundColor = .black
     }
+    
 }
