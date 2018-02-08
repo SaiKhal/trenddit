@@ -43,7 +43,7 @@ class PostView: UIView {
         layout.minimumLineSpacing = cellSpacing
         layout.minimumInteritemSpacing = cellSpacing
         let collectionView = UICollectionView(frame: self.bounds, collectionViewLayout: layout)
-        collectionView.backgroundColor = UIColor(displayP3Red: 239/255, green: 239/255, blue: 239/255, alpha: 1)
+        collectionView.backgroundColor = .orange
         collectionView.register(CategoryCollectionViewCell.self, forCellWithReuseIdentifier: "category cell" )
         return collectionView
     }()
@@ -83,7 +83,7 @@ class PostView: UIView {
     lazy var postButton: UIButton = {
         let button = UIButton()
         button.setTitle("POST", for: .normal)
-        button.backgroundColor = .red//Stylesheet.Colors.LightGray
+        button.backgroundColor = Stylesheet.Colors.Blue
         button.setTitleShadowColor(.magenta, for: .normal)
         button.setTitleColor(UIColor.white, for: .normal)
         return button

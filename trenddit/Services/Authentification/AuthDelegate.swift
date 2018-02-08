@@ -26,6 +26,8 @@ extension AuthDelegate {
                 print("Email in use already.")
             case .invalidEmail:
                 print("Email is invalid.")
+            case .weakPassword:
+                print("Password too weak \(nsError.userInfo["NSLocalizedFailureReasonErrorKey"]!)")
             default:
                 print("Some error.")
             }

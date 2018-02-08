@@ -17,8 +17,7 @@ struct Post: Codable {
     var upvotes: Int
     var downvotes: Int
     var totalVotes: Int
-    var category: String
-    var bodyText: String?
+    var category: [String]
     var url: String?
     var image: String?
     var comments: [String]?
@@ -37,6 +36,6 @@ struct Post: Codable {
         upvotes = postDict["upvotes"] as? Int ?? 0
         downvotes = postDict["downvotes"] as? Int ?? 0
         totalVotes = postDict["totalVotes"] as? Int ?? 0
-        category = postDict["category"] as? String ?? ""
+        category = postDict["category"] as? [String] ?? ["None"]
     }
 }
