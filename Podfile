@@ -6,6 +6,7 @@ target 'trenddit' do
   use_frameworks!
 
   # Pods for trenddit
+    pod 'Firebase/Storage'
     pod ‘Firebase/Database’
     pod ‘Firebase/Auth’
     pod ‘Firebase/Core’

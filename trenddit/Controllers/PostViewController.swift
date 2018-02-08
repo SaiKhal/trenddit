@@ -9,6 +9,7 @@
 //Kaniz
 import UIKit
 import FirebaseDatabase
+import Kingfisher
 
 class PostViewController: UIViewController {
     let cellSpacing: CGFloat = 5.0
@@ -23,22 +24,33 @@ class PostViewController: UIViewController {
         postView.collectionView.delegate = self
         postView.collectionView.dataSource = self
         setButtonActions()
+        
+        addUserDetails()
+    }
+    
+    private func addUserDetails() {
+        guard let user = AuthClient.currentUser else { return }
+        postView.userNameButton.setTitle(user.displayName, for: .normal)
+        postView.profileImageView.kf.setImage(with: user.photoURL)
     }
     
     // MARK: - User Actions
-    @objc func addImagePressed() {
-        //present(SignUpVC(), animated: true, completion: nil)
+    @objc func openImagePicker() {
+        let picker = UIImagePickerController()
+        picker.allowsEditing = true
+        picker.delegate = self
+        present(picker, animated: true)
     }
     
     @objc func postPressed() {
-//        if let (email, password) = validSignUpText(view: loginView) {
-//            authClient.signIn(withEmail: email, password: password)
-//        }
+        let image = postView.addImgButton.imageView?.image ?? #imageLiteral(resourceName: "postplaceholderimage")
+        let title = postView.createPostTF.text ?? "Empty text field"
+            DBService.manager.addPost(title: title, category: "test", image: image)
     }
     
     func setButtonActions() {
-        postView.addImgButton.addTarget(self, action: #selector(addImagePressed), for: .touchUpInside)
-//        loginView.callToActionView.callToActionButton.addTarget(self, action: #selector(signUpPressed), for: .touchUpInside)
+        postView.addImgButton.addTarget(self, action: #selector(openImagePicker), for: .touchUpInside)
+        postView.postButton.addTarget(self, action: #selector(postPressed), for: .touchUpInside)
     }
 }
 
@@ -84,4 +96,26 @@ extension PostViewController: UICollectionViewDataSource{
 
     
     //MARK: - Navigation
+}
+
+// MARK: - UIImagePickerControllerDelegate
+extension PostViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        var newImage: UIImage
+        
+        if let possibleImage = info["UIImagePickerControllerEditedImage"] as? UIImage {
+            newImage = possibleImage
+        } else if let possibleImage = info["UIImagePickerControllerOriginalImage"] as? UIImage {
+            newImage = possibleImage
+        } else {
+            return
+        }
+        
+        postView.addImgButton.setImage(newImage, for: .normal)
+        dismiss(animated: true)
+    }
 }

@@ -21,11 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let root: UIViewController!
 
-        if AuthClient.signedIn {
-            root = LoginVC()
+        if let user = AuthClient.currentUser {
+            root = CustomTabBarVC(user: user)
         } else {
 //            root = LoginVC() // for testing
-            root = CustomTabBarVC()
+            root = LoginVC()
         }
 
         // configure window

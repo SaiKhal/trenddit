@@ -67,7 +67,7 @@ extension LoginVC: AuthDelegate {
     }
 
     func didSignIn(user: User) {
-        present(CustomTabBarVC(), animated: true, completion: nil)
+        present(CustomTabBarVC(user: user), animated: true, completion: nil)
         print("\(user.email?.description): signed in.")
     }
 

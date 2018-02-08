@@ -8,6 +8,8 @@
 
 import UIKit
 import SnapKit
+import FirebaseDatabase
+import Kingfisher
 
 class FeedViewController: UIViewController {
     
@@ -17,6 +19,13 @@ class FeedViewController: UIViewController {
     
     // MARK: - Constants
     let feedView = FeedView()
+    var posts = [Post]() {
+        didSet {
+            dump(posts)
+            feedView.feedCollectionView.reloadData()
+        }
+    }
+    
     
     // MARK: - Overrides
     override func viewDidLoad() {
@@ -29,6 +38,26 @@ class FeedViewController: UIViewController {
         setupView()
         configureNavBar()
     
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getPost()
+    }
+    
+    func getPost() {
+        guard let userId = AuthClient.currentUser?.uid else { return }
+        DBService.manager.getPosts().child(userId).observe(.value) { (snapshot) in
+            var posts = [Post]()
+            for child in snapshot.children {
+                let dataSnapshot = child as! DataSnapshot
+                if let dict = dataSnapshot.value as? [String : Any] {
+                    let post = Post.init(postDict: dict)
+                    posts.append(post)
+                    self.posts = posts
+                }
+            }
+        }
+        
     }
     
     // MARK: - Functions
@@ -67,7 +96,8 @@ class FeedViewController: UIViewController {
 extension FeedViewController: UICollectionViewDataSource  {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard collectionView == self.feedView.categoryCollectionView else { return 10 }
+        guard collectionView == self.feedView.categoryCollectionView else {  return posts.count }
+        
         return 10 // return count for categoryCollectionView
     }
     
@@ -75,6 +105,11 @@ extension FeedViewController: UICollectionViewDataSource  {
         guard collectionView == self.feedView.categoryCollectionView else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: feedView.postCellID, for: indexPath) as! FeedCollectionViewCell
             // TODO: complete init
+            let post = posts[indexPath.item]
+            cell.postImageView.kf.setImage(with: URL(string: post.image!), placeholder: #imageLiteral(resourceName: "feedPlaceHolder"))
+            cell.userNameButton.setTitle(post.creator, for: .normal)
+            cell.profileImageView.kf.setImage(with: AuthClient.currentUser?.photoURL)
+            cell.titleButton.setTitle(post.title ?? "No text", for: .normal)
             //            cell.configureFeedCell(with: <#T##String#>, and: <#T##UIImage#>)
             return cell
         }

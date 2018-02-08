@@ -7,8 +7,32 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Kingfisher
 
 class CustomTabBarVC: UIViewController {
+    
+    var userProfileImageURL: URL!
+    var userProfileImage: UIImage?
+    
+    
+    init(user: User) {
+        super.init(nibName: nil, bundle: nil)
+        userProfileImageURL = user.photoURL
+        ImageDownloader.default.downloadImage(with: userProfileImageURL!, retrieveImageTask: nil, options: nil, progressBlock: nil) { (image, error, url, data) in
+            if let error = error {
+                
+            }
+            if let image = image {
+                self.userProfileImage = image
+//                self.applyTabBar(into: self)
+            }
+        }
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +55,11 @@ class CustomTabBarVC: UIViewController {
 //        tabController.setTitle("Feed", atIndex: 0)
         tabController.setViewController(LoginVC(), atIndex: 2)
 //        tabController.setTitle("User", atIndex: 2)
+        
+        if let image = userProfileImage {
+            
+//            tabController.setTabIcon(forIndex: 2, normal: #imageLiteral(resourceName: "feedPlaceHolder")) 
+        }
 
         // Configure tab bar apparance
         tabController.defaultColor = Stylesheet.Contexts.TabBarController.DefaultColor
