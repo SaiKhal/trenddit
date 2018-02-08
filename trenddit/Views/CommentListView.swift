@@ -16,13 +16,18 @@ class CommentListView: UIView {
     //Top Left: Table View with two custom cells
     lazy var tableView: UITableView = {
         var tv = UITableView()
+        tv.backgroundColor = .gray
         return tv
     }()
     
     //Bottom: Comment Text Field that opens Comment View
     lazy var commentTextField: UITextField = {
         var tf = UITextField()
+        tf.layer.borderColor = UIColor.gray.cgColor
+        tf.layer.borderWidth = 1.0
         tf.placeholder = "Comment..."
+        tf.borderStyle = .roundedRect
+        tf.clipsToBounds = true
         return tf
     }()
     
@@ -41,19 +46,23 @@ class CommentListView: UIView {
         addCommentTextField()
     }
     
+    
     func addTableView() {
         addSubview(tableView)
         tableView.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(20)
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(8)
+            make.leading.equalTo(safeAreaLayoutGuide.snp.leading)
+            make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing)
+            make.height.equalTo(safeAreaLayoutGuide).multipliedBy(0.9)
         }
     }
     
     func addCommentTextField() {
         addSubview(commentTextField)
         commentTextField.snp.makeConstraints { (make) -> Void in
-            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-10)
-            make.leading.trailing.equalTo(safeAreaLayoutGuide)
-        }
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-8)
+            make.leading.equalTo(safeAreaLayoutGuide.snp.leading).offset(3)
+            make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing).offset(-3)        }
     }
 
 
