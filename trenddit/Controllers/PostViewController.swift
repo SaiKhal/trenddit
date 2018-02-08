@@ -31,6 +31,8 @@ class PostViewController: UIViewController {
     }
     
     @objc func postPressed() {
+            DBService.manager.addPost(title: "test", category: "test", image: #imageLiteral(resourceName: "postplaceholderimage"))
+
 //        if let (email, password) = validSignUpText(view: loginView) {
 //            authClient.signIn(withEmail: email, password: password)
 //        }
@@ -38,7 +40,7 @@ class PostViewController: UIViewController {
     
     func setButtonActions() {
         postView.addImgButton.addTarget(self, action: #selector(addImagePressed), for: .touchUpInside)
-//        loginView.callToActionView.callToActionButton.addTarget(self, action: #selector(signUpPressed), for: .touchUpInside)
+        postView.postButton.addTarget(self, action: #selector(postPressed), for: .touchUpInside)
     }
 }
 

@@ -13,6 +13,10 @@ class AuthClient: NSObject {
     
     var delegate: AuthDelegate!
     
+    static var currentUser: User? {
+        return Auth.auth().currentUser
+    }
+    
     static var signedIn: Bool {
         if let _ = Auth.auth().currentUser {
             return true
@@ -75,10 +79,4 @@ class AuthClient: NSObject {
         }
     }
     
-    //if let user = Auth.auth().currentUser {
-    //    User.updatePassword(user)
-    //    User.updateEmail(user)
-    //    User.sendEmailVerification(user)
-    //    User.createProfileChangeRequest(user)
-    //}
 }
