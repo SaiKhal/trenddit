@@ -12,11 +12,7 @@ import FirebaseDatabase
 import Kingfisher
 
 class FeedViewController: UIViewController {
-    
-    // TODO: complete camera function and complete configureTabBar function.
-    // TODO: double protocol
-    // TODO: Make new view. So that: view -> cell -> view -> VC
-    
+
     // MARK: - Constants
     let feedView = FeedView()
     var posts = [Post]() {

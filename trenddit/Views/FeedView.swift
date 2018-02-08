@@ -50,7 +50,9 @@ class FeedView: UIView {
 //        layout.sectionInset = UIEdgeInsetsMake(0, cellSpacing, cellSpacing, 0)
 //        layout.minimumLineSpacing = cellSpacing
 //        layout.minimumInteritemSpacing = cellSpacing
-        collectionView.backgroundColor = Stylesheet.Colors.UltraLightGray
+        collectionView.backgroundColor = Stylesheet.Colors.White
+        collectionView.layer.borderColor = Stylesheet.Colors.LightGray.cgColor
+        collectionView.layer.borderWidth = 1
         collectionView.register(CategoryCollectionViewCell.self, forCellWithReuseIdentifier: categoryCellID )
         return collectionView
     }()
@@ -83,7 +85,7 @@ class FeedView: UIView {
             make.top.equalTo(snp.top)
             make.width.equalTo(self)
             make.centerX.equalTo(self)
-            make.height.equalTo(self).multipliedBy(0.13)
+            make.height.equalTo(self).multipliedBy(0.09)
         }
     }
     
@@ -92,7 +94,7 @@ class FeedView: UIView {
             make.top.equalTo(categoryCollectionView.snp.bottom)
             make.width.equalTo(self)
             make.centerX.equalTo(self)
-            make.height.equalTo(self).multipliedBy(0.87)
+            make.height.equalTo(self).multipliedBy(0.91)
         }
     }
 }

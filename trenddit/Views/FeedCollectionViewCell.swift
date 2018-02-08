@@ -11,24 +11,6 @@ import SnapKit
 
 class FeedCollectionViewCell: UICollectionViewCell {
     
-    // TODO: Add button targets. Complete configure cell function
-    // TODO: segues:
-    // profileImage > Profile COntroller
-    // userName > Profile Controller
-    // category > categories
-    // category cells > categories
-    // option button > option menu
-    // post header > detail post
-    // feedImage > detail post
-    // commentImage > detail post
-    // share button > share options
-    
-    
-    // TODO: make category cells rounded
-    // make Post header > 1 px
-    // tabBar set to white
-    // navbar implementation
-    
     // MARK: - Outlets
     lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()
