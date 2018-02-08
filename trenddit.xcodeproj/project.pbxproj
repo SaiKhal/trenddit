@@ -40,7 +40,6 @@
 		C46E713F20211E9C00AA0226 /* LogInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46E713E20211E9C00AA0226 /* LogInButton.swift */; };
 		C48438DE2021200A00E9909F /* SignUpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48438DD2021200A00E9909F /* SignUpButton.swift */; };
 		C4A056BE20212D1400D8E589 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A056BD20212D1400D8E589 /* CustomTextField.swift */; };
-		C4A056C320212FB700D8E589 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A056C220212FB700D8E589 /* Post.swift */; };
 		C4A056C52021517600D8E589 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A056C42021517600D8E589 /* SignUpVC.swift */; };
 		C4A056C7202152CC00D8E589 /* AuthDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A056C6202152CC00D8E589 /* AuthDelegate.swift */; };
 		C4C8B70D202001DC00FD2B3B /* AuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8B70C202001DC00FD2B3B /* AuthClient.swift */; };
@@ -90,7 +89,6 @@
 		C46E713E20211E9C00AA0226 /* LogInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInButton.swift; sourceTree = "<group>"; };
 		C48438DD2021200A00E9909F /* SignUpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpButton.swift; sourceTree = "<group>"; };
 		C4A056BD20212D1400D8E589 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
-		C4A056C220212FB700D8E589 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		C4A056C42021517600D8E589 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		C4A056C6202152CC00D8E589 /* AuthDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDelegate.swift; sourceTree = "<group>"; };
 		C4C8B70C202001DC00FD2B3B /* AuthClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthClient.swift; sourceTree = "<group>"; };
@@ -202,7 +200,6 @@
 		C4A056C120212FAF00D8E589 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C4A056C220212FB700D8E589 /* Post.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -452,7 +449,6 @@
 				C46E713520210C2300AA0226 /* (null) in Sources */,
 				C48438DE2021200A00E9909F /* SignUpButton.swift in Sources */,
 				81CC731B20225D4400B98E3F /* PostView.swift in Sources */,
-				C4A056C320212FB700D8E589 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
