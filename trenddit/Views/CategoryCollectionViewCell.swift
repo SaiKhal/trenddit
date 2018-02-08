@@ -66,8 +66,8 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     
     
     // configure cell from viewController
-        public func configureCategoryCell(with category: String, and postImage: UIImage) {
-            categoryLabel.text = category
+    public func configureCategoryCell(with postInfo: Post) {
+        categoryLabel.text = postInfo.category
         }
     
 }

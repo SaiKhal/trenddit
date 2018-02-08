@@ -327,14 +327,14 @@ class FeedCollectionViewCell: UICollectionViewCell {
     }
     
         // function for configuring cell from viewController
-        public func configureFeedCell(with details: Feed) {
-//            profileImageView.image = details.userID.profileImage
-            userNameButton.titleLabel?.text = details.userID.userName
-            postCategoryButton.titleLabel?.text = details.userID.postID.category
-            titleButton.titleLabel?.text = details.userID.postID.category
-//            postImageView.image = details.userID.postID.postImage
-            totalVotesLabel.text = details.userID.postID.totalVotes
-            totalRepliesLabel.text = String(details.userID.postID.totalComments)
+        public func configureFeedCell(with postInfo: Post) {
+            postImageView.kf.setImage(with: URL(string: postInfo.image!), placeholder: #imageLiteral(resourceName: "feedPlaceHolder"))
+            userNameButton.setTitle(postInfo.creator, for: .normal)
+            profileImageView.kf.setImage(with: AuthClient.currentUser?.photoURL)
+            titleButton.setTitle(postInfo.title, for: .normal)
+            postCategoryButton.setTitle(postInfo.category, for: .normal)
+            totalVotesLabel.text = String(postInfo.totalVotes)
+            totalRepliesLabel.text = String(postInfo.comments?.count ?? 0)
         }
     
 }

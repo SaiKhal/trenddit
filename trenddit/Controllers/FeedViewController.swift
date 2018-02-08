@@ -98,24 +98,14 @@ extension FeedViewController: UICollectionViewDataSource  {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let post = posts[indexPath.item]
         guard collectionView == self.feedView.categoryCollectionView else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: feedView.postCellID, for: indexPath) as! FeedCollectionViewCell
-            // TODO: complete init
-            let post = posts[indexPath.item]
-            cell.postImageView.kf.setImage(with: URL(string: post.image!), placeholder: #imageLiteral(resourceName: "feedPlaceHolder"))
-            cell.userNameButton.setTitle(post.creator, for: .normal)
-            cell.profileImageView.kf.setImage(with: AuthClient.currentUser?.photoURL)
-            cell.titleButton.setTitle(post.title ?? "No text", for: .normal)
-            //            cell.configureFeedCell(with: <#T##String#>, and: <#T##UIImage#>)
+            cell.configureFeedCell(with: post)
             return cell
         }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: feedView.categoryCellID, for: indexPath) as! CategoryCollectionViewCell
-//        cell.configureCell()
-        
-        
-        // TODO: complete init
-        //        cell.configureCategoryCell(with: <#T##String#>, and: <#T##UIImage#>)
-        
+        cell.configureCategoryCell(with: post)
         return cell
     }
 }
