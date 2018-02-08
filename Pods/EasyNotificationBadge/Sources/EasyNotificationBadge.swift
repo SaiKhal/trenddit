@@ -85,7 +85,7 @@ extension UIView {
         let oldWidth: CGFloat?
         if doesBadgeExist {
             oldWidth = badgeLabel.frame.width
-        } else {
+        }else{
             oldWidth = nil
         }
 
@@ -172,11 +172,11 @@ extension UIView {
                 },
                                completion: nil)
             }
-        } else {
+        }else{
             if appearance.animate, let oldWidth = oldWidth {
                 let currentWidth = badgeLabel.frame.width
                 badgeLabel.frame.size.width = oldWidth
-                UIView.animate(withDuration: appearance.duration) {
+                UIView.animate(withDuration: appearance.duration){
                     badgeLabel.frame.size.width = currentWidth
                 }
             }
@@ -193,7 +193,7 @@ extension UIBarButtonItem {
     @objc public func badge(text: String?) {
         badge(text: text, appearance: BadgeAppearance())
     }
-
+    
     public func badge(text badgeText: String?, appearance: BadgeAppearance = BadgeAppearance()) {
         if let view = badgeViewHolder {
             getView(in: view).badge(text: badgeText, appearance: appearance)
@@ -205,8 +205,8 @@ extension UIBarButtonItem {
     private var badgeViewHolder: UIView? {
         return value(forKey: "view") as? UIView
     }
-
-    private func getView(in holder: UIView) -> UIView {
+    
+    private func getView(in holder: UIView)->UIView{
         for sub in holder.subviews {
             if "\(type(of: sub))" == "_UIModernBarButton" {
                 return sub
@@ -215,6 +215,7 @@ extension UIBarButtonItem {
         return holder
     }
 
+    
 }
 
 /*

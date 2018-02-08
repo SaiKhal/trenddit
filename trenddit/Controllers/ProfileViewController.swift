@@ -8,12 +8,21 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
-
+class ProfileViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDelegate, UITableViewDataSource {
+    
+var testArr = ["as","abc","awe"]
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.view.backgroundColor = Stylesheet.Colors.White
+        profileSegmentedControl.tintColor = Stylesheet.Colors.LightBlue
+        setupProfilePicture()
+        self.postCollectionView.register(UINib(nibName: "ProfileCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ProfileCollectionViewCell")
+        postCollectionView.backgroundColor = Stylesheet.Colors.White
+        self.voteTableView.register(UINib(nibName: "VoteTableViewCell", bundle: nil), forCellReuseIdentifier: "VoteTableViewCell")
+        self.postCollectionView.dataSource = self
+        self.postCollectionView.delegate = self
+        self.voteTableView.dataSource = self
+        self.voteTableView.delegate = self
     }
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var postCounter: UILabel!
@@ -22,6 +31,39 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var voteTableView: UITableView!
     @IBOutlet weak var postCollectionView: UICollectionView!
+    @IBOutlet weak var profileSegmentedControl: UISegmentedControl!
+  
+    @IBAction func selectedSegmentedControlIndex(_ sender: UISegmentedControl) {
+        if profileSegmentedControl.selectedSegmentIndex == 0 {
+            voteTableView.isHidden = true
+            postCollectionView.isHidden = false
+        } else {
+            voteTableView.isHidden = false
+            postCollectionView.isHidden = true
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return testArr.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = voteTableView.dequeueReusableCell(withIdentifier: "VoteTableViewCell", for: indexPath) as! VoteTableViewCell
+        return cell
+    }
+    
+    
+    let profileCollectionViewCellID = "ProfileCollectionViewCell"
+    let profileTableViewCellID = "ProfileTableViewCell"
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = postCollectionView.dequeueReusableCell(withReuseIdentifier: profileCollectionViewCellID, for: indexPath) as! ProfileCollectionViewCell
+        return cell
+    }
     @IBAction func showPostCollectionView(_ sender: UIButton) {
         postCollectionView.isHidden = false
         voteTableView.isHidden = true
@@ -35,6 +77,13 @@ class ProfileViewController: UIViewController {
 
     
     private func setupProfilePicture() {
-        profileImage.layer.cornerRadius = profileImage.frame.size.width/2
+        profileImage.image = #imageLiteral(resourceName: "feedPlaceHolder")
+        profileImage.layer.cornerRadius = 5
+        profileImage.clipsToBounds = true
+        
+    }
+    
+    private func setUpLabels() {
+    
     }
 }

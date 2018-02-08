@@ -17,7 +17,8 @@ class EditProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupProfilePicture()
-        // Do any additional setup after loading the view.
+        self.view.backgroundColor = Stylesheet.Colors.UltraLightGray
+        
     }
 
     @IBAction func changeProfileImage(_ sender: UIButton) {
@@ -28,8 +29,9 @@ class EditProfileViewController: UIViewController {
         editScreenProfileImage.layer.cornerRadius = editScreenProfileImage.frame.width/2
     }
 }
-extension EditProfileViewController : UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
-    }
-}
+//extension EditProfileViewController : UITextFieldDelegate {
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        
+//    }
+//}
+

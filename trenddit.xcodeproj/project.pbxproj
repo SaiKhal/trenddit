@@ -54,6 +54,10 @@
 		C4DD4F1A2020C7F700C0FBE0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8B7172020434A00FD2B3B /* Constants.swift */; };
 		C4DD4F212020CC7500C0FBE0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4DD4F202020CC7500C0FBE0 /* GoogleService-Info.plist */; };
 		CBA68423399D5995FF565856 /* Pods_trenddit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A483F771524432B67E1FA549 /* Pods_trenddit.framework */; };
+		FA16A1DD202BFC6000956646 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA16A1DB202BFC6000956646 /* ProfileCollectionViewCell.swift */; };
+		FA16A1DE202BFC6000956646 /* ProfileCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA16A1DC202BFC6000956646 /* ProfileCollectionViewCell.xib */; };
+		FA16A1E1202C092400956646 /* VoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA16A1DF202C092400956646 /* VoteTableViewCell.swift */; };
+		FA16A1E2202C092400956646 /* VoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA16A1E0202C092400956646 /* VoteTableViewCell.xib */; };
 		FA203E3520292B6D00E0FD3B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA203E3320292B6D00E0FD3B /* ProfileViewController.swift */; };
 		FA203E3620292B6D00E0FD3B /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA203E3420292B6D00E0FD3B /* ProfileViewController.xib */; };
 		FA203E3B2029879100E0FD3B /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA203E392029879100E0FD3B /* EditProfileViewController.swift */; };
@@ -111,6 +115,10 @@
 		C4C8F7F12022C02700F4288A /* CallToActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallToActionView.swift; sourceTree = "<group>"; };
 		C4C8F7F320236B0A00F4288A /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
 		C4DD4F202020CC7500C0FBE0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FA16A1DB202BFC6000956646 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
+		FA16A1DC202BFC6000956646 /* ProfileCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileCollectionViewCell.xib; sourceTree = "<group>"; };
+		FA16A1DF202C092400956646 /* VoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteTableViewCell.swift; sourceTree = "<group>"; };
+		FA16A1E0202C092400956646 /* VoteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VoteTableViewCell.xib; sourceTree = "<group>"; };
 		FA203E3320292B6D00E0FD3B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		FA203E3420292B6D00E0FD3B /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		FA203E392029879100E0FD3B /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
@@ -266,7 +274,11 @@
 		C4C8B7182020436D00FD2B3B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FA16A1DF202C092400956646 /* VoteTableViewCell.swift */,
+				FA16A1E0202C092400956646 /* VoteTableViewCell.xib */,
 				87BEDC392022C4BA00DD6561 /* CategoryCollectionViewCell.swift */,
+				FA16A1DB202BFC6000956646 /* ProfileCollectionViewCell.swift */,
+				FA16A1DC202BFC6000956646 /* ProfileCollectionViewCell.xib */,
 				C4A41C16202793BB00BACF24 /* ProfileView.swift */,
 				8773868A20229BA500056F69 /* FeedCollectionViewCell.swift */,
 				8773868C20229BD100056F69 /* FeedView.swift */,
@@ -276,8 +288,6 @@
 				931800CA2023B29B00AC8CBA /* CommentListView.swift */,
 				931800CC2023B2D000AC8CBA /* ZoomedImageView.swift */,
 				931800CE2023B2ED00AC8CBA /* CommentInputView.swift */,
-				C46E713D20211E8200AA0226 /* Buttons */,
-				C46E713820211B3000AA0226 /* TextFields */,
 				C44EAF82202166A800E6A7D9 /* LogoView.swift */,
 				C4C8F7F12022C02700F4288A /* CallToActionView.swift */,
 				C4C8F7F320236B0A00F4288A /* ViewFactory.swift */,
@@ -361,9 +371,10 @@
 				81A16607201FE7DA00EE8CA0 /* LaunchScreen.storyboard in Resources */,
 				C4DD4F212020CC7500C0FBE0 /* GoogleService-Info.plist in Resources */,
 				FA203E3C2029879100E0FD3B /* EditProfileViewController.xib in Resources */,
-				81A16604201FE7DA00EE8CA0 /* Assets.xcassets in Resources */,
 				FA203E3620292B6D00E0FD3B /* ProfileViewController.xib in Resources */,
 				81A165FF201FE7DA00EE8CA0 /* Main.storyboard in Resources */,
+				FA16A1E2202C092400956646 /* VoteTableViewCell.xib in Resources */,
+				FA16A1DE202BFC6000956646 /* ProfileCollectionViewCell.xib in Resources */,
 				C44EAF852021697C00E6A7D9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -451,6 +462,7 @@
 				C4C8B7112020098700FD2B3B /* LoginView.swift in Sources */,
 				931800C92023B26900AC8CBA /* CommentListVC.swift in Sources */,
 				C4A056BE20212D1400D8E589 /* CustomTextField.swift in Sources */,
+				FA16A1E1202C092400956646 /* VoteTableViewCell.swift in Sources */,
 				C46E71372021107A00AA0226 /* CustomTabBarVC.swift in Sources */,
 				87BEDC3A2022C4BA00DD6561 /* CategoryCollectionViewCell.swift in Sources */,
 				C4C8F7F420236B0A00F4288A /* ViewFactory.swift in Sources */,
@@ -459,6 +471,7 @@
 				931800CF2023B2ED00AC8CBA /* CommentInputView.swift in Sources */,
 				931800C72023B23C00AC8CBA /* ZoomedImageVC.swift in Sources */,
 				C44EAF81202158FD00E6A7D9 /* Stylesheet.swift in Sources */,
+				FA16A1DD202BFC6000956646 /* ProfileCollectionViewCell.swift in Sources */,
 				931800CB2023B29B00AC8CBA /* CommentListView.swift in Sources */,
 				C46E71312020FE8000AA0226 /* AZTabBarDelegate.swift in Sources */,
 				81A165FC201FE7DA00EE8CA0 /* LoginVC.swift in Sources */,
@@ -486,7 +499,6 @@
 				C48438DE2021200A00E9909F /* SignUpButton.swift in Sources */,
 				81CC731B20225D4400B98E3F /* PostView.swift in Sources */,
 				C4A056C320212FB700D8E589 /* Post.swift in Sources */,
-				C4C8B70F2020056500FD2B3B /* ErrorHandleable.swift in Sources */,
 				FA203E3520292B6D00E0FD3B /* ProfileViewController.swift in Sources */,
 				FA203E3B2029879100E0FD3B /* EditProfileViewController.swift in Sources */,
 			);
@@ -627,7 +639,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XYLS53SA6G;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = trenddit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nyc.c4q.AC4.3.trenddit;
@@ -643,7 +655,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XYLS53SA6G;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = trenddit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nyc.c4q.AC4.3.trenddit;
