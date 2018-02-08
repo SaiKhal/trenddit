@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 
-class SignUpVC: UIViewController {
+class SignUpVC: UIViewController, UINavigationControllerDelegate {
 
     // MARK: - Setup - View/Data
     let authClient = AuthClient()
@@ -24,15 +24,26 @@ class SignUpVC: UIViewController {
         self.modalTransitionStyle = .flipHorizontal
         self.modalPresentationStyle = .overCurrentContext
     }
-
+    
     // MARK: - User Actions
+    @objc func tapDetected() {
+        print("Single Tap on imageview")
+    }
+    
+    @objc func openImagePicker() {
+        let picker = UIImagePickerController()
+        picker.allowsEditing = true
+        picker.delegate = self
+        present(picker, animated: true)
+    }
+
     @objc func dismissPressed() {
         dismiss(animated: true, completion: nil)
     }
 
     @objc func signUpPressed() {
         if let (email, password) = validSignUpText(view: signUpView) {
-            authClient.createUser(withEmail: email, password: password)
+            authClient.createUser(withEmail: email, password: password, displayName: signUpView.usernameTextField.text)
         }
     }
 
@@ -47,6 +58,11 @@ private extension SignUpVC {
     }
 
     func setButtonActions() {
+        let singleTap = UITapGestureRecognizer(target: self, action: #selector(openImagePicker))
+        singleTap.numberOfTapsRequired = 1
+        signUpView.profileImageView.isUserInteractionEnabled = true
+        signUpView.profileImageView.addGestureRecognizer(singleTap)
+        
         signUpView.dismissButton.addTarget(self, action: #selector(dismissPressed), for: .touchUpInside)
         signUpView.callToActionView.callToActionButton.addTarget(self, action: #selector(dismissPressed), for: .touchUpInside)
         signUpView.signUpButton.addTarget(self, action: #selector(signUpPressed), for: .touchUpInside)
@@ -68,7 +84,7 @@ extension SignUpVC: AuthDelegate {
     }
     
     func didCreateUser(user: User) {
-        print("\(user.email?.description): Created")
+        print("\(user.email ?? "NoEmail?"): Created")
     }
 
 }
@@ -78,5 +94,27 @@ extension SignUpVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+}
+
+// MARK: - UIImagePickerControllerDelegate
+extension SignUpVC: UIImagePickerControllerDelegate {
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        var newImage: UIImage
+        
+        if let possibleImage = info["UIImagePickerControllerEditedImage"] as? UIImage {
+            newImage = possibleImage
+        } else if let possibleImage = info["UIImagePickerControllerOriginalImage"] as? UIImage {
+            newImage = possibleImage
+        } else {
+            return
+        }
+        
+        signUpView.profileImageView.image = newImage
+        dismiss(animated: true)
     }
 }

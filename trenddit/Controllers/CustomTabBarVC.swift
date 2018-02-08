@@ -19,14 +19,18 @@ class CustomTabBarVC: UIViewController {
         let tabIcons: [String] = ["houses", "plus", "user"]
 
         let tabController = AZTabBarController.insert(into: controller, withTabIconNames: tabIcons, andSelectedIconNames: tabIcons)
+        
+        let feedViewController = FeedViewController()
+        let feednavigationController = UINavigationController(rootViewController: feedViewController)
 
         // Set controllers inside tab bar
-        tabController.setViewController(FeedViewController(), atIndex: 0)
-        tabController.setTitle("Feed", atIndex: 0)
-        tabController.setViewController(UIViewController(), atIndex: 1)
-        tabController.setTitle("Post", atIndex: 1)
+        //Kaniz - I added my view controller as one of the tabs
+        tabController.setViewController(PostViewController(), atIndex: 1)
+//        tabController.setTitle("Post", atIndex: 1)
+        tabController.setViewController(feednavigationController, atIndex: 0)
+//        tabController.setTitle("Feed", atIndex: 0)
         tabController.setViewController(LoginVC(), atIndex: 2)
-        tabController.setTitle("User", atIndex: 2)
+//        tabController.setTitle("User", atIndex: 2)
 
         // Configure tab bar apparance
         tabController.defaultColor = Stylesheet.Contexts.TabBarController.DefaultColor

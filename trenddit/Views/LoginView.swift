@@ -16,8 +16,8 @@ class LoginView: UIView {
     let logoView = LogoView()
 
     // Text Fields
-    let emailTextfield = TextFieldFactory.generate(type: .email)
-    let passwordTextfield = TextFieldFactory.generate(type: .password)
+    let emailTextfield = ViewFactory.TextField.generate(type: .email)
+    let passwordTextfield = ViewFactory.TextField.generate(type: .password)
 
     // Buttons
     let logInButton: LogInButton = LogInButton()
