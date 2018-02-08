@@ -25,6 +25,8 @@ class SignUpVC: UIViewController, UINavigationControllerDelegate {
         self.modalPresentationStyle = .overCurrentContext
     }
     
+    
+    
     // MARK: - User Actions
     @objc func tapDetected() {
         print("Single Tap on imageview")
@@ -43,7 +45,7 @@ class SignUpVC: UIViewController, UINavigationControllerDelegate {
 
     @objc func signUpPressed() {
         if let (email, password) = validSignUpText(view: signUpView) {
-            authClient.createUser(withEmail: email, password: password, displayName: signUpView.usernameTextField.text)
+            authClient.createUser(withEmail: email, password: password, displayName: signUpView.usernameTextField.text, image: signUpView.profileImageView.image)
         }
     }
 

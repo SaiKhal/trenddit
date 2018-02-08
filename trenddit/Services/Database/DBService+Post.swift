@@ -11,21 +11,21 @@ import UIKit
 
 extension DBService {
     public func addPost(title: String, category: String, image: UIImage) {
-        let childByAutoId = DBService.manager.getPosts().childByAutoId()
         let dateCreated = ISO8601DateFormatter().string(from: Date())
         guard let userId = AuthClient.currentUser?.uid else { fatalError("uid is nil")}
         guard let displayName = AuthClient.currentUser?.displayName else { fatalError("displayName is nil") }
         
+        let childByAutoId = DBService.manager.getPosts().child(userId).childByAutoId()
         childByAutoId.setValue(["postID"         : childByAutoId.key,
-                                "userId"        : userId,
+                                "userID"        : userId,
                                 "title"         : title,
                                 "creator"       : displayName,
                                 "category"      : category,
+                                "dateCreated"   : dateCreated,
                                 "upvotes"       : 0,
                                 "downvotes"     : 0,
                                 "totalVotes"    : 0,
-                                "flagged"       : false,
-                                "imageUrl"      : ""]) { (error, dbRef) in
+                                "flagged"       : false]) { (error, dbRef) in
                                     if let error = error {
                                         print("addJob error: \(error)")
                                     } else {

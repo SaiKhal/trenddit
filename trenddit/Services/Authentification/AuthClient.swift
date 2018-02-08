@@ -25,24 +25,32 @@ class AuthClient: NSObject {
         }
     }
     
-    func createUser(withEmail: String, password: String, displayName: String?) {
+    func createUser(withEmail: String, password: String, displayName: String?, image: UIImage?) {
         Auth.auth().createUser(withEmail: withEmail, password: password) { [weak self] (user, error) in
             if let error = error {
                 self?.delegate.handle(error: error)
             }
             guard let user = user else { return }
-            if let displayName = displayName {
-                let changeRequest = user.createProfileChangeRequest()
-                changeRequest.displayName = displayName
-                changeRequest.commitChanges(completion: { error in
-                    if let error = error {
-                        print(error.localizedDescription)
-                        return
-                    }
-                    print("Added displayName: \(displayName) to user: \(user.email ?? "No email")")
+            let changeRequest = user.createProfileChangeRequest()
+            guard let displayName = displayName else { return }
+            
+            if let profileImage = image {
+                StorageService.manager.storeImage(image: profileImage, userId: user.uid, completion: { (imageURL) in
+                    changeRequest.photoURL = imageURL!
+                    changeRequest.displayName = displayName
+                    changeRequest.commitChanges(completion: { error in
+                        if let error = error {
+                            print(error.localizedDescription)
+                            return
+                        }
+                        self?.delegate.didCreateUser?(user: user)
+                        print("Added displayName: \(displayName) & photoURL \(AuthClient.currentUser?.photoURL?.absoluteString ?? "") to user: \(user.email ?? "No email")")
+                    })
                 })
-                self?.delegate.didCreateUser?(user: user)
-            } 
+            }
+            
+            
+            
         }
     }
     

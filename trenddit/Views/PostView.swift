@@ -147,7 +147,7 @@ class PostView: UIView {
         createPostTF.snp.makeConstraints{(make) in
             make.top.equalTo(snp.top).offset(130)
             make.width.equalTo(self.snp.width)
-            make.height.width.equalTo(safeAreaLayoutGuide).dividedBy(14)
+            make.height.equalTo(safeAreaLayoutGuide).dividedBy(14)
        }
     }
     

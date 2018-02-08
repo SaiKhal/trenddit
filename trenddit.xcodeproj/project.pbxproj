@@ -46,6 +46,7 @@
 		C49220DF202BA8D3003C2A19 /* DBService+Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49220DE202BA8D3003C2A19 /* DBService+Post.swift */; };
 		C49220E1202BD406003C2A19 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49220E0202BD406003C2A19 /* StorageService.swift */; };
 		C49220E3202BD44B003C2A19 /* StorageService+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49220E2202BD44B003C2A19 /* StorageService+Image.swift */; };
+		C49220E5202BFF1D003C2A19 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49220E4202BFF1D003C2A19 /* Profile.swift */; };
 		C4A056BE20212D1400D8E589 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A056BD20212D1400D8E589 /* CustomTextField.swift */; };
 		C4A056C320212FB700D8E589 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A056C220212FB700D8E589 /* Post.swift */; };
 		C4A056C52021517600D8E589 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A056C42021517600D8E589 /* SignUpVC.swift */; };
@@ -105,6 +106,7 @@
 		C49220DE202BA8D3003C2A19 /* DBService+Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DBService+Post.swift"; sourceTree = "<group>"; };
 		C49220E0202BD406003C2A19 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		C49220E2202BD44B003C2A19 /* StorageService+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StorageService+Image.swift"; sourceTree = "<group>"; };
+		C49220E4202BFF1D003C2A19 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		C4A056BD20212D1400D8E589 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		C4A056C220212FB700D8E589 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		C4A056C42021517600D8E589 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				C4A056C220212FB700D8E589 /* Post.swift */,
+				C49220E4202BFF1D003C2A19 /* Profile.swift */,
 				87F81CD320261BCF00A16EF6 /* Feed.swift */,
 				87F81CD520261D4700A16EF6 /* Category.swift */,
 			);
@@ -453,6 +456,7 @@
 			files = (
 				C46E712F2020FE8000AA0226 /* AZTabBarController.swift in Sources */,
 				C49220E3202BD44B003C2A19 /* StorageService+Image.swift in Sources */,
+				C49220E5202BFF1D003C2A19 /* Profile.swift in Sources */,
 				C49220E1202BD406003C2A19 /* StorageService.swift in Sources */,
 				87F81CD420261BCF00A16EF6 /* Feed.swift in Sources */,
 				8773868D20229BD100056F69 /* FeedView.swift in Sources */,

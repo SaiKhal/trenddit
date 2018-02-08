@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 extension DBService {
     public func addUser() {
@@ -20,6 +21,7 @@ extension DBService {
             if let error = error {
                 print("error adding user with error: \(error)")
             } else {
+
                 print("added user successfully @ dbRef: \(dbRef)")
             }
         }
