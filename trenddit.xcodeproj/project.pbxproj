@@ -25,6 +25,8 @@
 		931800CB2023B29B00AC8CBA /* CommentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931800CA2023B29B00AC8CBA /* CommentListView.swift */; };
 		931800CD2023B2D000AC8CBA /* ZoomedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931800CC2023B2D000AC8CBA /* ZoomedImageView.swift */; };
 		931800CF2023B2ED00AC8CBA /* CommentInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931800CE2023B2ED00AC8CBA /* CommentInputView.swift */; };
+		9373CA652028CA0800878052 /* CommentListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9373CA642028CA0800878052 /* CommentListCell.swift */; };
+		9373CA672028CA6E00878052 /* DisplayPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9373CA662028CA6E00878052 /* DisplayPostCell.swift */; };
 		C4200BFC202123900025058D /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4200BFB202123900025058D /* SignUpView.swift */; };
 		C44EAF7F2021584C00E6A7D9 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44EAF7E2021584C00E6A7D9 /* UIColorExt.swift */; };
 		C44EAF81202158FD00E6A7D9 /* Stylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44EAF80202158FD00E6A7D9 /* Stylesheet.swift */; };
@@ -48,7 +50,6 @@
 		C49220E3202BD44B003C2A19 /* StorageService+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49220E2202BD44B003C2A19 /* StorageService+Image.swift */; };
 		C49220E5202BFF1D003C2A19 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49220E4202BFF1D003C2A19 /* Profile.swift */; };
 		C4A056BE20212D1400D8E589 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A056BD20212D1400D8E589 /* CustomTextField.swift */; };
-		C4A056C320212FB700D8E589 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A056C220212FB700D8E589 /* Post.swift */; };
 		C4A056C52021517600D8E589 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A056C42021517600D8E589 /* SignUpVC.swift */; };
 		C4A056C7202152CC00D8E589 /* AuthDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A056C6202152CC00D8E589 /* AuthDelegate.swift */; };
 		C4A41C152027937A00BACF24 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A41C142027937A00BACF24 /* ProfileVC.swift */; };
@@ -83,6 +84,8 @@
 		931800CA2023B29B00AC8CBA /* CommentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListView.swift; sourceTree = "<group>"; };
 		931800CC2023B2D000AC8CBA /* ZoomedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomedImageView.swift; sourceTree = "<group>"; };
 		931800CE2023B2ED00AC8CBA /* CommentInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInputView.swift; sourceTree = "<group>"; };
+		9373CA642028CA0800878052 /* CommentListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListCell.swift; sourceTree = "<group>"; };
+		9373CA662028CA6E00878052 /* DisplayPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayPostCell.swift; sourceTree = "<group>"; };
 		A483F771524432B67E1FA549 /* Pods_trenddit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_trenddit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8233DF17766892C05415FA3 /* Pods-trenddit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trenddit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-trenddit/Pods-trenddit.debug.xcconfig"; sourceTree = "<group>"; };
 		C316B0E80377A318D0895EFB /* Pods-trenddit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trenddit.release.xcconfig"; path = "Pods/Target Support Files/Pods-trenddit/Pods-trenddit.release.xcconfig"; sourceTree = "<group>"; };
@@ -108,7 +111,6 @@
 		C49220E2202BD44B003C2A19 /* StorageService+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StorageService+Image.swift"; sourceTree = "<group>"; };
 		C49220E4202BFF1D003C2A19 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		C4A056BD20212D1400D8E589 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
-		C4A056C220212FB700D8E589 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		C4A056C42021517600D8E589 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		C4A056C6202152CC00D8E589 /* AuthDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDelegate.swift; sourceTree = "<group>"; };
 		C4A41C142027937A00BACF24 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
@@ -251,7 +253,6 @@
 		C4C8B7152020434100FD2B3B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C46E71362021107A00AA0226 /* CustomTabBarVC.swift */,
 				81A165FB201FE7DA00EE8CA0 /* LoginVC.swift */,
 				C4A41C142027937A00BACF24 /* ProfileVC.swift */,
 				C4A056C42021517600D8E589 /* SignUpVC.swift */,
@@ -280,6 +281,9 @@
 				87BEDC392022C4BA00DD6561 /* CategoryCollectionViewCell.swift */,
 				C4A41C16202793BB00BACF24 /* ProfileView.swift */,
 				8773868A20229BA500056F69 /* FeedCollectionViewCell.swift */,
+				9373CA642028CA0800878052 /* CommentListCell.swift */,
+				9373CA662028CA6E00878052 /* DisplayPostCell.swift */,
+				C46E71362021107A00AA0226 /* CustomTabBarVC.swift */,
 				8773868C20229BD100056F69 /* FeedView.swift */,
 				C4C8B7102020098700FD2B3B /* LoginView.swift */,
 				C4200BFB202123900025058D /* SignUpView.swift */,
@@ -454,6 +458,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9373CA672028CA6E00878052 /* DisplayPostCell.swift in Sources */,
 				C46E712F2020FE8000AA0226 /* AZTabBarController.swift in Sources */,
 				C49220E3202BD44B003C2A19 /* StorageService+Image.swift in Sources */,
 				C49220E5202BFF1D003C2A19 /* Profile.swift in Sources */,
@@ -487,6 +492,7 @@
 				C46E712E2020FE8000AA0226 /* AZTabBarButtonDelegate.swift in Sources */,
 				81A165FA201FE7DA00EE8CA0 /* AppDelegate.swift in Sources */,
 				C4DD4F1A2020C7F700C0FBE0 /* Constants.swift in Sources */,
+				9373CA652028CA0800878052 /* CommentListCell.swift in Sources */,
 				C4200BFC202123900025058D /* SignUpView.swift in Sources */,
 				C4A41C17202793BB00BACF24 /* ProfileView.swift in Sources */,
 				81028A9020238880005DDE4D /* PostViewController.swift in Sources */,
@@ -500,7 +506,6 @@
 				C49220DD202BA7A0003C2A19 /* DBService+User.swift in Sources */,
 				C48438DE2021200A00E9909F /* SignUpButton.swift in Sources */,
 				81CC731B20225D4400B98E3F /* PostView.swift in Sources */,
-				C4A056C320212FB700D8E589 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
