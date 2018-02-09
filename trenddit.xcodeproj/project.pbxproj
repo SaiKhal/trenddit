@@ -168,8 +168,8 @@
 			isa = PBXGroup;
 			children = (
 				81A165F9201FE7DA00EE8CA0 /* AppDelegate.swift */,
-				C4C8B7152020434100FD2B3B /* Controllers */,
 				C4C8B7192020437700FD2B3B /* Services */,
+				C4C8B7152020434100FD2B3B /* Controllers */,
 				C4C8B7182020436D00FD2B3B /* Views */,
 				C4A056C120212FAF00D8E589 /* Models */,
 				C4C8B7162020434A00FD2B3B /* Supporting Files */,
@@ -283,10 +283,10 @@
 				87BEDC392022C4BA00DD6561 /* CategoryCollectionViewCell.swift */,
 				C4A41C16202793BB00BACF24 /* ProfileView.swift */,
 				8773868A20229BA500056F69 /* FeedCollectionViewCell.swift */,
+				8773868C20229BD100056F69 /* FeedView.swift */,
 				9373CA642028CA0800878052 /* CommentListCell.swift */,
 				9373CA662028CA6E00878052 /* DisplayPostCell.swift */,
 				C46E71362021107A00AA0226 /* CustomTabBarVC.swift */,
-				8773868C20229BD100056F69 /* FeedView.swift */,
 				C4C8B7102020098700FD2B3B /* LoginView.swift */,
 				C4200BFB202123900025058D /* SignUpView.swift */,
 				81CC731A20225D4400B98E3F /* PostView.swift */,

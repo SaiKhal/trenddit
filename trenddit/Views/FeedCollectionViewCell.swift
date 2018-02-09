@@ -9,25 +9,26 @@
 import UIKit
 import SnapKit
 
+//protocol FeedCellDelegate: class {
+//    func upVote()
+//}
+//
+//// set extension
+//extension <#ViewControllerName#>: FeedCellDelegate {
+//    func upVote() {
+//    }
+//}
+//
+//// set delegate
+//FeedCellDelegate.delegate = self
+//
+//// set method of the contract
+//func upVote(_ post: Post) {
+//    <#code block#>
+//}
+//
+
 class FeedCollectionViewCell: UICollectionViewCell {
-    
-    // TODO: Add button targets. Complete configure cell function
-    // TODO: segues:
-    // profileImage > Profile COntroller
-    // userName > Profile Controller
-    // category > categories
-    // category cells > categories
-    // option button > option menu
-    // post header > detail post
-    // feedImage > detail post
-    // commentImage > detail post
-    // share button > share options
-    
-    
-    // TODO: make category cells rounded
-    // make Post header > 1 px
-    // tabBar set to white
-    // navbar implementation
     
     // MARK: - Outlets
     lazy var profileImageView: UIImageView = {
@@ -106,12 +107,14 @@ class FeedCollectionViewCell: UICollectionViewCell {
         label.text = "13.1k"
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 9, weight: .regular)
+        
         return label
     }()
     
     lazy var downVoteButton: UIButton = {
         let button = UIButton(type: UIButtonType.custom) as UIButton
         button.setImage(#imageLiteral(resourceName: "down-arrow"), for: .normal)
+//        button.addTarget(self, action: #selector(delegate.), for: .touchUpInside)
         return button
     }()
     
@@ -152,6 +155,9 @@ class FeedCollectionViewCell: UICollectionViewCell {
         addSubviews()
         setupViews()
     }
+    
+    //Delegate
+//    weak var delegate = FeedCellDelegate?
     
     // required. Storyboard
     required init?(coder aDecoder: NSCoder) {
@@ -345,14 +351,14 @@ class FeedCollectionViewCell: UICollectionViewCell {
     }
     
         // function for configuring cell from viewController
-        public func configureFeedCell(with details: Feed) {
-//            profileImageView.image = details.userID.profileImage
-            userNameButton.titleLabel?.text = details.userID.userName
-            postCategoryButton.titleLabel?.text = details.userID.postID.category
-            titleButton.titleLabel?.text = details.userID.postID.category
-//            postImageView.image = details.userID.postID.postImage
-            totalVotesLabel.text = details.userID.postID.totalVotes
-            totalRepliesLabel.text = String(details.userID.postID.totalComments)
+        public func configureFeedCell(with postInfo: Post) {
+            postImageView.kf.setImage(with: URL(string: postInfo.image!), placeholder: #imageLiteral(resourceName: "feedPlaceHolder"))
+            userNameButton.setTitle(postInfo.creator, for: .normal)
+            profileImageView.kf.setImage(with: AuthClient.currentUser?.photoURL)
+            titleButton.setTitle(postInfo.title, for: .normal)
+            postCategoryButton.setTitle(postInfo.category.reduce("", {$0 + $1 + " "}), for: .normal)
+            totalVotesLabel.text = String(postInfo.totalVotes)
+            totalRepliesLabel.text = String(postInfo.comments?.count ?? 0)
         }
     
 }

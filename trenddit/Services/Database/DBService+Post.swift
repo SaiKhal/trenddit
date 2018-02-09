@@ -41,5 +41,19 @@ extension DBService {
                                     }
         }
     }
+    
+    //storage plu simage
+    //child user id and another child
+    public func incrementTotalVotes(post: Post) {
+        let postRef = DBService.manager.getPosts()
+        let incrementVote = post.totalVotes + 1
+        postRef.updateChildValues(["totalVotes": incrementVote] )
+    }
+    
+    public func decrementTotalVotes(post: Post) {
+        let postRef = DBService.manager.getPosts()
+        let decrementVote = post.totalVotes  - 1
+        postRef.updateChildValues(["totalVotes": decrementVote] )
+    }
 }
 
