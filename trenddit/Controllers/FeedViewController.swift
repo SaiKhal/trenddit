@@ -42,7 +42,7 @@ class FeedViewController: UIViewController {
     
     func getPost() {
         guard let userId = AuthClient.currentUser?.uid else { return }
-        DBService.manager.getPosts().child(userId).observe(.value) { (snapshot) in
+        DBService.manager.getPosts().observe(.value) { (snapshot) in
             var posts = [Post]()
             for child in snapshot.children.reversed() {
                 let dataSnapshot = child as! DataSnapshot

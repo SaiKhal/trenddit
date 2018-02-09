@@ -61,13 +61,13 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     }
     
     public func toggleColor() {
-        switch categoryImageView.backgroundColor! {
-        case Stylesheet.Colors.UltraLightGray:
-            categoryImageView.backgroundColor = Stylesheet.Colors.Blue
+        switch categoryLabel.backgroundColor! {
+        case Stylesheet.Colors.White:
+            categoryLabel.backgroundColor = Stylesheet.Colors.Blue
         case Stylesheet.Colors.Blue:
-            categoryImageView.backgroundColor = Stylesheet.Colors.UltraLightGray
+            categoryLabel.backgroundColor = Stylesheet.Colors.White
         default:
-            categoryImageView.backgroundColor = Stylesheet.Colors.UltraLightGray
+            categoryLabel.backgroundColor = Stylesheet.Colors.White
         }
     }
     

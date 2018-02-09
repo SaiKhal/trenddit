@@ -14,12 +14,14 @@ extension DBService {
         let dateCreated = ISO8601DateFormatter().string(from: Date())
         guard let userId = AuthClient.currentUser?.uid else { fatalError("uid is nil")}
         guard let displayName = AuthClient.currentUser?.displayName else { fatalError("displayName is nil") }
+        guard let currentUser = AuthClient.currentUser else { fatalError("not logged in")}
         
-        let childByAutoId = DBService.manager.getPosts().child(userId).childByAutoId()
+        let childByAutoId = DBService.manager.getPosts().childByAutoId()
         childByAutoId.setValue(["postID"         : childByAutoId.key,
                                 "userID"        : userId,
                                 "title"         : title,
                                 "creator"       : displayName,
+                                "userPhotoUrl"  : currentUser.photoURL?.absoluteString ?? "",
                                 "category"      : Array(category),
                                 "dateCreated"   : dateCreated,
                                 "upvotes"       : 0,
