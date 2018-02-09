@@ -334,7 +334,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
             userNameButton.setTitle(postInfo.creator, for: .normal)
             profileImageView.kf.setImage(with: AuthClient.currentUser?.photoURL)
             titleButton.setTitle(postInfo.title, for: .normal)
-            postCategoryButton.setTitle(postInfo.category, for: .normal)
+            postCategoryButton.setTitle(postInfo.category.reduce("", {$0 + $1 + " "}), for: .normal)
             totalVotesLabel.text = String(postInfo.totalVotes)
             totalRepliesLabel.text = String(postInfo.comments?.count ?? 0)
         }
