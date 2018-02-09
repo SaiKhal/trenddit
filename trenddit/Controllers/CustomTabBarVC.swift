@@ -36,6 +36,8 @@ class CustomTabBarVC: UIViewController {
         
         let feedViewController = FeedViewController()
         let feednavigationController = UINavigationController(rootViewController: feedViewController)
+        
+        let profileNavController = UINavigationController(rootViewController: ProfileVC())
 
         // Set controllers inside tab bar
         //Kaniz - I added my view controller as one of the tabs
@@ -43,7 +45,7 @@ class CustomTabBarVC: UIViewController {
 //        tabController.setTitle("Post", atIndex: 1)
         tabController.setViewController(feednavigationController, atIndex: 0)
 //        tabController.setTitle("Feed", atIndex: 0)
-        tabController.setViewController(LoginVC(), atIndex: 2)
+        tabController.setViewController(profileNavController, atIndex: 2)
 //        tabController.setTitle("User", atIndex: 2)
         
         if let image = userProfileImage {
