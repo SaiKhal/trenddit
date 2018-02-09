@@ -10,14 +10,14 @@ import UIKit
 import SnapKit
 
 protocol FeedCellDelegate: class {
-    func upVotePressed()
-    func downVotePressed()
+    func upVotePressed(post: Post)
+    func downVotePressed(post: Post)
     func userNamePressed()
     func categoryPressed()
     func titlePressed()
     func profileImagePressed()
     func postImagePressed()
-    func commentPressed()
+    func commentPressed(post: Post)
     func optionsPressed()
     func shareButtonPressed()
     func flagUser()
@@ -25,6 +25,8 @@ protocol FeedCellDelegate: class {
 }
 
 class FeedCollectionViewCell: UICollectionViewCell {
+    
+    var post: Post!
     
     // MARK: - Outlets
     lazy var profileImageView: UIImageView = {
@@ -230,15 +232,15 @@ class FeedCollectionViewCell: UICollectionViewCell {
     }
     
     @objc private func upVoteButtonPressed() {
-        delegate?.upVotePressed()
+        delegate?.upVotePressed(post: post)
     }
     
     @objc private func downVoteButtonPressed() {
-        delegate?.downVotePressed()
+        delegate?.downVotePressed(post: post)
     }
     
     @objc private func replyToPostButtonPressed() {
-        delegate?.commentPressed()
+        delegate?.commentPressed(post: post)
 //        delegate.route(destination: CommentListVC(post: post))
 //        print("test")
 

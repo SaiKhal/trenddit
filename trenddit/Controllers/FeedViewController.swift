@@ -107,6 +107,7 @@ extension FeedViewController: UICollectionViewDataSource  {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: feedView.postCellID, for: indexPath) as! FeedCollectionViewCell
             let post = posts[indexPath.item]
             cell.delegate = self
+            cell.post = post
             cell.configureFeedCell(with: post)
 //            cell.delegate = self
 //            cell.post = post
@@ -127,12 +128,12 @@ extension FeedViewController: UICollectionViewDelegate{
 
 
 extension FeedViewController: FeedCellDelegate {
-    func upVotePressed() {
-        
+    func upVotePressed(post: Post) {
+        DBService.manager.incrementTotalVotes(post: post)
     }
     
-    func downVotePressed() {
-        
+    func downVotePressed(post: Post) {
+        DBService.manager.decrementTotalVotes(post: post)
     }
     
     func userNamePressed() {
@@ -159,8 +160,8 @@ extension FeedViewController: FeedCellDelegate {
         navigationController?.pushViewController(zoomedImageVC, animated: true)
     }
     
-    func commentPressed() {
-        let commentListViewController = CommentListVC()
+    func commentPressed(post: Post) {
+        let commentListViewController = CommentListVC(post: post)
         navigationController?.pushViewController(commentListViewController, animated: true)
     }
     

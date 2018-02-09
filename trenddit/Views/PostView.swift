@@ -132,7 +132,7 @@ class PostView: UIView {
     private func setTextField() {
         addSubview(createPostTF)
         createPostTF.snp.makeConstraints{(make) in
-            make.top.equalTo(profileImageView.snp.bottom).offset(20)
+            make.top.equalTo(profileImageView.snp.bottom).offset(10)
             make.width.equalTo(self.snp.width).multipliedBy(0.9)
             make.height.equalTo(safeAreaLayoutGuide).dividedBy(14)
             make.centerX.equalTo(self.snp.centerX)
@@ -142,7 +142,7 @@ class PostView: UIView {
     private func setAddImageButton() {
         addSubview(addImgButton)
         addImgButton.snp.makeConstraints{(make) in
-            make.top.equalTo(createPostTF.snp.bottom).offset(10)
+            make.top.equalTo(createPostTF.snp.bottom)
             make.size.equalTo(self.snp.width).multipliedBy(0.9)
             make.centerX.equalTo(snp.centerX)
         }
@@ -151,7 +151,7 @@ class PostView: UIView {
     private func setPostButton() {
         addSubview(postButton)
         postButton.snp.makeConstraints{(make) in
-            make.top.equalTo(addImgButton.snp.bottom).offset(10)
+            make.top.equalTo(addImgButton.snp.bottom)
             make.width.equalTo(self.snp.width).multipliedBy(0.8)
             make.height.equalTo(self.snp.height).multipliedBy(0.05)//0.1
             make.centerX.equalTo(self.snp.centerX)

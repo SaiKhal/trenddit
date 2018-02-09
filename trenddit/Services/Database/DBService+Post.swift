@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import FirebaseDatabase
 
 extension DBService {
     public func addPost(title: String, category: Set<String>, image: UIImage) {
@@ -47,15 +48,20 @@ extension DBService {
     //storage plu simage
     //child user id and another child
     public func incrementTotalVotes(post: Post) {
-        let postRef = DBService.manager.getPosts()
+        let postRef = DBService.manager.getPosts().child(post.postID)
         let incrementVote = post.totalVotes + 1
+        let newUpvoteValue = post.upvotes + 1
         postRef.updateChildValues(["totalVotes": incrementVote] )
+        postRef.updateChildValues(["upvotes": newUpvoteValue] )
+        print("post \(post.postID) has been upvoted. New Vote value: \(post.upvotes)")
     }
     
     public func decrementTotalVotes(post: Post) {
-        let postRef = DBService.manager.getPosts()
+        let postRef = DBService.manager.getPosts().child(post.postID)
         let decrementVote = post.totalVotes  - 1
+        let newDownvoteValue = post.downvotes - 1
         postRef.updateChildValues(["totalVotes": decrementVote] )
+        postRef.updateChildValues(["downvotes": newDownvoteValue] )
     }
 }
 
