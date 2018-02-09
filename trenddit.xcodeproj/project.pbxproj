@@ -29,6 +29,8 @@
 		9373CA672028CA6E00878052 /* DisplayPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9373CA662028CA6E00878052 /* DisplayPostCell.swift */; };
 		C4200BFC202123900025058D /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4200BFB202123900025058D /* SignUpView.swift */; };
 		C4287479202D4B3C00C90AC8 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4287478202D4B3C00C90AC8 /* Router.swift */; };
+		C428747B202D545500C90AC8 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C428747A202D545500C90AC8 /* Comment.swift */; };
+		C428747D202D548800C90AC8 /* DBService+Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C428747C202D548800C90AC8 /* DBService+Comment.swift */; };
 		C44EAF7F2021584C00E6A7D9 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44EAF7E2021584C00E6A7D9 /* UIColorExt.swift */; };
 		C44EAF81202158FD00E6A7D9 /* Stylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44EAF80202158FD00E6A7D9 /* Stylesheet.swift */; };
 		C44EAF83202166A800E6A7D9 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44EAF82202166A800E6A7D9 /* LogoView.swift */; };
@@ -93,6 +95,8 @@
 		C316B0E80377A318D0895EFB /* Pods-trenddit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trenddit.release.xcconfig"; path = "Pods/Target Support Files/Pods-trenddit/Pods-trenddit.release.xcconfig"; sourceTree = "<group>"; };
 		C4200BFB202123900025058D /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		C4287478202D4B3C00C90AC8 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		C428747A202D545500C90AC8 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		C428747C202D548800C90AC8 /* DBService+Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DBService+Comment.swift"; sourceTree = "<group>"; };
 		C44EAF7E2021584C00E6A7D9 /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
 		C44EAF80202158FD00E6A7D9 /* Stylesheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stylesheet.swift; sourceTree = "<group>"; };
 		C44EAF82202166A800E6A7D9 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
@@ -230,6 +234,7 @@
 				C49220D9202BA710003C2A19 /* DBService.swift */,
 				C49220DC202BA7A0003C2A19 /* DBService+User.swift */,
 				C49220DE202BA8D3003C2A19 /* DBService+Post.swift */,
+				C428747C202D548800C90AC8 /* DBService+Comment.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -239,6 +244,7 @@
 			children = (
 				C4C1ED35202CE4DB0008E64C /* Post.swift */,
 				C49220E4202BFF1D003C2A19 /* Profile.swift */,
+				C428747A202D545500C90AC8 /* Comment.swift */,
 				87F81CD320261BCF00A16EF6 /* Feed.swift */,
 				87F81CD520261D4700A16EF6 /* Category.swift */,
 			);
@@ -474,6 +480,7 @@
 				8773868D20229BD100056F69 /* FeedView.swift in Sources */,
 				C4C8B7112020098700FD2B3B /* LoginView.swift in Sources */,
 				931800C92023B26900AC8CBA /* CommentListVC.swift in Sources */,
+				C428747D202D548800C90AC8 /* DBService+Comment.swift in Sources */,
 				C4A056BE20212D1400D8E589 /* CustomTextField.swift in Sources */,
 				C46E71372021107A00AA0226 /* CustomTabBarVC.swift in Sources */,
 				87BEDC3A2022C4BA00DD6561 /* CategoryCollectionViewCell.swift in Sources */,
@@ -485,6 +492,7 @@
 				C44EAF81202158FD00E6A7D9 /* Stylesheet.swift in Sources */,
 				931800CB2023B29B00AC8CBA /* CommentListView.swift in Sources */,
 				C46E71312020FE8000AA0226 /* AZTabBarDelegate.swift in Sources */,
+				C428747B202D545500C90AC8 /* Comment.swift in Sources */,
 				81A165FC201FE7DA00EE8CA0 /* LoginVC.swift in Sources */,
 				C4A056C52021517600D8E589 /* SignUpVC.swift in Sources */,
 				C4C8F7F22022C02700F4288A /* CallToActionView.swift in Sources */,

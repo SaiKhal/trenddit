@@ -9,9 +9,6 @@
 import UIKit
 
 protocol Router {
-    func route(destination: UIViewController)
+    func route(destination: UIViewController?)
 }
 
-extension Router {
-    
-}

@@ -9,7 +9,13 @@
 import UIKit
 
 class DisplayPostCell: UITableViewCell {
+    
+    var delegate: Router!
 
+    @objc func dismissVC() {
+        delegate.route(destination: nil)
+    }
+    
     lazy var userNameLabel: UILabel = {
         var label = UILabel()
         label.text = "catterific • catLover89 • 3hr"
@@ -20,6 +26,7 @@ class DisplayPostCell: UITableViewCell {
     lazy var reportButton: UIButton = {
         var btn = UIButton()
         btn.setImage(#imageLiteral(resourceName: "more"), for: .normal)
+        btn.addTarget(self, action: #selector(dismissVC), for: .touchUpInside)
         return btn
     }()
     

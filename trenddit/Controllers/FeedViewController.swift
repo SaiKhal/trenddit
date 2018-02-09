@@ -126,8 +126,10 @@ extension FeedViewController: UICollectionViewDelegate{
 
 
 extension FeedViewController: Router {
-    func route(destination: UIViewController) {
-        present(destination, animated: true, completion: nil)
+    func route(destination: UIViewController?) {
+        if let destination = destination {
+            present(destination, animated: true, completion: nil)
+        }
     }
 }
 
