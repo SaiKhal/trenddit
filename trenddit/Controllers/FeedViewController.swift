@@ -44,7 +44,7 @@ class FeedViewController: UIViewController {
         guard let userId = AuthClient.currentUser?.uid else { return }
         DBService.manager.getPosts().child(userId).observe(.value) { (snapshot) in
             var posts = [Post]()
-            for child in snapshot.children {
+            for child in snapshot.children.reversed() {
                 let dataSnapshot = child as! DataSnapshot
                 if let dict = dataSnapshot.value as? [String : Any] {
                     let post = Post.init(postDict: dict)
@@ -67,7 +67,11 @@ class FeedViewController: UIViewController {
     
     // TODO: complete camera function
     @objc func cameraButtonClicked() {
-        print("camera button pressed")
+        let grandParent = parent?.parent
+        if grandParent is AZTabBarController {
+            let tabController = grandParent as! AZTabBarController
+            tabController.setIndex(1)
+        }
     }
     
     private func addSubView() {

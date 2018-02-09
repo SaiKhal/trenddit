@@ -86,6 +86,7 @@ extension SignUpVC: AuthDelegate {
     }
     
     func didCreateUser(user: User) {
+        present(CustomTabBarVC(user: user), animated: true, completion: nil)
         print("\(user.email ?? "NoEmail?"): Created")
     }
 

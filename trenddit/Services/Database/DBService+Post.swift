@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 extension DBService {
-    public func addPost(title: String, category: String, image: UIImage) {
+    public func addPost(title: String, category: Set<String>, image: UIImage) {
         let dateCreated = ISO8601DateFormatter().string(from: Date())
         guard let userId = AuthClient.currentUser?.uid else { fatalError("uid is nil")}
         guard let displayName = AuthClient.currentUser?.displayName else { fatalError("displayName is nil") }
@@ -20,7 +20,7 @@ extension DBService {
                                 "userID"        : userId,
                                 "title"         : title,
                                 "creator"       : displayName,
-                                "category"      : category,
+                                "category"      : Array(category),
                                 "dateCreated"   : dateCreated,
                                 "upvotes"       : 0,
                                 "downvotes"     : 0,

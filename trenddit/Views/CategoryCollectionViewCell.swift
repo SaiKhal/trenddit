@@ -22,6 +22,18 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
+    let categoryImageView: UIImageView = {
+        var imageView = UIImageView()
+        imageView.backgroundColor = Stylesheet.Colors.UltraLightGray
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.layer.borderColor = UIColor.white.cgColor
+        imageView.layer.borderWidth = 2.0
+        imageView.layer.cornerRadius = imageView.bounds.width/2.0
+        return imageView
+    }()
+    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubViews()
@@ -45,6 +57,23 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     
     public override func layoutSubviews() {
         super.layoutSubviews()
+        self.setCircularImageView()
+    }
+    
+    public func toggleColor() {
+        switch categoryImageView.backgroundColor! {
+        case Stylesheet.Colors.UltraLightGray:
+            categoryImageView.backgroundColor = Stylesheet.Colors.Blue
+        case Stylesheet.Colors.Blue:
+            categoryImageView.backgroundColor = Stylesheet.Colors.UltraLightGray
+        default:
+            categoryImageView.backgroundColor = Stylesheet.Colors.UltraLightGray
+        }
+    }
+    
+    private func setCircularImageView() {
+        self.categoryImageView.layer.cornerRadius = CGFloat(roundf(Float(self.categoryImageView.frame.size.width / 2)))
+        
     }
     
     private func setupViews(){
@@ -67,7 +96,7 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     
     // configure cell from viewController
     public func configureCategoryCell(with postInfo: Post) {
-        categoryLabel.text = postInfo.category
+        categoryLabel.text = postInfo.category.reduce("", {$0 + $1 + " "})
         }
     
 }
