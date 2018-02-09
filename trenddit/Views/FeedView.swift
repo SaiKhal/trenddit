@@ -97,6 +97,7 @@ class FeedView: UIView {
             make.height.equalTo(self).multipliedBy(0.91)
         }
     }
+    
 }
 
 

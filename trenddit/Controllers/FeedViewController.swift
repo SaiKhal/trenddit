@@ -33,7 +33,7 @@ class FeedViewController: UIViewController {
         addSubView()
         setupView()
         configureNavBar()
-    
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -105,6 +105,7 @@ extension FeedViewController: UICollectionViewDataSource  {
         guard collectionView == self.feedView.categoryCollectionView else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: feedView.postCellID, for: indexPath) as! FeedCollectionViewCell
             let post = posts[indexPath.item]
+            cell.delegate = self
             cell.configureFeedCell(with: post)
             return cell
         }
@@ -121,18 +122,58 @@ extension FeedViewController: UICollectionViewDelegate{
     }
 }
 
-//extension FeedViewController: UICollectionViewDelegateFlowLayout {
-//    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        
-//        guard collectionView == self.feedView.categoryCollectionView else {
-//            //CGSize for feedCollectionView
-//            let sized = CGSize(width: collectionView.frame.size.width , height: collectionView.frame.size.height / 1.85)
-//            return sized
-//        }
-//        //CGSize for categoryCollectionView
-//        let sized = CGSize(width: collectionView.frame.size.width / 5, height: collectionView.frame.size.height )
-//        return sized
-//    }
-//}
-
+extension FeedViewController: FeedCellDelegate {
+    func upVotePressed() {
+        
+    }
+    
+    func downVotePressed() {
+        
+    }
+    
+    func userNamePressed() {
+        
+    }
+    
+    func categoryPressed() {
+        
+    }
+    
+    func titlePressed() {
+        let commentListViewController = CommentListVC()
+        navigationController?.pushViewController(commentListViewController, animated: true)
+    }
+    
+    func profileImagePressed() {
+        let profileViewController = ProfileVC()
+        navigationController?.pushViewController(profileViewController, animated: true)
+    }
+    
+    func postImagePressed() {
+        print("image pressed")
+        let zoomedImageVC = ZoomedImageVC()
+        navigationController?.pushViewController(zoomedImageVC, animated: true)
+    }
+    
+    func commentPressed() {
+        let commentListViewController = CommentListVC()
+        navigationController?.pushViewController(commentListViewController, animated: true)
+    }
+    
+    func optionsPressed() {
+    }
+    
+    func shareButtonPressed() {
+        
+    }
+    
+    func flagUser() {
+        
+    }
+    
+    func flagPost() {
+        
+    }
+    
+    
+}
