@@ -65,6 +65,7 @@
 		C4DD4F1A2020C7F700C0FBE0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8B7172020434A00FD2B3B /* Constants.swift */; };
 		C4DD4F212020CC7500C0FBE0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4DD4F202020CC7500C0FBE0 /* GoogleService-Info.plist */; };
 		CBA68423399D5995FF565856 /* Pods_trenddit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A483F771524432B67E1FA549 /* Pods_trenddit.framework */; };
+		F40B91E7202E11D7008D7042 /* ProfilePostHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40B91E6202E11D7008D7042 /* ProfilePostHistoryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -129,6 +130,7 @@
 		C4C8F7F12022C02700F4288A /* CallToActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallToActionView.swift; sourceTree = "<group>"; };
 		C4C8F7F320236B0A00F4288A /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
 		C4DD4F202020CC7500C0FBE0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F40B91E6202E11D7008D7042 /* ProfilePostHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePostHistoryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 		C428747E202D6B6000C90AC8 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				F40B91E6202E11D7008D7042 /* ProfilePostHistoryCell.swift */,
 				87BEDC392022C4BA00DD6561 /* CategoryCollectionViewCell.swift */,
 				8773868A20229BA500056F69 /* FeedCollectionViewCell.swift */,
 				9373CA642028CA0800878052 /* CommentListCell.swift */,
@@ -512,6 +515,7 @@
 				C49220DA202BA710003C2A19 /* DBService.swift in Sources */,
 				C49220DF202BA8D3003C2A19 /* DBService+Post.swift in Sources */,
 				C46E712D2020FE8000AA0226 /* AZTabBarButton.swift in Sources */,
+				F40B91E7202E11D7008D7042 /* ProfilePostHistoryCell.swift in Sources */,
 				C46E712E2020FE8000AA0226 /* AZTabBarButtonDelegate.swift in Sources */,
 				81A165FA201FE7DA00EE8CA0 /* AppDelegate.swift in Sources */,
 				C4DD4F1A2020C7F700C0FBE0 /* Constants.swift in Sources */,
