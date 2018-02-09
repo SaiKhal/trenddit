@@ -33,7 +33,7 @@ class DisplayPostCell: UITableViewCell {
     //Center: Image/Video
     lazy var postImage: UIImageView = {
         var img = UIImageView()
-        img.image = #imageLiteral(resourceName: "user")
+        img.image = #imageLiteral(resourceName: "feedPlaceHolder")
         img.backgroundColor = .black
         img.contentMode = .scaleAspectFit
         return img
