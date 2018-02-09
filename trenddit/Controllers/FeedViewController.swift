@@ -89,6 +89,7 @@ class FeedViewController: UIViewController {
     }
     
     private func setupFeedCellFunctions() {
+        
     }
 }
 
@@ -106,6 +107,8 @@ extension FeedViewController: UICollectionViewDataSource  {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: feedView.postCellID, for: indexPath) as! FeedCollectionViewCell
             let post = posts[indexPath.item]
             cell.configureFeedCell(with: post)
+            cell.delegate = self
+            cell.post = post
             return cell
         }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: feedView.categoryCellID, for: indexPath) as! CategoryCollectionViewCell
@@ -118,6 +121,15 @@ extension FeedViewController: UICollectionViewDataSource  {
 extension FeedViewController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+    }
+}
+
+
+extension FeedViewController: Router {
+    func route(destination: UIViewController?) {
+        if let destination = destination {
+            present(destination, animated: true, completion: nil)
+        }
     }
 }
 
