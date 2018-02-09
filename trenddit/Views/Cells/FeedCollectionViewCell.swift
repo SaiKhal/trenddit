@@ -243,7 +243,6 @@ class FeedCollectionViewCell: UICollectionViewCell {
     
     @objc private func replyToPostButtonPressed() {
         delegate?.commentPressed(post: post)
-//        delegate.route(destination: CommentListVC(post: post))
 //        print("test")
 
     }
@@ -299,7 +298,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
     private func setupPostImageView() {
         postImageView.snp.makeConstraints { (make) in
             make.top.equalTo(titleButton.snp.bottom).offset(3)
-            make.size.equalTo(self.snp.size).multipliedBy(0.7)
+            make.size.equalTo(self.snp.size).multipliedBy(0.5)
             make.centerX.equalTo(self)
         }
     }

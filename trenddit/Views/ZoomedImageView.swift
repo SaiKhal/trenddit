@@ -16,7 +16,6 @@ class ZoomedImageView: UIView {
     lazy var dismissButton: UIButton = {
         var btn = UIButton()
         btn.setImage(#imageLiteral(resourceName: "close"), for: .normal)
-        btn.backgroundColor = .white
         return btn
     }()
     

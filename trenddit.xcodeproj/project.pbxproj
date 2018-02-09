@@ -31,6 +31,7 @@
 		C4287479202D4B3C00C90AC8 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4287478202D4B3C00C90AC8 /* Router.swift */; };
 		C428747B202D545500C90AC8 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C428747A202D545500C90AC8 /* Comment.swift */; };
 		C428747D202D548800C90AC8 /* DBService+Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C428747C202D548800C90AC8 /* DBService+Comment.swift */; };
+		C4287494202E267000C90AC8 /* CommentInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4287493202E267000C90AC8 /* CommentInputViewController.swift */; };
 		C44EAF7F2021584C00E6A7D9 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44EAF7E2021584C00E6A7D9 /* UIColorExt.swift */; };
 		C44EAF81202158FD00E6A7D9 /* Stylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44EAF80202158FD00E6A7D9 /* Stylesheet.swift */; };
 		C44EAF83202166A800E6A7D9 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44EAF82202166A800E6A7D9 /* LogoView.swift */; };
@@ -98,6 +99,7 @@
 		C4287478202D4B3C00C90AC8 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		C428747A202D545500C90AC8 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		C428747C202D548800C90AC8 /* DBService+Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DBService+Comment.swift"; sourceTree = "<group>"; };
+		C4287493202E267000C90AC8 /* CommentInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInputViewController.swift; sourceTree = "<group>"; };
 		C44EAF7E2021584C00E6A7D9 /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
 		C44EAF80202158FD00E6A7D9 /* Stylesheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stylesheet.swift; sourceTree = "<group>"; };
 		C44EAF82202166A800E6A7D9 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 				931800C82023B26900AC8CBA /* CommentListVC.swift */,
 				C46E71362021107A00AA0226 /* CustomTabBarVC.swift */,
 				87BEDC352022BD3E00DD6561 /* FeedViewController.swift */,
+				C4287493202E267000C90AC8 /* CommentInputViewController.swift */,
 				81A165FB201FE7DA00EE8CA0 /* LoginVC.swift */,
 				C4A056C42021517600D8E589 /* SignUpVC.swift */,
 				C4A41C142027937A00BACF24 /* ProfileVC.swift */,
@@ -516,6 +519,7 @@
 				C49220DF202BA8D3003C2A19 /* DBService+Post.swift in Sources */,
 				C46E712D2020FE8000AA0226 /* AZTabBarButton.swift in Sources */,
 				F40B91E7202E11D7008D7042 /* ProfilePostHistoryCell.swift in Sources */,
+				C4287494202E267000C90AC8 /* CommentInputViewController.swift in Sources */,
 				C46E712E2020FE8000AA0226 /* AZTabBarButtonDelegate.swift in Sources */,
 				81A165FA201FE7DA00EE8CA0 /* AppDelegate.swift in Sources */,
 				C4DD4F1A2020C7F700C0FBE0 /* Constants.swift in Sources */,

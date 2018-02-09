@@ -161,8 +161,9 @@ extension FeedViewController: FeedCellDelegate {
     }
     
     func commentPressed(post: Post) {
-        let commentListViewController = CommentListVC(post: post)
-        navigationController?.pushViewController(commentListViewController, animated: true)
+        present(CommentListVC(post: post), animated: true, completion: nil)
+//        let commentListViewController = CommentListVC(post: post)
+//        navigationController?.pushViewController(commentListViewController, animated: true)
     }
     
     func optionsPressed() {

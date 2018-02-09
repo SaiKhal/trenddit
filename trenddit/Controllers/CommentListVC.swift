@@ -20,7 +20,6 @@ class CommentListVC: UIViewController{
         }
     }
     
-    
     convenience init(post: Post) {
         self.init()
         self.post = post
@@ -86,18 +85,22 @@ extension CommentListVC: UITableViewDataSource {
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "DisplayPostCell", for: indexPath) as! DisplayPostCell
+            guard let comment = comments?[indexPath.row] else { return cell }
             cell.selectionStyle = .none
             cell.layer.borderColor = UIColor.lightText.cgColor
             cell.layer.borderWidth = 1.0
             cell.layer.cornerRadius = 5
             cell.clipsToBounds = true
             cell.delegate = self
+            cell.userNameLabel.text = comment.creator
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "CommentListCell", for: indexPath) as! CommentListCell
             guard let comment = comments?[indexPath.row] else { return cell }
             cell.selectionStyle = .none
             cell.commentTV.text = comment.commentText
+            cell.userNameLabel.text = comment.creator
+            
             return cell
         }
     }
@@ -113,6 +116,7 @@ extension CommentListVC: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
     //when clicked, display comment input view
+        present(CommentInputViewController(post: post), animated: true, completion: nil)
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
