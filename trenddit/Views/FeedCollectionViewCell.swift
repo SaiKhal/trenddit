@@ -9,25 +9,6 @@
 import UIKit
 import SnapKit
 
-//protocol FeedCellDelegate: class {
-//    func upVote()
-//}
-//
-//// set extension
-//extension <#ViewControllerName#>: FeedCellDelegate {
-//    func upVote() {
-//    }
-//}
-//
-//// set delegate
-//FeedCellDelegate.delegate = self
-//
-//// set method of the contract
-//func upVote(_ post: Post) {
-//    <#code block#>
-//}
-
-
 class FeedCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Outlets
@@ -114,7 +95,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
     lazy var downVoteButton: UIButton = {
         let button = UIButton(type: UIButtonType.custom) as UIButton
         button.setImage(#imageLiteral(resourceName: "down-arrow"), for: .normal)
-//        button.addTarget(self, action: #selector(), for: .touchUpInside)
+        button.addTarget(self, action: #selector(downVoteButtonPressed()), for: .touchUpInside)
         return button
     }()
     
@@ -155,10 +136,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
         addSubviews()
         setupViews()
     }
-    
-    //Delegate
-//    weak var delegate = FeedCellDelegate?
-    
+
     // required. Storyboard
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
