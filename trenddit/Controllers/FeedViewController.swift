@@ -108,8 +108,8 @@ extension FeedViewController: UICollectionViewDataSource  {
             let post = posts[indexPath.item]
             cell.delegate = self
             cell.configureFeedCell(with: post)
-            cell.delegate = self
-            cell.post = post
+//            cell.delegate = self
+//            cell.post = post
             return cell
         }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: feedView.categoryCellID, for: indexPath) as! CategoryCollectionViewCell
