@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>886923442606-m0ba8s7hblmmb1mrgrrca4pr4lstlmj4.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.886923442606-m0ba8s7hblmmb1mrgrrca4pr4lstlmj4</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDck6TP3EBAryr5MtwJnwK8o21axx-SQGY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>886923442606</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>nyc.c4q.AC4.3.trenddit</string>
+	<key>PROJECT_ID</key>
+	<string>trenddit</string>
+	<key>STORAGE_BUCKET</key>
+	<string>trenddit.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:886923442606:ios:13f589e1e7e08124</string>
+	<key>DATABASE_URL</key>
+	<string>https://trenddit.firebaseio.com</string>
+</dict>
+</plist>

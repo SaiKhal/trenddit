@@ -6,10 +6,13 @@ target 'trenddit' do
   use_frameworks!
 
   # Pods for trenddit
+    pod 'Firebase/Storage'
     pod ‘Firebase/Database’
     pod ‘Firebase/Auth’
     pod ‘Firebase/Core’
     pod ‘SnapKit’, ‘~> 4.0.0’
     pod ‘Kingfisher’, ‘~> 4.0’
-
+    pod 'AZTabBar'
+    pod 'EasyNotificationBadge'
+    pod 'TextFieldEffects'
 end
