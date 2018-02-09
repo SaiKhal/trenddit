@@ -12,7 +12,7 @@ Whether it's the Eagles, yoga, or CardiB that you care about, there's a subTrend
 
 ## Features
 Users can: 
-- create a custom profile, set the image, username and 
+- create a custom profile, set the image and username
 - Post Images with a title 
 - Vote for comments: You can upvote or downvote comments and pictures 
 - view all of the previous posts and votes in the profile
