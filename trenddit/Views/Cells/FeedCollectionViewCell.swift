@@ -97,6 +97,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
     lazy var upVoteButton: UIButton = {
         let button = UIButton(type: UIButtonType.custom) as UIButton
         button.setImage(#imageLiteral(resourceName: "up-arrow"), for: .normal)
+        button.addTarget(self, action: #selector(upVoteButtonPressed), for: .touchUpInside)
         return button
     }()
     
