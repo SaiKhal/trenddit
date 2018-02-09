@@ -361,9 +361,11 @@ class FeedCollectionViewCell: UICollectionViewCell {
     
         // function for configuring cell from viewController
         public func configureFeedCell(with postInfo: Post) {
+            if let photoUrl = URL(string: postInfo.userPhotoURL) {
+                profileImageView.kf.setImage(with: photoUrl)
+            }
             postImageView.kf.setImage(with: URL(string: postInfo.image!), placeholder: #imageLiteral(resourceName: "feedPlaceHolder"))
             userNameButton.setTitle(postInfo.creator, for: .normal)
-            profileImageView.kf.setImage(with: URL(string: postInfo.userPhotoURL)!)
             titleButton.setTitle(postInfo.title, for: .normal)
             postCategoryButton.setTitle(postInfo.category.reduce("", {$0 + $1 + " "}), for: .normal)
             totalVotesLabel.text = String(postInfo.totalVotes)
