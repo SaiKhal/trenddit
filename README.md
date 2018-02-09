@@ -11,7 +11,11 @@ Whether it's the Eagles, yoga, or CardiB that you care about, there's a subTrend
 |<img src=https://media.giphy.com/media/26DNdoCeEaDUQiqty/giphy.gif>|
 
 ## Features
-//to do
+Users can: 
+- create a custom profile, set the image, username and 
+- Post Images with a title 
+- Vote for comments: You can upvote or downvote comments and pictures 
+- view all of the previous posts and votes in the profile
 
 ## Requirements
 - iOS 8.0+ / Mac OS X 10.11+ / tvOS 9.0+
@@ -33,7 +37,6 @@ CocoaPods is a dependency manager for Cocoa projects. You can install it with th
 	- Firebase/Core
 	- Firebase/Auth
 	- Firebase/Database
-//TODO: what else did we use
 
 ### How to Install Pods
 To integrate these pods into your Xcode project using CocoaPods, specify it in your Podfile:
