@@ -10,8 +10,6 @@ Whether it's the Eagles, yoga, or CardiB that you care about, there's a subTrend
 |:-------------:|
 |<img src=https://media.giphy.com/media/26DNdoCeEaDUQiqty/giphy.gif>|
 
-//<img src=https://media.giphy.com/media/26DNdoCeEaDUQiqty/giphy.gif>
-
 ## Features
 //to do
 
