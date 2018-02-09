@@ -14,11 +14,11 @@ class PostView: UIView {
     lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "user")
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         imageView.layer.masksToBounds = true
         //imageView.layer.cornerRadius = 8.0
         imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = self.bounds.width * 0.30 * 0.5
+        imageView.layer.cornerRadius = self.bounds.width * 0.20 * 0.5
         return imageView
     }()
     
@@ -29,7 +29,7 @@ class PostView: UIView {
         button.setTitleColor(UIColor.red, for: .selected)
         button.setTitle("username", for: .normal)
         button.contentHorizontalAlignment = .left
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)//button.titleLabel?.font.withSize(18)
+        button.titleLabel?.font = UIFont(name: Stylesheet.Fonts.Bold, size: 18)//button.titleLabel?.font.withSize(18)
         return button
     }()
     
@@ -58,6 +58,7 @@ class PostView: UIView {
         tf.placeholder = "Post text here ..."
         tf.textColor = .black
         tf.backgroundColor = UIColor.white
+        tf.font = UIFont(name: Stylesheet.Fonts.Light, size: 14)
         //TODO: How to make it wrap and limit charaters?
         return tf
     }()
@@ -74,6 +75,7 @@ class PostView: UIView {
     lazy var postButton: UIButton = {
         let button = UIButton()
         button.setTitle("POST", for: .normal)
+        button.titleLabel?.font = UIFont(name: Stylesheet.Fonts.Light, size: 20)
         button.backgroundColor = Stylesheet.Colors.Blue
         button.setTitleShadowColor(.magenta, for: .normal)
         button.setTitleColor(.white, for: .normal)
@@ -116,10 +118,10 @@ class PostView: UIView {
     
     private func setUserProfileImage() {
         addSubview(profileImageView)
-        profileImageView.snp.makeConstraints{(make) in
+        profileImageView.snp.makeConstraints{ make in
             make.top.equalTo(collectionView.snp.bottom).offset(10)
             make.left.equalTo(snp.left).offset(10)
-            make.size.equalTo(self.snp.width).multipliedBy(0.3)//.15
+            make.size.equalTo(self.snp.width).multipliedBy(0.2)
 
         }
     }

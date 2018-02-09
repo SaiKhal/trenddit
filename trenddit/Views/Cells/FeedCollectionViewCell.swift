@@ -34,6 +34,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
         imageView.image = UIImage(named: "user")
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = self.bounds.width * 0.15 * 0.5
         imageView.isUserInteractionEnabled = true
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(profileImageTapped))
         imageView.addGestureRecognizer(tapRecognizer)
@@ -47,7 +48,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
         button.setTitleColor(UIColor.red, for: .selected)
         button.setTitle("username", for: .normal)
         button.contentHorizontalAlignment = .left
-        button.titleLabel?.font = button.titleLabel?.font.withSize(12)
+        button.titleLabel?.font = UIFont(name: Stylesheet.Fonts.Light, size: 14)
         button.addTarget(self, action: #selector(segueToProfile), for: .touchUpInside)
         return button
     }()
@@ -59,7 +60,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
         button.setTitleColor(UIColor.red, for: .selected)
         button.setTitle("category", for: .normal)
         button.contentHorizontalAlignment = .left
-        button.titleLabel?.font = button.titleLabel?.font.withSize(12)
+        button.titleLabel?.font = UIFont(name: Stylesheet.Fonts.Thin, size: 12)
         button.addTarget(self, action: #selector(changeFeedToCategory), for: .touchUpInside)
         return button
     }()
@@ -77,8 +78,8 @@ class FeedCollectionViewCell: UICollectionViewCell {
         button.setTitleColor(UIColor.black, for: .normal)
         button.setTitleColor(UIColor.red, for: .selected)
         button.setTitle("this is the post header", for: .normal)
-        button.contentHorizontalAlignment = .left
-        button.titleLabel?.font = button.titleLabel?.font.withSize(15)
+        button.contentHorizontalAlignment = .center
+        button.titleLabel?.font = UIFont(name: Stylesheet.Fonts.Bold, size: 16)
         button.addTarget(self, action: #selector(replyToPostButtonPressed), for: .touchUpInside)
         return button
     }()
@@ -255,8 +256,8 @@ class FeedCollectionViewCell: UICollectionViewCell {
     private func setupProfileImageView() {
         profileImageView.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(snp.top).offset(10)
-            make.leading.equalTo(snp.leading)
-            make.height.width.equalTo(self).multipliedBy(0.13)
+            make.left.equalTo(snp.left).offset(10)
+            make.size.equalTo(self.snp.width).multipliedBy(0.15)
         }
     }
     
@@ -298,8 +299,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
     private func setupPostImageView() {
         postImageView.snp.makeConstraints { (make) in
             make.top.equalTo(titleButton.snp.bottom).offset(3)
-            make.width.equalTo(self)
-            make.height.equalTo(self).multipliedBy(0.6)
+            make.size.equalTo(self.snp.size).multipliedBy(0.7)
             make.centerX.equalTo(self)
         }
     }

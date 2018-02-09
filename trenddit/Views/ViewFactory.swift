@@ -13,7 +13,7 @@ enum TextFieldType {
     case email
     case password
     case general(String)
-}
+} 
 
 enum ViewFactory {
     enum TextField {

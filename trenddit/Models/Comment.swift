@@ -22,6 +22,7 @@ struct Comment: Codable {
         commentText = commentDict["commentText"] as? String ?? ""
         creator = commentDict["creator"] as? String ?? ""
         category = commentDict["category"] as? String ?? ""
+
         date = {
             let dateStr = commentDict["date"] as? String ?? ""
             return dateStr.components(separatedBy: CharacterSet.letters).reduce("", {$0 + $1 + " "})

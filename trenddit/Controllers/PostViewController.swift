@@ -102,6 +102,7 @@ extension PostViewController: UICollectionViewDataSource{
         let cell = postView.collectionView.dequeueReusableCell(withReuseIdentifier: "category cell", for: indexPath) as! CategoryCollectionViewCell
         let category = categories[indexPath.item]
         cell.categoryLabel.text = category
+        cell.categoryLabel.font = UIFont(name: Stylesheet.Fonts.Light, size: 14)
         return cell
     }
 
