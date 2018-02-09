@@ -5,6 +5,7 @@ Whether it's the Eagles, yoga, or CardiB that you care about, there's a subTrend
 
 ## Gifs
 //to do
+<img src=https://media.giphy.com/media/26DNdoCeEaDUQiqty/giphy.gif>
 
 ## Features
 //to do
