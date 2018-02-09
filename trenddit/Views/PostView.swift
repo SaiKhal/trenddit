@@ -15,7 +15,10 @@ class PostView: UIView {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "user")
         imageView.contentMode = .scaleAspectFit
+        imageView.layer.masksToBounds = true
+        //imageView.layer.cornerRadius = 8.0
         imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = self.bounds.width * 0.30 * 0.5
         return imageView
     }()
     
@@ -26,7 +29,7 @@ class PostView: UIView {
         button.setTitleColor(UIColor.red, for: .selected)
         button.setTitle("username", for: .normal)
         button.contentHorizontalAlignment = .left
-        button.titleLabel?.font = button.titleLabel?.font.withSize(12)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)//button.titleLabel?.font.withSize(18)
         return button
     }()
     
@@ -51,7 +54,7 @@ class PostView: UIView {
     
     lazy var createPostTF: UITextField = {
         var tf = UITextField()
-        tf.borderStyle = .bezel
+        tf.borderStyle = .none
         tf.placeholder = "Post text here ..."
         tf.textColor = .black
         tf.backgroundColor = UIColor.white
@@ -73,7 +76,9 @@ class PostView: UIView {
         button.setTitle("POST", for: .normal)
         button.backgroundColor = Stylesheet.Colors.Blue
         button.setTitleShadowColor(.magenta, for: .normal)
-        button.setTitleColor(UIColor.white, for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.layer.cornerRadius = 8.0
+        button.clipsToBounds = true
         return button
     }()
     
@@ -99,7 +104,6 @@ class PostView: UIView {
         setPostButton()
     }
     
-    //TODO: Change to a button like the user name
     private func setCategoryCollectionView() {
         addSubview(collectionView)
         collectionView.snp.makeConstraints { (make) in
@@ -116,6 +120,7 @@ class PostView: UIView {
             make.top.equalTo(collectionView.snp.bottom).offset(10)
             make.left.equalTo(snp.left).offset(10)
             make.size.equalTo(self.snp.width).multipliedBy(0.3)//.15
+
         }
     }
     
@@ -142,20 +147,32 @@ class PostView: UIView {
     private func setAddImageButton() {
         addSubview(addImgButton)
         addImgButton.snp.makeConstraints{(make) in
-            make.top.equalTo(createPostTF.snp.bottom)
-            make.size.equalTo(self.snp.width).multipliedBy(0.9)
+            make.size.equalTo(250)
+            make.bottom.equalTo(snp.bottom).offset(-180)
             make.centerX.equalTo(snp.centerX)
+        //        addImgButton.snp.makeConstraints{(make) in
+        //            make.top.equalTo(createPostTF.snp.bottom)
+        //            make.size.equalTo(self.snp.width).multipliedBy(0.15)//0.9
+        //            make.centerX.equalTo(snp.centerX)
+        //        }
+            //            make.centerY.equalTo(snp.centerY)
         }
     }
     
     private func setPostButton() {
         addSubview(postButton)
         postButton.snp.makeConstraints{(make) in
-            make.top.equalTo(addImgButton.snp.bottom)
+            make.bottom.equalTo(snp.bottom).offset(-90)
             make.width.equalTo(self.snp.width).multipliedBy(0.8)
             make.height.equalTo(self.snp.height).multipliedBy(0.05)//0.1
             make.centerX.equalTo(self.snp.centerX)
         }
+//        postButton.snp.makeConstraints{(make) in
+//            make.bottom.equalTo(snp.bottom)
+//            make.width.equalTo(self.snp.width).multipliedBy(0.8)
+//            make.height.equalTo(self.snp.height).multipliedBy(0.05)//0.1
+//            make.centerX.equalTo(self.snp.centerX)
+//        }
     }
     
     

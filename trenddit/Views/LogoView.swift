@@ -11,20 +11,21 @@ import UIKit
 class LogoView: UIView {
     lazy var logoImage: UIImageView = {
         let iv = UIImageView()
-        iv.backgroundColor = .orange
+        //iv.backgroundColor = .orange
+        iv.image = UIImage(named: "horn")
         return iv
     }()
 
     lazy var logoNameLabel: UILabel = {
         let label = UILabel()
         label.text = "TRENDDIT"
-        label.font = UIFont(name: Stylesheet.Fonts.Light, size: 28)
+        label.font = UIFont(name: Stylesheet.Fonts.Light, size: 35)//28
         return label
     }()
 
     lazy var captionLabel: UILabel = {
         let label = UILabel()
-        label.text = "WHO IS MAKING THAT LOGO THO"
+        label.text = "Have an opinion? Share it, on Trenddit!"
         label.font = UIFont(name: Stylesheet.Fonts.Thin, size: 18)
         return label
     }()
