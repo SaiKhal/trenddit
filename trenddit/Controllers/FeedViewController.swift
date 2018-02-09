@@ -98,14 +98,14 @@ extension FeedViewController: UICollectionViewDataSource  {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let post = posts[indexPath.item]
         guard collectionView == self.feedView.categoryCollectionView else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: feedView.postCellID, for: indexPath) as! FeedCollectionViewCell
+            let post = posts[indexPath.item]
             cell.configureFeedCell(with: post)
             return cell
         }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: feedView.categoryCellID, for: indexPath) as! CategoryCollectionViewCell
-        cell.configureCategoryCell(with: post)
+//        cell.configureCategoryCell(with: post)
         return cell
     }
 }
