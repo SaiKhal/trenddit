@@ -45,9 +45,10 @@ class PostViewController: UIViewController {
     }
     
     @objc func postPressed() {
-        let image = postView.addImgButton.imageView?.image ?? #imageLiteral(resourceName: "postplaceholderimage")
-        let title = postView.createPostTF.text ?? "Empty text field"
-        print(selectedCategory)
+        guard let image = postView.addImgButton.imageView?.image else { showAlert(missingItem: "image"); return }
+        guard image != #imageLiteral(resourceName: "addImage2") else { showAlert(missingItem: "image"); return }
+        guard let title = postView.createPostTF.text else { showAlert(missingItem: "title"); return }
+        guard !selectedCategory.isEmpty else { showAlert(missingItem: "category"); return }
         DBService.manager.addPost(title: title, category: selectedCategory, image: image)
     }
     
@@ -56,18 +57,11 @@ class PostViewController: UIViewController {
         postView.postButton.addTarget(self, action: #selector(postPressed), for: .touchUpInside)
     }
     
-//    func getSelectedCategory() -> [String] {
-//        var categoriesTemp = [String]()
-//        for index in 0..<categories.count {
-//            let indexpath = IndexPath(item: index, section: 0)
-//            let cell = postView.collectionView.cellForItem(at: indexpath) as! CategoryCollectionViewCell
-//            if cell.categoryImageView.backgroundColor == Stylesheet.Colors.Blue {
-//                selectedCategory.insert(<#T##newMember: String##String#>)
-//            }
-//
-//        }
-//        return categoriesTemp
-//    }
+    func showAlert(missingItem: String) {
+        let alert = UIAlertController(title: "Enter a post \(missingItem)!", message: "Cannot create a post with a \(missingItem)!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Gotcha", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
 }
 
 

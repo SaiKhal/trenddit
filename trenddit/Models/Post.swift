@@ -21,7 +21,8 @@ struct Post: Codable {
     var category: [String]
     var url: String?
     var image: String?
-    var comments: [String]?
+    var amountOfComments: Int
+    
     func postToJSON()->Any{
         let jsonData = try! JSONEncoder().encode(self)
         return try! JSONSerialization.jsonObject(with: jsonData, options: [])
@@ -37,6 +38,7 @@ struct Post: Codable {
         upvotes = postDict["upvotes"] as? Int ?? 0
         downvotes = postDict["downvotes"] as? Int ?? 0
         totalVotes = postDict["totalVotes"] as? Int ?? 0
+        amountOfComments = postDict["amountOfComments"] as? Int ?? 0
         category = postDict["category"] as? [String] ?? ["None"]
         date = {
             let dateStr = postDict["dateCreated"] as? String ?? ""

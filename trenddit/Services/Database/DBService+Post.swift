@@ -28,6 +28,7 @@ extension DBService {
                                 "upvotes"       : 0,
                                 "downvotes"     : 0,
                                 "totalVotes"    : 0,
+                                "amountOfComments": 0,
                                 "flagged"       : false]) { (error, dbRef) in
                                     if let error = error {
                                         print("addJob error: \(error)")

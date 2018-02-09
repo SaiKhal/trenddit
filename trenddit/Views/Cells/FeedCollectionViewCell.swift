@@ -372,7 +372,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
             titleButton.setTitle(postInfo.title, for: .normal)
             postCategoryButton.setTitle(postInfo.category.reduce("", {$0 + $1 + " "}), for: .normal)
             totalVotesLabel.text = String(postInfo.totalVotes)
-            totalRepliesLabel.text = String(postInfo.comments?.count ?? 0)
+            totalRepliesLabel.text = String(postInfo.amountOfComments)
         }
     
 }

@@ -64,6 +64,7 @@ class AuthClient: NSObject {
                 self?.delegate.didSignIn?(user: user)
             }
         }
+        
     }
     
     func signOut() {
