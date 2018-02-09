@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         if let user = AuthClient.currentUser {
 //            root = CommentListVC()
-            root = CustomTabBarVC(user: user)
+            root = LoginVC()
         } else {
 //            root = LoginVC() // for testing
             root = LoginVC()
