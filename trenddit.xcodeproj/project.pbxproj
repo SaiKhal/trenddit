@@ -28,6 +28,7 @@
 		9373CA652028CA0800878052 /* CommentListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9373CA642028CA0800878052 /* CommentListCell.swift */; };
 		9373CA672028CA6E00878052 /* DisplayPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9373CA662028CA6E00878052 /* DisplayPostCell.swift */; };
 		C4200BFC202123900025058D /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4200BFB202123900025058D /* SignUpView.swift */; };
+		C4287479202D4B3C00C90AC8 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4287478202D4B3C00C90AC8 /* Router.swift */; };
 		C44EAF7F2021584C00E6A7D9 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44EAF7E2021584C00E6A7D9 /* UIColorExt.swift */; };
 		C44EAF81202158FD00E6A7D9 /* Stylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44EAF80202158FD00E6A7D9 /* Stylesheet.swift */; };
 		C44EAF83202166A800E6A7D9 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44EAF82202166A800E6A7D9 /* LogoView.swift */; };
@@ -91,6 +92,7 @@
 		A8233DF17766892C05415FA3 /* Pods-trenddit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trenddit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-trenddit/Pods-trenddit.debug.xcconfig"; sourceTree = "<group>"; };
 		C316B0E80377A318D0895EFB /* Pods-trenddit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trenddit.release.xcconfig"; path = "Pods/Target Support Files/Pods-trenddit/Pods-trenddit.release.xcconfig"; sourceTree = "<group>"; };
 		C4200BFB202123900025058D /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		C4287478202D4B3C00C90AC8 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		C44EAF7E2021584C00E6A7D9 /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
 		C44EAF80202158FD00E6A7D9 /* Stylesheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stylesheet.swift; sourceTree = "<group>"; };
 		C44EAF82202166A800E6A7D9 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 				C49220DB202BA784003C2A19 /* Database */,
 				C49220E0202BD406003C2A19 /* StorageService.swift */,
 				C49220E2202BD44B003C2A19 /* StorageService+Image.swift */,
+				C4287478202D4B3C00C90AC8 /* Router.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 			files = (
 				9373CA672028CA6E00878052 /* DisplayPostCell.swift in Sources */,
 				C46E712F2020FE8000AA0226 /* AZTabBarController.swift in Sources */,
+				C4287479202D4B3C00C90AC8 /* Router.swift in Sources */,
 				C49220E3202BD44B003C2A19 /* StorageService+Image.swift in Sources */,
 				C49220E5202BFF1D003C2A19 /* Profile.swift in Sources */,
 				C49220E1202BD406003C2A19 /* StorageService.swift in Sources */,

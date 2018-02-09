@@ -12,6 +12,12 @@ class CommentListVC: UIViewController{
     
     //Purpose: (Controls Comment View)
     var commentListView = CommentListView()
+    var post: Post!
+    
+    convenience init(post: Post) {
+        self.init()
+        self.post = post
+    }
     
     //View Did Load
     override func viewDidLoad() {
@@ -62,6 +68,10 @@ extension CommentListVC: UITableViewDataSource {
 }
 
 extension CommentListVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print("postid: \(post.postID)")
+        return true
+    }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
     //when clicked, display comment input view

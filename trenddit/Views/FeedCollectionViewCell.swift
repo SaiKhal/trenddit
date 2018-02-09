@@ -157,7 +157,9 @@ class FeedCollectionViewCell: UICollectionViewCell {
     }
     
     //Delegate
-//    weak var delegate = FeedCellDelegate?
+    var delegate: Router!
+    
+    var post: Post!
     
     // required. Storyboard
     required init?(coder aDecoder: NSCoder) {
@@ -232,6 +234,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
     }
     
     @objc private func replyToPostButtonPressed() {
+        delegate.route(destination: CommentListVC(post: post))
         print("test")
     }
     
