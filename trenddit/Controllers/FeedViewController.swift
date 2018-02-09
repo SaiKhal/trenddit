@@ -33,7 +33,7 @@ class FeedViewController: UIViewController {
         addSubView()
         setupView()
         configureNavBar()
-    
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -106,9 +106,10 @@ extension FeedViewController: UICollectionViewDataSource  {
         guard collectionView == self.feedView.categoryCollectionView else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: feedView.postCellID, for: indexPath) as! FeedCollectionViewCell
             let post = posts[indexPath.item]
-            cell.configureFeedCell(with: post)
             cell.delegate = self
-            cell.post = post
+            cell.configureFeedCell(with: post)
+//            cell.delegate = self
+//            cell.post = post
             return cell
         }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: feedView.categoryCellID, for: indexPath) as! CategoryCollectionViewCell
@@ -125,13 +126,69 @@ extension FeedViewController: UICollectionViewDelegate{
 }
 
 
-extension FeedViewController: Router {
-    func route(destination: UIViewController?) {
-        if let destination = destination {
-            present(destination, animated: true, completion: nil)
-        }
+extension FeedViewController: FeedCellDelegate {
+    func upVotePressed() {
+        
     }
+    
+    func downVotePressed() {
+        
+    }
+    
+    func userNamePressed() {
+        
+    }
+    
+    func categoryPressed() {
+        
+    }
+    
+    func titlePressed() {
+        let commentListViewController = CommentListVC()
+        navigationController?.pushViewController(commentListViewController, animated: true)
+    }
+    
+    func profileImagePressed() {
+        let profileViewController = ProfileVC()
+        navigationController?.pushViewController(profileViewController, animated: true)
+    }
+    
+    func postImagePressed() {
+        print("image pressed")
+        let zoomedImageVC = ZoomedImageVC()
+        navigationController?.pushViewController(zoomedImageVC, animated: true)
+    }
+    
+    func commentPressed() {
+        let commentListViewController = CommentListVC()
+        navigationController?.pushViewController(commentListViewController, animated: true)
+    }
+    
+    func optionsPressed() {
+    }
+    
+    func shareButtonPressed() {
+        
+    }
+    
+    func flagUser() {
+        
+    }
+    
+    func flagPost() {
+        
+    }
+    
+    
 }
+
+//extension FeedViewController: Router {
+//    func route(destination: UIViewController?) {
+//        if let destination = destination {
+//            present(destination, animated: true, completion: nil)
+//        }
+//    }
+//}
 
 //extension FeedViewController: UICollectionViewDelegateFlowLayout {
 //    

@@ -51,24 +51,12 @@ class PostView: UIView {
     
     lazy var createPostTF: UITextField = {
         var tf = UITextField()
-        tf.borderStyle = .roundedRect
+        tf.borderStyle = .bezel
         tf.placeholder = "Post text here ..."
         tf.textColor = .black
         tf.backgroundColor = UIColor.white
         //TODO: How to make it wrap and limit charaters?
         return tf
-    }()
-    
-    
-    
-    lazy var addPhotoimageView: UIImageView = {
-        var iv = UIImageView()
-        //iv.image = UIImage(named: "postplaceholderimage") //for testing
-        iv.image = UIImage(named: "addImage2")
-        iv.alpha = 0.30
-        //iv.backgroundColor = .magenta
-        //iv.isHidden = true //hidden until they choose to add image
-        return iv
     }()
     
     lazy var addImgButton: UIButton = {
@@ -103,11 +91,10 @@ class PostView: UIView {
     
     //Constraining Objects using SnapKit
     func setViews(){
+        setCategoryCollectionView()
         setUserProfileImage()
         setUsernameButton()
-        setCategoryCollectionView()
         setTextField()
-        //addPhotoImageView()
         setAddImageButton()
         setPostButton()
     }
@@ -126,60 +113,45 @@ class PostView: UIView {
     private func setUserProfileImage() {
         addSubview(profileImageView)
         profileImageView.snp.makeConstraints{(make) in
-            make.top.equalTo(snp.top).offset(60)
-            make.leading.equalTo(snp.leading).offset(10)
-            make.height.width.equalTo(self).multipliedBy(0.10)//.15
+            make.top.equalTo(collectionView.snp.bottom).offset(10)
+            make.left.equalTo(snp.left).offset(10)
+            make.size.equalTo(self.snp.width).multipliedBy(0.3)//.15
         }
     }
     
     private func setUsernameButton() {
         addSubview(userNameButton)
         userNameButton.snp.makeConstraints{(make) in
-            make.top.equalTo(snp.top).offset(80)
-            make.leading.equalTo(snp.leading).offset(60)
-            make.height.equalTo(self).multipliedBy(0.05)
-            make.width.equalTo(self).multipliedBy(0.30)
+            make.centerY.equalTo(profileImageView.snp.centerY)
+            make.left.equalTo(profileImageView.snp.right).offset(10)
+//            make.height.equalTo(self).multipliedBy(0.05)
+            make.width.equalTo(self.snp.width).multipliedBy(0.30)
         }
     }
     
     private func setTextField() {
         addSubview(createPostTF)
         createPostTF.snp.makeConstraints{(make) in
-            make.top.equalTo(snp.top).offset(130)
-            make.width.equalTo(self.snp.width)
+            make.top.equalTo(profileImageView.snp.bottom).offset(20)
+            make.width.equalTo(self.snp.width).multipliedBy(0.9)
             make.height.equalTo(safeAreaLayoutGuide).dividedBy(14)
+            make.centerX.equalTo(self.snp.centerX)
        }
-    }
-    
-    private func addPhotoImageView() {
-        addSubview(addPhotoimageView)
-        addPhotoimageView.snp.makeConstraints{(make) in
-            make.top.equalTo(snp.top).offset(350)//200
-            make.size.equalTo(300)
-            //make.width.equalTo(self.snp.width).dividedBy(2)
-            //make.height.equalTo(self.snp.height).dividedBy(4)//2
-            make.centerX.equalTo(snp.centerX)
-        }
     }
     
     private func setAddImageButton() {
         addSubview(addImgButton)
         addImgButton.snp.makeConstraints{(make) in
-//            make.top.equalTo(self.snp.top).offset(150)
-//            make.trailing.equalTo(snp.trailing).offset(-20)
-//            make.size.equalTo(40)
-            //testing center
-            //make.bottom.equalTo(snp.bottom).offset(-70)//200
-            make.size.equalTo(250)
+            make.top.equalTo(createPostTF.snp.bottom).offset(10)
+            make.size.equalTo(self.snp.width).multipliedBy(0.9)
             make.centerX.equalTo(snp.centerX)
-            make.centerY.equalTo(snp.centerY)
         }
     }
     
     private func setPostButton() {
         addSubview(postButton)
         postButton.snp.makeConstraints{(make) in
-            make.bottom.equalTo(snp.bottom).offset(-90)
+            make.top.equalTo(addImgButton.snp.bottom).offset(10)
             make.width.equalTo(self.snp.width).multipliedBy(0.8)
             make.height.equalTo(self.snp.height).multipliedBy(0.05)//0.1
             make.centerX.equalTo(self.snp.centerX)

@@ -9,24 +9,20 @@
 import UIKit
 import SnapKit
 
-//protocol FeedCellDelegate: class {
-//    func upVote()
-//}
-//
-//// set extension
-//extension <#ViewControllerName#>: FeedCellDelegate {
-//    func upVote() {
-//    }
-//}
-//
-//// set delegate
-//FeedCellDelegate.delegate = self
-//
-//// set method of the contract
-//func upVote(_ post: Post) {
-//    <#code block#>
-//}
-//
+protocol FeedCellDelegate: class {
+    func upVotePressed()
+    func downVotePressed()
+    func userNamePressed()
+    func categoryPressed()
+    func titlePressed()
+    func profileImagePressed()
+    func postImagePressed()
+    func commentPressed()
+    func optionsPressed()
+    func shareButtonPressed()
+    func flagUser()
+    func flagPost()
+}
 
 class FeedCollectionViewCell: UICollectionViewCell {
     
@@ -37,7 +33,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         imageView.isUserInteractionEnabled = true
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(profileImageTapped))
         imageView.addGestureRecognizer(tapRecognizer)
         return imageView
     }()
@@ -91,7 +87,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         imageView.isUserInteractionEnabled = true
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(postImageTapped))
         imageView.addGestureRecognizer(tapRecognizer)
         return imageView
     }()
@@ -114,7 +110,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
     lazy var downVoteButton: UIButton = {
         let button = UIButton(type: UIButtonType.custom) as UIButton
         button.setImage(#imageLiteral(resourceName: "down-arrow"), for: .normal)
-//        button.addTarget(self, action: #selector(delegate.), for: .touchUpInside)
+        button.addTarget(self, action: #selector(downVoteButtonPressed), for: .touchUpInside)
         return button
     }()
     
@@ -148,6 +144,8 @@ class FeedCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
+    weak var delegate: FeedCellDelegate?
+    
     //MARK: - Initializers
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
@@ -155,11 +153,12 @@ class FeedCollectionViewCell: UICollectionViewCell {
         addSubviews()
         setupViews()
     }
+
     
-    //Delegate
-    var delegate: Router!
-    
-    var post: Post!
+//    //Delegate
+//    var delegate: Router!
+//
+//    var post: Post!
     
     // required. Storyboard
     required init?(coder aDecoder: NSCoder) {
@@ -206,40 +205,47 @@ class FeedCollectionViewCell: UICollectionViewCell {
         setupShareLabel()
     }
     
+    // delegates
     @objc private func changeFeedToCategory() {
-        print("test")
+        delegate?.categoryPressed()
     }
     
     @objc private func segueToProfile() {
-        print("test")
-        //userNameButton
+        delegate?.profileImagePressed()
+        print("segue to profile delegate")
     }
     
-    @objc public func imageTapped(sender: UIImageView, target:UIViewController) {
-        print("image tapped")
-        //profileImageView
-        //postImageView
+    @objc public func profileImageTapped(sender: UIImageView, target:UIViewController) {
+        print("profile image delegate")
+        delegate?.profileImagePressed()
+    }
+    
+    @objc public func postImageTapped(sender: UIImageView, target:UIViewController) {
+        print("post image delegate")
+        delegate?.postImagePressed()
     }
     
     @objc private func displayOptionsbuttonPressed() {
-        print("test")
+        delegate?.optionsPressed()
     }
     
     @objc private func upVoteButtonPressed() {
-        print("test")
+        delegate?.upVotePressed()
     }
     
     @objc private func downVoteButtonPressed() {
-        print("test")
+        delegate?.downVotePressed()
     }
     
     @objc private func replyToPostButtonPressed() {
-        delegate.route(destination: CommentListVC(post: post))
-        print("test")
+        delegate?.commentPressed()
+//        delegate.route(destination: CommentListVC(post: post))
+//        print("test")
+
     }
     
     @objc private func shareOptionsButtonPressed() {
-        print("image tapped")
+        delegate?.shareButtonPressed()
     }
     
     // MARK: - Snapkit constraints
@@ -355,9 +361,11 @@ class FeedCollectionViewCell: UICollectionViewCell {
     
         // function for configuring cell from viewController
         public func configureFeedCell(with postInfo: Post) {
+            if let photoUrl = URL(string: postInfo.userPhotoURL) {
+                profileImageView.kf.setImage(with: photoUrl)
+            }
             postImageView.kf.setImage(with: URL(string: postInfo.image!), placeholder: #imageLiteral(resourceName: "feedPlaceHolder"))
             userNameButton.setTitle(postInfo.creator, for: .normal)
-            profileImageView.kf.setImage(with: URL(string: postInfo.userPhotoURL)!)
             titleButton.setTitle(postInfo.title, for: .normal)
             postCategoryButton.setTitle(postInfo.category.reduce("", {$0 + $1 + " "}), for: .normal)
             totalVotesLabel.text = String(postInfo.totalVotes)
