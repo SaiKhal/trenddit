@@ -85,7 +85,9 @@ class PostView: UIView {
         button.setTitle("POST", for: .normal)
         button.backgroundColor = Stylesheet.Colors.Blue
         button.setTitleShadowColor(.magenta, for: .normal)
-        button.setTitleColor(UIColor.white, for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.layer.cornerRadius = 8.0
+        button.clipsToBounds = true
         return button
     }()
     
