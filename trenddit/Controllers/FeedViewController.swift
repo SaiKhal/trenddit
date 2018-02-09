@@ -71,7 +71,11 @@ class FeedViewController: UIViewController {
     
     // TODO: complete camera function
     @objc func cameraButtonClicked() {
-        print("camera button pressed")
+        let grandParent = parent?.parent
+        if grandParent is AZTabBarController {
+            let tabController = grandParent as! AZTabBarController
+            tabController.setIndex(1)
+        }
     }
     
     private func addSubView() {
@@ -109,6 +113,7 @@ extension FeedViewController: UICollectionViewDataSource  {
             cell.postImageView.kf.setImage(with: URL(string: post.image!), placeholder: #imageLiteral(resourceName: "feedPlaceHolder"))
             cell.userNameButton.setTitle(post.creator, for: .normal)
             cell.profileImageView.kf.setImage(with: AuthClient.currentUser?.photoURL)
+            cell.postCategoryButton.setTitle(post.category.reduce("", {$0 + $1 + " "}), for: .normal)
             cell.titleButton.setTitle(post.title ?? "No text", for: .normal)
             //            cell.configureFeedCell(with: <#T##String#>, and: <#T##UIImage#>)
             return cell

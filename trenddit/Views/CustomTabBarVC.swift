@@ -18,16 +18,6 @@ class CustomTabBarVC: UIViewController {
     
     init(user: User) {
         super.init(nibName: nil, bundle: nil)
-        userProfileImageURL = user.photoURL
-        ImageDownloader.default.downloadImage(with: userProfileImageURL!, retrieveImageTask: nil, options: nil, progressBlock: nil) { (image, error, url, data) in
-            if let error = error {
-                
-            }
-            if let image = image {
-                self.userProfileImage = image
-//                self.applyTabBar(into: self)
-            }
-        }
     }
     
     required init?(coder aDecoder: NSCoder) {
