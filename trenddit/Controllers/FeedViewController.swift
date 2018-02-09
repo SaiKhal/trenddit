@@ -42,7 +42,7 @@ class FeedViewController: UIViewController {
     
     func getPost() {
         guard let userId = AuthClient.currentUser?.uid else { return }
-        DBService.manager.getPosts().child(userId).observe(.value) { (snapshot) in
+        DBService.manager.getPosts().observe(.value) { (snapshot) in
             var posts = [Post]()
             for child in snapshot.children.reversed() {
                 let dataSnapshot = child as! DataSnapshot
@@ -89,6 +89,7 @@ class FeedViewController: UIViewController {
     }
     
     private func setupFeedCellFunctions() {
+        
     }
 }
 
@@ -107,6 +108,8 @@ extension FeedViewController: UICollectionViewDataSource  {
             let post = posts[indexPath.item]
             cell.delegate = self
             cell.configureFeedCell(with: post)
+            cell.delegate = self
+            cell.post = post
             return cell
         }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: feedView.categoryCellID, for: indexPath) as! CategoryCollectionViewCell
@@ -121,6 +124,7 @@ extension FeedViewController: UICollectionViewDelegate{
         
     }
 }
+
 
 extension FeedViewController: FeedCellDelegate {
     func upVotePressed() {
@@ -177,3 +181,27 @@ extension FeedViewController: FeedCellDelegate {
     
     
 }
+
+//extension FeedViewController: Router {
+//    func route(destination: UIViewController?) {
+//        if let destination = destination {
+//            present(destination, animated: true, completion: nil)
+//        }
+//    }
+//}
+
+//extension FeedViewController: UICollectionViewDelegateFlowLayout {
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        
+//        guard collectionView == self.feedView.categoryCollectionView else {
+//            //CGSize for feedCollectionView
+//            let sized = CGSize(width: collectionView.frame.size.width , height: collectionView.frame.size.height / 1.85)
+//            return sized
+//        }
+//        //CGSize for categoryCollectionView
+//        let sized = CGSize(width: collectionView.frame.size.width / 5, height: collectionView.frame.size.height )
+//        return sized
+//    }
+//}
+

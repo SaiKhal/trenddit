@@ -46,7 +46,7 @@ extension StorageService {
             // set post's imageURL
             let imageURL = String(describing: snapshot.metadata!.downloadURL()!)
             guard let userId = AuthClient.currentUser?.uid else { fatalError("uid is nil")}
-            DBService.manager.getPosts().child(userId).child(postId).updateChildValues(["imageURL" :  imageURL])
+            DBService.manager.getPosts().child(postId).updateChildValues(["imageURL" :  imageURL])
             
         }
         

@@ -13,6 +13,7 @@ struct Post: Codable {
     let userID: String
     let creator: String
     let date: String
+    let userPhotoURL: String
     var title: String
     var upvotes: Int
     var downvotes: Int
@@ -29,7 +30,7 @@ struct Post: Codable {
     init(postDict: [String : Any]) {
         postID = postDict["postID"] as? String ?? ""
         userID = postDict["userID"] as? String ?? ""
-        date = postDict["date"] as? String ?? ""
+        userPhotoURL = postDict["userPhotoUrl"] as? String ?? ""
         creator = postDict["creator"] as? String ?? ""
         title = postDict["title"] as? String ?? ""
         image = postDict["imageURL"] as? String ?? ""
@@ -37,5 +38,9 @@ struct Post: Codable {
         downvotes = postDict["downvotes"] as? Int ?? 0
         totalVotes = postDict["totalVotes"] as? Int ?? 0
         category = postDict["category"] as? [String] ?? ["None"]
+        date = {
+            let dateStr = postDict["dateCreated"] as? String ?? ""
+            return dateStr.components(separatedBy: CharacterSet.letters).reduce("", {$0 + $1 + " "})
+        }()
     }
 }

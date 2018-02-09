@@ -154,6 +154,12 @@ class FeedCollectionViewCell: UICollectionViewCell {
         setupViews()
     }
 
+    
+//    //Delegate
+//    var delegate: Router!
+//
+//    var post: Post!
+    
     // required. Storyboard
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -233,6 +239,9 @@ class FeedCollectionViewCell: UICollectionViewCell {
     
     @objc private func replyToPostButtonPressed() {
         delegate?.commentPressed()
+//        delegate.route(destination: CommentListVC(post: post))
+//        print("test")
+
     }
     
     @objc private func shareOptionsButtonPressed() {
@@ -354,7 +363,7 @@ class FeedCollectionViewCell: UICollectionViewCell {
         public func configureFeedCell(with postInfo: Post) {
             postImageView.kf.setImage(with: URL(string: postInfo.image!), placeholder: #imageLiteral(resourceName: "feedPlaceHolder"))
             userNameButton.setTitle(postInfo.creator, for: .normal)
-            profileImageView.kf.setImage(with: AuthClient.currentUser?.photoURL)
+            profileImageView.kf.setImage(with: URL(string: postInfo.userPhotoURL)!)
             titleButton.setTitle(postInfo.title, for: .normal)
             postCategoryButton.setTitle(postInfo.category.reduce("", {$0 + $1 + " "}), for: .normal)
             totalVotesLabel.text = String(postInfo.totalVotes)
