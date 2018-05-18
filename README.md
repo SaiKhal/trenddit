@@ -6,9 +6,9 @@ Whether it's the Eagles, yoga, or CardiB that you care about, there's a subTrend
 ## Screenshots
 
 |:-------------:|
-![screeenshot](https://user-images.githubusercontent.com/27717536/40210228-bcdcac46-5a11-11e8-9bf7-a5d6c5c20f6f.jpeg =250x400)
-![screeenshot](https://user-images.githubusercontent.com/27717536/40210234-c3589e0e-5a11-11e8-9b0f-8f1378ffbc3d.jpeg =250x400)
-![screeenshot](https://user-images.githubusercontent.com/27717536/40210237-c55fed06-5a11-11e8-8e2e-5fd7179fdcd0.jpeg =250x400)
+![screeenshot](https://user-images.githubusercontent.com/27717536/40210228-bcdcac46-5a11-11e8-9bf7-a5d6c5c20f6f.jpeg){:height="50%" width="50%"}
+![screeenshot](https://user-images.githubusercontent.com/27717536/40210234-c3589e0e-5a11-11e8-9b0f-8f1378ffbc3d.jpeg){:height="50%" width="50%"}
+![screeenshot](https://user-images.githubusercontent.com/27717536/40210237-c55fed06-5a11-11e8-8e2e-5fd7179fdcd0.jpeg){:height="50%" width="50%"}
 
 
 ## Features
