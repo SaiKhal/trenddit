@@ -5,10 +5,11 @@ Whether it's the Eagles, yoga, or CardiB that you care about, there's a subTrend
 
 ## Screenshots
 
-|:-------------:|
+<p align="middle">
 <img src="https://user-images.githubusercontent.com/27717536/40210228-bcdcac46-5a11-11e8-9bf7-a5d6c5c20f6f.jpeg" width="180">
 <img src="https://user-images.githubusercontent.com/27717536/40210234-c3589e0e-5a11-11e8-9b0f-8f1378ffbc3d.jpeg" width="180">
 <img src="https://user-images.githubusercontent.com/27717536/40210237-c55fed06-5a11-11e8-8e2e-5fd7179fdcd0.jpeg" width="180">
+</p>
 
 ## Features
 Users can: 
