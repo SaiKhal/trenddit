@@ -3,12 +3,13 @@
 ## Overview
 Whether it's the Eagles, yoga, or CardiB that you care about, there's a subTrenddit for you! Share your opinion with others across the world and get a chance to vote on the best comments.
 
-## Gifs
-//to do
+## Screenshots
 
-|testing|
 |:-------------:|
-|<img src=https://media.giphy.com/media/26DNdoCeEaDUQiqty/giphy.gif>|
+![screeenshot](https://user-images.githubusercontent.com/27717536/40210228-bcdcac46-5a11-11e8-9bf7-a5d6c5c20f6f.jpeg)
+![screeenshot](https://user-images.githubusercontent.com/27717536/40210234-c3589e0e-5a11-11e8-9b0f-8f1378ffbc3d.jpeg)
+![screeenshot](https://user-images.githubusercontent.com/27717536/40210237-c55fed06-5a11-11e8-8e2e-5fd7179fdcd0.jpeg)
+
 
 ## Features
 Users can: 
